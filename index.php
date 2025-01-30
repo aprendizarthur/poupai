@@ -13,12 +13,12 @@
     <title>POUPAÍ - Gerenciador de finanças online</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <meta name="description" content="Tome controle das suas finanças hoje mesmo. Cadastre-se e comece a economizar! Receba de graça relatórios detalhados!">
-    <meta name="theme-color" content="#969696">
+    <meta name="theme-color" content="#FFFFFF">
     
 <!--BOOTSTRAP CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <!--FOLHA CSS-->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style-index.css">
 <!--FONTAWESOME JS-->
     <script src="https://kit.fontawesome.com/6afdaad939.js" crossorigin="anonymous">      </script>
 <!--BOOTSTRAP ICONS-->
@@ -87,14 +87,14 @@
                 <div class="row mt-4 d-flex background-menus justify-content-between borda-cima">
                     <div class="col-sm-12 col-md-12 col-lg-6 background-preto text-center align-items-center p-5">
                         <h1 class="inter-bold text-light">Tome controle das suas finanças hoje mesmo</h1>
-                        <p class="poppins-light text-light pt-2">E para melhorar, você não precisa gastar um centavo sequer!</p>
-                        <a class="nav-link d-block my-2 botao-primario poppins-regular mt-4" rel="nofollow" href="login.php">Registrar agora</a>
-                        <a class="nav-link d-block my-2 botao-terciario poppins-regular mt-2" rel="nofollow" href="registro.php">Já tenho uma conta</a>
+                        <p class="poppins-light text-light pt-2">E para melhorar, você não precisa gastar nada!</p>
+                        <a class="nav-link d-block my-2 botao-primario poppins-regular mt-4" rel="nofollow" href="registro.php">Registrar agora</a>
+                        <a class="nav-link d-block my-2 botao-terciario poppins-regular mt-2" rel="nofollow" href="login.php">Já tenho uma conta</a>
                     </div>
 
                     <!--CTA SÓ APARECE TELAS GRANDES-->
                     <div class="d-none d-lg-block col-lg-6 background-preto text-center text-light p-5">
-                        <h1 class="inter-bold">Receba relatórios detalhados!</h1>
+                        <h1 class="inter-bold">Receba relatórios personalizados!</h1>
                         <p class="poppins-light pt-2">Com a ajuda da nossa assistente <span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span></p>
                         <!--CANVAS TELAS GRANDES-->
                         <canvas class="d-flex mt-3" id="grafico-cta2" width="100%" height="40%"></canvas>
@@ -102,8 +102,8 @@
                     </div>
 
                     <!--CTA SÓ APARECE TELAS MEDIOS MENOR-->
-                    <div class="d-block d-lg-none col-md-12 text-center justify-content-center p-5">
-                        <h2 class="inter-bold mb-3">Receba relatórios detalhados!</h2>
+                    <div class="d-block mt-2 d-lg-none col-md-12 text-center justify-content-center p-5">
+                        <h2 class="inter-bold mb-3">Receba relatórios personalizados!</h2>
                         <p class="poppins-light pt-2">Com a ajuda da nossa assistente <span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span>.</p>
                             
                         <!--CANVAS TELA CELULAR-->
@@ -122,8 +122,8 @@
             <section id="apresentando-eliza">
                 <div class="row d-flex background-menus text-center">            
                     <div class="col-12 text-center my-5">
-                        <h2 class="d-block d-md-none inter-bold">Relatórios mais inteligentes com a <span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span></h2>  
-                        <h2 class="d-none d-md-block inter-bold mb-5">Relatórios mais inteligentes com a <span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span></h2>  
+                        <h2 class="d-block d-md-none inter-bold">Relatórios inteligentes com a <span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span></h2>  
+                        <h2 class="d-none d-md-block inter-bold mb-5">Relatórios inteligentes com a <span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span></h2>  
 
                         <div class="row d-flex justify-content-center">
                             <!--CONTEXTUALIZANDO SOBRE ELIZA-->
@@ -171,7 +171,7 @@
             <section id="eliza-ia">
                 <div class="row d-flex background-menus justify-content-center borda-baixo">
                     <div class="col-11 col-md-12 text-center mb-4">
-                        <p class="poppins-regular disabled p-3 borda-obs" style="color: #969696;">
+                        <p class="poppins-regular disabled" style="color: #969696;">
                         É importante lembrar que a <span class="disabled"><i class="bi bi-stars"></i>Eliza</span> não é uma inteligência artificial, ela apenas realiza cálculos e retorna ao usuário dados relevantes.
                         </p>
                     </div>
@@ -182,7 +182,7 @@
         <!--FECHAMENTO MAIN-->
 
         <!--ABERTURA FOOTER-->
-        <footer class="my-4">
+        <footer class="mt-4">
             <a class="navbar-brand inter-extrabold logo mt-2 px-4" href="index.php">POUPAÍ</a>
             <hr>
             <div class="row d-flex p-4">

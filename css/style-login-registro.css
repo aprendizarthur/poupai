@@ -26,6 +26,14 @@ body{
     text-align: left;
 }
 
+.caixa-interna-erro{
+    background-color: #e83838;
+    border: solid 1px #969696;
+    border-radius: 12px;
+    text-align: left;
+    color: white;
+}
+
 .background-preto{
     background-color: #1F1F21;
 }

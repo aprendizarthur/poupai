@@ -110,14 +110,16 @@
                 //se existe o usuario, loga e salva dados na sessão
                 if((int)$linha['TOTAL']> 0){
                     
-                //recuperando o nome do usuario para salvar na sessao
-                $sql_code = "SELECT nome_usuario FROM usuarios WHERE email_usuario = '$email' AND senha_usuario = '$senha'";
+                //recuperando o nome do usuario e ID para salvar na sessao
+                $sql_code = "SELECT id_usuario, nome_usuario FROM usuarios WHERE email_usuario = '$email' AND senha_usuario = '$senha'";
                 
-                if($resultadoNome = $mysqli->query($sql_code)){
+                if($resultado = $mysqli->query($sql_code)){
 
-                    $nome = $resultadoNome->fetch_assoc();
+                    $usuario = $resultado->fetch_assoc();
                 } 
-                $_SESSION['nome'] = $nome['nome_usuario'];
+
+                $_SESSION['id'] = $usuario['id_usuario'];
+                $_SESSION['nome'] = $usuario['nome_usuario'];
                 $_SESSION['email'] = $email;
 
                 header("Location: painel.php");

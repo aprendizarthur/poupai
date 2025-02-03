@@ -21,6 +21,11 @@ footer{
     border: solid 1px #969696;
 }
 
+select{
+    border-radius: 8px;
+    border: 1px solid #969696;
+}
+
 .link-footer{
     color: #969696;
     text-decoration: none;
@@ -32,12 +37,44 @@ footer{
     text-decoration: none;
 }
 
+.borda-cima{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-top: solid 1px #969696;
+}
+
 .relatorio-eliza{
     box-shadow: 0px 0px 10px 0px #0088cc83;
+    border-radius: 12px;
+}
+
+.texto-primario-2{
+    background-image: linear-gradient(to right, #0088CC, #a1cce2);
+    background-clip: text;
+    color: transparent;
 }
 
 .texto-primario{
     color: #0088CC;
+}
+
+.botao-sair{
+    background-color: #F5F5F5;
+    border: solid 1px #969696;
+    border-radius: 12px;
+    color: #969696;
+}
+
+.borda-branca{
+    background-color: #969696;
+    border-radius: 20px;
+    color: #FFFFFF;
+}
+
+.botao-sair:hover{
+    background-color: black;
+    border-radius: 12px;
+    color: #FFFFFF !important;
 }
 
 .border{
@@ -136,7 +173,21 @@ footer{
     text-align: center;
 }
 
+.botao-despesa{
+    border-radius: 12px;
+    background-color: #eb4444;
+    border: solid 1px #eb4444;
+    color: #FFFFFF !important;
+    text-align: center;
+}
 
+.botao-receita{
+    border-radius: 12px;
+    background-color: #319949;
+    border: solid 1px #319949;
+    color: #FFFFFF !important;
+    text-align: center;
+}
 /*CLASSES TIPOGRAFIA --------------------------*/
     /*FONTES*/
     .inter-regular {

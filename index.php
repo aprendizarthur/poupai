@@ -1,5 +1,6 @@
 <?php 
-//adicionar funções php
+//INCLUINDO ARQUIVO COM FUNCOES PHP
+include('functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +91,14 @@
                         <p class="poppins-light text-light pt-2">E para melhorar, você não precisa gastar nada!</p>
                         <a class="nav-link d-block my-2 botao-primario poppins-regular mt-4" rel="nofollow" href="registro.php">Registrar agora</a>
                         <a class="nav-link d-block my-2 botao-terciario poppins-regular mt-2" rel="nofollow" href="login.php">Já tenho uma conta</a>
+
+                        <!--SAIBA MAIS SÓ APARECE TELAS PEQUENAS-->
+                        <div class="borda-branca d-inline-block d-lg-none mt-2 p-2 justify-content-center text-center">
+                            <span class= "poppins-light ml-1">Saiba mais</span>
+                            <i class="fa-duotone fa-solid fa-chevron-down fa-sm"></i>
+                        </div>
                     </div>
+
 
                     <!--CTA SÓ APARECE TELAS GRANDES-->
                     <div class="d-none d-lg-block col-lg-6 background-preto text-center text-light p-5">
@@ -117,7 +125,7 @@
                 </div>
             </section>
             <!--FECHAMENTO SESSÃO CTA-->
-    
+
             <!--SESSÃO APRESENTANDO ELIZA-->
             <section id="apresentando-eliza">
                 <div class="row d-flex background-menus text-center">            
@@ -146,7 +154,7 @@
                                 <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
 
                                 <p class="poppins-regular text-light my-3">
-                                    Oi Arthur! Vou te passar o resumo deste mês.
+                                    Oi <span class="texto-primario-2">Arthur</span>! Vou te passar o resumo deste mês.
                                 </p>
 
                                 <p class="poppins-regular text-light my-3">
@@ -154,11 +162,11 @@
                                 </p>
 
                                 <p class="poppins-regular text-light my-3">
-                                    Comparando com mês passado:  
+                                    Comparando com o mês passado:  
                                 </p>
 
                                 <p class="poppins-regular text-light my-3">
-                                    Este mês, você gastou 28% a mais com alimentação e 12% a menos com cartão de crédito!
+                                    Seus gastos com alimentação subiram 28%, enquanto as despesas com cartão de crédito reduziram em 12%.
                                 </p>
                             </div>
                         </div>

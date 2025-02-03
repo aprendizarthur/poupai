@@ -73,12 +73,20 @@
 
                     //fazendo consulta e tratando resultado
                     if($mysqli->query($sql_code)){
-                        header("Location: tutorial.php");
-
+                        
                         //passando variaveis do usuario para a sessão
                         $_SESSION['nome'] = $nome;
                         $_SESSION['email'] = $email;
 
+                        //pegando ID do usuario para sessão
+                        $sql_code = "SELECT  id_usuario AS ID FROM usuarios WHERE nome_usuario = '$nome' AND email_usuario = '$email'";
+                        
+                        if($resultado = $mysqli->query($sql_code)){
+
+                            $_SESSION['id'] = $resultado->fetch_assoc()['ID'];
+                        }
+
+                        header("Location: tutorial.php");
                         exit();
                     } else{
                         header("Location: erro-conexao-banco.php");

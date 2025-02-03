@@ -3,6 +3,8 @@
 include('functions.php');
 //CHAMADO FUNCAO DE REGISTRO
 registro($mysqli);
+//VERIFICANDO SE ESTA LOGADO, CASO ESTEJA ENCAMINHA PARA O PAINEL
+verificarSessaoLogin();
 ?>
 
 <!DOCTYPE html>

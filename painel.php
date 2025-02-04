@@ -3,6 +3,10 @@
 include('functions.php');
 //FUNÇÃO VERIRICAR SESSÃO
 verificarSessao();
+//FUNCAO ADICIONAR RECEITA
+adicionarReceita($mysqli);
+//FUNCAO ADICIONAR DESPESA
+adicionarDespesa($mysqli);
 ?>
 
 <!DOCTYPE html>
@@ -92,19 +96,18 @@ verificarSessao();
                 </div>
                 
                 <div class="row d-flex p-3 background-menus justify-content-around">
-                    <!--FORM DESPESA-->
                     <div class="col-12 col-md-6">
                         <div class="caixa-interna p-3 my-4">
                             <h2 class="inter-regular mb-4">Nova despesa</h2> <hr>
-                            
+                            <!--FORM DESPESA-->
                             <form action="" method="POST">
                                 <div class="form-group">
                                     <label for="valor" class="poppins-regular">Valor</label>
-                                    <input type="text" required class="form-control poppins-regular p-1" name="valor" placeholder="R$">    
+                                    <input type="text" required class="form-control poppins-regular p-1" name="valor-despesa" placeholder="R$">    
                                 </div>
 
                                 <div class="form-group">
-                                    <select class="form-select w-100 p-2 poppins-regular" required>
+                                    <select class="form-select w-100 p-2 poppins-regular" name="categoria-despesa" required>
                                         <option value="" selected class="poppins-regular">Selecione a categoria</option>
                                         <option value="moradia" class="poppins-regular">Moradia (Aluguel, condomínio, água, luz, internet)</option>
                                         <option value="alimentacao" class="poppins-regular">Alimentação (Supermercado, restaurdantes, delivery)</option>
@@ -127,15 +130,15 @@ verificarSessao();
                     <div class="col-12 col-md-6">
                         <div class="caixa-interna p-3 my-4">
                             <h2 class="inter-regular mb-4">Nova receita</h2> <hr>
-                            
+                            <!--FORM RECEITA-->
                             <form action="" method="POST">
                                 <div class="form-group">
                                     <label for="valor" class="poppins-regular">Valor</label>
-                                    <input type="text" required class="form-control poppins-regular p-1" name="valor" placeholder="R$">    
+                                    <input type="text" required class="form-control poppins-regular p-1" name="valor-receita" placeholder="R$">    
                                 </div>
 
                                 <div class="form-group">
-                                    <select class="form-select w-100 p-2 poppins-regular" required>
+                                    <select class="form-select w-100 p-2 poppins-regular" name="categoria-receita" required>
                                         <option value="" selected class="poppins-regular">Selecione a categoria</option>
                                         <option value="salario" class="poppins-regular">Salário (Pagamento fixo do trabalho)</option>
                                         <option value="extra" class="poppins-regular">Freelance e Extras (Trabalhos avulsos, renda extra)</option>

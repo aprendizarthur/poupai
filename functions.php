@@ -142,4 +142,55 @@
             }
         }
     }
+
+//FUNCAO ADICIONAR RECEITA
+    function adicionarReceita($mysqli){
+        //se o método for POST e tiver ocorrido o submit
+        if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){
+
+            //essa função ta sendo chamada antes, então se nao tiver categoria-receita, é despesa
+            if($_POST['categoria-receita'] == ""){
+                adicionarDespesa($mysqli);
+            }
+
+            //coletando dados do formulário
+            $valor = (float)$mysqli->real_escape_string($_POST['valor-receita']);
+            $categoria = $mysqli->real_escape_string($_POST['categoria-receita']);
+            $id = $_SESSION['id'];
+
+            $sql_code = "INSERT INTO movimentacoes (id_usuario, categoria, valor) VALUES ('$id','$categoria','$valor')";
+
+            if($mysqli->query($sql_code)){
+                header("Location: dado-enviado.php");    
+                exit();        
+            } else {
+                header("Location: erro-enviar-dado.php");    
+                exit(); 
+            }
+        }
+    }
+
+//FUNCAO ADICIONAR DESPESA
+    function adicionarDespesa($mysqli){
+        //se o método for POST e tiver ocorrido o submit
+        if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){
+
+            //coletando dados do formulário
+            $valor = (float)$mysqli->real_escape_string($_POST['valor-despesa']);
+            $categoria = $mysqli->real_escape_string($_POST['categoria-despesa']);
+            $id = $_SESSION['id'];
+
+            $valor = -$valor;
+
+            $sql_code = "INSERT INTO movimentacoes (id_usuario, categoria, valor) VALUES ('$id','$categoria','$valor')";
+
+            if($mysqli->query($sql_code)){
+                header("Location: dado-enviado.php");    
+                exit();        
+            } else {
+                header("Location: erro-enviar-dado.php");    
+                exit(); 
+            }
+        }
+    }
 ?>

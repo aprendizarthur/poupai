@@ -34,6 +34,20 @@ body{
     color: white;
 }
 
+.caixa-interna-sucesso{
+    background-color: #3da739bd;
+    border: solid 1px #969696;
+    border-radius: 12px;
+    text-align: left;
+    color: white;
+}
+
+.texto-primario-2{
+    background-image: linear-gradient(to right, #0088CC, #a1cce2);
+    background-clip: text;
+    color: transparent;
+}
+
 .background-preto{
     background-color: #1F1F21;
 }

@@ -90,12 +90,12 @@ adicionarDespesa($mysqli);
                         <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
 
                         <p class="poppins-regular text-light my-3">
-                            Oi <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span>, bom te ver! Use o painel abaixo para adicionar uma despesa ou receita do seu dia.
+                            Oi <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span>, bom te ver! Use o painel abaixo para adicionar uma nova despesa ou receita do seu dia.
                         </p>
                     </div>
                 </div>
                 
-                <div class="row d-flex p-3 background-menus justify-content-around">
+                <div class="row d-flex p-3 background-menus justify-content-around borda-baixo">
                     <div class="col-12 col-md-6">
                         <div class="caixa-interna p-3 my-4">
                             <h2 class="inter-regular mb-4">Nova despesa</h2> <hr>
@@ -151,6 +151,20 @@ adicionarDespesa($mysqli);
                                 <button type="submit" name="submit" class="btn poppins-regular botao-receita w-100 mt-2 py-3">Adicionar</button>
                             </form>
                         </div>
+                    </div>
+
+                    <!--ENCAMINHAR RELATORIOS-->
+                    <div class="col-12 mt-4">
+                        <a class="btn botao-primario poppins-regular p-3 w-100" href="relatorios.php">Conferir relatórios da <span class="disabled"><i class="bi bi-stars"></i>Eliza</span></a>
+                    </div>
+
+                    <!--INTERAÇÃO ELIZA-->
+                    <div class="col-12 p-3 relatorio-eliza mt-5 text-left p-4 background-preto col-md-12">
+                        <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
+
+                        <p class="poppins-regular text-light my-3">
+                            Ao clicar no botão azul logo acima, vou te levar para os meus <span class="texto-primario-2">relatórios</span>, lá posso te apresentar gráficos com os dados que você me forneceu!
+                        </p>
                     </div>
                 </div>
            </div>

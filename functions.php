@@ -64,6 +64,8 @@
                 //fazendo consulta e tratando resultado
                 if($resultado = $mysqli->query($sql_code)){
                     $linhas = $resultado->fetch_assoc();
+                } else {
+                    header("Location: erro-conexao-banco.php");
                 }
 
                 //se retornou alguma consulta, email já dacastrado

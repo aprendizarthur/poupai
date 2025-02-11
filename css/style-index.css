@@ -58,6 +58,17 @@ select{
     color: #0088CC;
 }
 
+.background-disabled{
+    background-color: #969696;
+    color: white;
+}
+
+.background-branco{
+    background-color: #FFFFFF;
+    border: 1px solid #969696;
+    border-radius: 12px;
+}
+
 .botao-sair{
     background-color: #F5F5F5;
     border: solid 1px #969696;

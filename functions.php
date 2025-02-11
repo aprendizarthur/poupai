@@ -18,8 +18,7 @@
             //inicia sessão
             session_start();
         }
-    
-
+         
 //FUNÇÃO VERIFICAR SESSÃO
     function verificarSessao(){
         if(!isset($_SESSION['nome']) || !isset($_SESSION['email'])){
@@ -28,7 +27,6 @@
         } else { 
 
         };
-
     }
 
     function verificarSessaoLogin(){
@@ -193,6 +191,44 @@
                 header("Location: erro-enviar-dado.php");    
                 exit(); 
             }
+        }
+    }
+
+//FUNCAO COLETAR DADOS PARA RELATORIOS (SEM SER GRAFICO)
+    function buscarDados($mysqli){
+        
+        $id = $_SESSION['id'];
+
+        $sql_code = "SELECT 
+        SUM(CASE WHEN valor < 0 THEN valor ELSE 0 END) AS totalDespesa,
+        SUM(CASE WHEN valor > 0 THEN valor ELSE 0 END) AS totalReceita,
+        COUNT(*) AS totalMovimentacoes FROM movimentacoes WHERE id_usuario = '$id'
+        ";
+
+        if($resultado = $mysqli->query($sql_code)){
+            $dados = $resultado->fetch_assoc();
+
+            $_SESSION['totalDespesa'] = $dados['totalDespesa'] ?? 0;
+            $_SESSION['totalReceita'] = $dados['totalReceita'] ?? 0;
+            $_SESSION['totalMovimentacoes'] = $dados['totalMovimentacoes'] ?? 0;
+
+            //comentário que a eliza vai fazer dependendo da relação entre receita x despesa do usuário
+            $_SESSION['elizaMontante'] = "";
+
+            switch (true) {
+                case  (-$_SESSION['totalDespesa']) > $_SESSION['totalReceita']:
+                    $_SESSION['elizaMontante'] = "Suas despesas mensais estão ultrapassando suas receitas. Considere revisar seus gastos, cortar despesas não essenciais ou buscar formas de aumentar sua renda para equilibrar o orçamento.";
+                    break;
+                
+                case (-$_SESSION['totalDespesa']) < $_SESSION['totalReceita']:
+                    $_SESSION['elizaMontante'] = "Suas despesas estão em um nível saudável. Isso significa que você tem uma boa margem para economizar ou investir!";
+                    break;
+            }
+
+
+        } else {
+            header("Location: erro-conexao-banco.php");
+            exit();
         }
     }
 ?>

@@ -94,7 +94,7 @@ include('functions.php');
 
                         <!--SAIBA MAIS SÓ APARECE TELAS PEQUENAS-->
                         <div class="borda-branca d-inline-block d-lg-none mt-2 p-2 justify-content-center text-center">
-                            <span class= "poppins-light ml-1">Saiba mais</span>
+                            <a href="#apresentando-eliza" style="color: #ffffff;"><span class= "poppins-light ml-1">Saiba mais</span></a>
                             <i class="fa-duotone fa-solid fa-chevron-down fa-sm"></i>
                         </div>
                     </div>
@@ -119,8 +119,8 @@ include('functions.php');
                         <script>criargraficocta('grafico-cta')</script>
                             
                         <!--CANVAS TELA TABLET-->
-                        <canvas class="d-none d-md-flex mt-3" id="grafico-cta3" width="100%" height="40%"></canvas>
-                        <script>criargraficocta3('grafico-cta3')</script>  
+                        <canvas class="d-none d-md-block mt-3" id="grafico-cta3" width="100%" height="50%"></canvas>
+                        <script>criargraficocta5('grafico-cta3')</script>  
                     </div>
                 </div>
             </section>
@@ -158,15 +158,15 @@ include('functions.php');
                                 </p>
 
                                 <p class="poppins-regular text-light my-3">
-                                    Você realizou 89 movimentações, e teve mais despesas do que mês passado! O principal gasto foi com alimentação.
+                                    Você realizou 16 movimentações, totalizando R$1440.9 em despesas e R$1969.23 em receitas.
                                 </p>
 
                                 <p class="poppins-regular text-light my-3">
-                                    Comparando com o mês passado:  
+                                    Suas despesas estão em um nível saudável. Isso significa que você tem uma boa margem para economizar ou investir!
                                 </p>
 
                                 <p class="poppins-regular text-light my-3">
-                                    Seus gastos com alimentação subiram 28%, enquanto as despesas com cartão de crédito reduziram em 12%.
+                                    Sua principal despesa foi com moradia.
                                 </p>
                             </div>
                         </div>
@@ -175,17 +175,42 @@ include('functions.php');
             </section>
             <!--FECHAMENTO SESSÃO APRESENTANDO ELIZA-->
 
-            <!--SESSÃO OBSERVAÇÃO ELIZA IA-->
+            <!--SESSÃO RELATORIO DESPESAS TELAS PEQUENAS-->
+            <section id="relatorios">
+                <div class="row d-flex d-md-none background-menus justify-content-center">
+                    <div class="col-12 d-flex mb-5 text-center justify-content-center">
+                        <h2 class="d-block inter-bold">Entenda como você usa o seu dinheiro</h2>  
+                    </div>
+                    
+
+                    <div class="col-12 col-md-6 mb-5 text-center justify-content-center">
+                        <canvas class="d-block" id="graficoDespesaINDEX" width="100%" height="15%"></canvas>
+                        <script>criargraficocta3(graficoDespesaINDEX)</script>
+                    </div>
+
+                    <div class="col-12 col-md-6 mb-5 text-left justify-content-center">
+                    <p class="poppins-light mb-3">
+                        <strong>Com o extrato mensal, você terá total controle sobre suas despesas</strong>, permitindo analisar cada gasto e identificar onde é possível economizar.
+                    </p>
+
+                    <p class="poppins-light mb-3">
+                        Com essas informações, será mais fácil <strong>elaborar um plano para cortar custos desnecessários</strong> e direcionar seus recursos para o que realmente importa, ajudando a melhorar sua saúde financeira ao longo do tempo.
+                    </p>
+                    </div>
+                </div>
+            </section>
+            <!--FECHAMENTO SESSÃO RELATORIOS DESPESAS-->
+
+             <!--SESSÃO OBSERVAÇÃO ELIZA IA-->
             <section id="eliza-ia">
-                <div class="row d-flex background-menus justify-content-center borda-baixo">
-                    <div class="col-11 col-md-12 text-center mb-4">
-                        <p class="poppins-regular disabled" style="color: #969696;">
+                <div class="row d-flex background-preto justify-content-center borda-baixo">
+                    <div class="col-11 col-md-12 text-center text-light mt-4 mb-3">
+                        <p class="poppins-regular text0-primario-2 text-light">
                         É importante lembrar que a <span class="disabled"><i class="bi bi-stars"></i>Eliza</span> não é uma inteligência artificial, ela apenas realiza cálculos e retorna ao usuário dados relevantes.
                         </p>
                     </div>
                 </div>
             </section>
-            <!--FECHAMENTO SESSÃO OBSERVAÇÃO ELIZA IA-->
         </main>
         <!--FECHAMENTO MAIN-->
 

@@ -192,6 +192,20 @@ select{
     text-align: center;
 }
 
+.botao-disabled{
+    background-color: #F5F5F5;
+    border: solid 1px #969696;
+    color: #969696;
+    border-radius: 12px;
+}
+
+.botao-disabled:hover{
+    background-color: #969696;
+    border: solid 1px #F5F5F5;
+    color: #F5F5F5;
+    border-radius: 12px;
+}
+
 .botao-receita{
     border-radius: 12px;
     background-color: #319949;

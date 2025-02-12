@@ -31,7 +31,7 @@ include('functions.php');
 <!--CHART-JS-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!--GERAR CHARTS JS-->
-    <script src="charts.js"></script>
+    <script src="charts/charts.js"></script>
 </head>
 <body>
     <div class="container">
@@ -80,7 +80,11 @@ include('functions.php');
             </div>
         </header>
         <!--FECHAMENTO HEADER-->
-
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                criargraficocta3('grafico-cta4');
+            });
+        </script>
         <!--ABERTURA MAIN-->
         <main>
             <!--SESSÃO CTA-->
@@ -119,8 +123,8 @@ include('functions.php');
                         <script>criargraficocta('grafico-cta')</script>
                             
                         <!--CANVAS TELA TABLET-->
-                        <canvas class="d-none d-md-block mt-3" id="grafico-cta3" width="100%" height="50%"></canvas>
-                        <script>criargraficocta5('grafico-cta3')</script>  
+                        <canvas class="d-none d-md-block mt-3" id="grafico-cta4" width="100%" height="50%"></canvas>
+                        <script>criargraficocta4('grafico-cta4')</script>  
                     </div>
                 </div>
             </section>
@@ -135,7 +139,7 @@ include('functions.php');
 
                         <div class="row d-flex justify-content-center">
                             <!--CONTEXTUALIZANDO SOBRE ELIZA-->
-                            <div class="col-sm-10 col-md-6 text-left p-4">
+                            <div class="col-sm-10 col-md-6 text-center p-4">
                                 <p class="poppins-light mb-3">
                                     <strong><span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span> é sua parceira no caminho para conquistar a liberdade financeira</strong>. Temos no diálogo preto um exemplo de relatório que ela gera e te apresenta, que ainda é complementado pelos gráficos.
                                 </p>
@@ -183,12 +187,12 @@ include('functions.php');
                     </div>
                     
 
-                    <div class="col-12 col-md-6 mb-5 text-center justify-content-center">
-                        <canvas class="d-block" id="graficoDespesaINDEX" width="100%" height="15%"></canvas>
-                        <script>criargraficocta3(graficoDespesaINDEX)</script>
+                    <div class="d-flex col-12 col-md-6 mb-5 text-center justify-content-center">
+                        <canvas class="d-flex" id="graficoDespesaINDEX" width="100%" height="15%"></canvas>
+                        
                     </div>
 
-                    <div class="col-12 col-md-6 mb-5 text-left justify-content-center">
+                    <div class="col-12 col-md-6 mb-5 text-center justify-content-center">
                     <p class="poppins-light mb-3">
                         <strong>Com o extrato mensal, você terá total controle sobre suas despesas</strong>, permitindo analisar cada gasto e identificar onde é possível economizar.
                     </p>

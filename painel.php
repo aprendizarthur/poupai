@@ -1,7 +1,7 @@
 <?php 
 //INCLUINDO ARQUIVO COM FUNCOES PHP
 include('functions.php');
-//FUNÇÃO VERIRICAR SESSÃO
+//FUNÇÃO VERIFICAR SESSÃO
 verificarSessao();
 //FUNCAO ADICIONAR RECEITA
 adicionarReceita($mysqli);
@@ -155,6 +155,10 @@ adicionarDespesa($mysqli);
                         </div>
                     </div>
 
+                    <!--ENCAMINHAR EXCLUSÃO DADOS-->
+                    <div class="col-12 mt-4">
+                        <a class="btn botao-disabled poppins-regular p-3 w-100" href="excluir.php">Excluir dado</span></a>
+                    </div>
                     <!--ENCAMINHAR RELATORIOS-->
                     <div class="col-12 mt-4">
                         <a class="btn botao-primario poppins-regular p-3 w-100" href="relatorios.php">Conferir relatórios da <span class="disabled"><i class="bi bi-stars"></i>Eliza</span></a>

@@ -194,6 +194,61 @@
         }
     }
 
+//FUNÇÃO PARA VISUALIZAR DADOS (P/ EXCLUIR)
+    function mostrarDados($mysqli){
+
+        //pegando id da SESSION
+        $id = $_SESSION['id'];
+        
+        $sql_code = "SELECT valor, categoria, id_movimentacao FROM movimentacoes WHERE id_usuario = '$id' ORDER BY data_movimentacao DESC LIMIT 10";
+
+        if($resultado = $mysqli->query($sql_code)){
+            //verificando numero de linhas da consulta, se não tiver nada vai aparecer que nenhum dado foi registrado
+            $num_dados = $resultado->num_rows;
+            
+            //se não existe nenhum dado
+            if($num_dados == 0){
+                echo '<tr class="poppins-regular">
+                          <td colspan="3">Nenhum dado registrado</td>                  
+                    </tr>';
+            } else {
+                //enquanto tiver linhas de dado imprime na tabela
+                while($dado = $resultado->fetch_assoc()){
+                    echo "<tr class='poppins-regular'>
+                            <td>" . "R$ ". -$dado['valor'] . "</td>  
+                            <td>" . $dado['categoria'] . "</td>  
+                            <td> <a href='confirmar-excluir.php?id=" . $dado['id_movimentacao'] . "' class='botao-despesa p-2'>Excluir</a></td>                 
+                           </tr>";
+                }
+            }
+
+        } else {
+            header("Location: erro-conexao-banco.php");
+            die();
+        }
+    }
+
+//FUNÇÃO PARA EXCLUIR DADO
+    function excluirDado($mysqli){
+        
+        //se o usuário clicou em excluir na confirmação
+        if(isset($_POST['confirmacao'])){
+
+            //recebendo o ID da movimentalção (enviado por GET ao clicar em excluir na página excluir.php)
+            $idMovimentacao = $_GET['id'];
+                
+            //pegando id da SESSION
+            $id = $_SESSION['id'];
+
+            $sql_code = "DELETE from movimentacoes WHERE id_usuario = '$id' AND id_movimentacao = '$idMovimentacao'";
+
+            if($mysqli->query($sql_code)){
+                header("Location: dado-excluido.php");
+            } else {
+                header("Location: erro-conexao-banco.php");
+            }
+        }
+    }
 //FUNCAO COLETAR DADOS PARA RELATORIOS (SEM SER GRAFICO)
     function buscarDados($mysqli){
         

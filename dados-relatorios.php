@@ -25,9 +25,6 @@
             SUM(CASE WHEN categoria = 'presentes' THEN valor else 0 END) AS totalPresentes,
             SUM(CASE WHEN categoria = 'reembolsos' THEN valor else 0 END) AS totalReembolsos
 
-
-
-
             FROM movimentacoes WHERE id_usuario = $id AND MONTH(data_movimentacao) = MONTH(CURDATE()) AND YEAR(data_movimentacao) = YEAR(CURDATE())
         ";
         

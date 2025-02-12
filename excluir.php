@@ -1,13 +1,8 @@
 <?php 
 //INCLUINDO ARQUIVO COM FUNCOES PHP
 include('functions.php');
-
 //FUNÇÃO VERIFICAR SESSÃO
 verificarSessao();
-
-//FUNÇÃO RECUPERAR DADOS DO BANCO PARA PARECER ELIZA
-buscarDados($mysqli);
-
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +13,7 @@ buscarDados($mysqli);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!--TÍTULO/ÍCONE/DESCRIÇÃO DA PÁGINA/COR TEMA NAVEGADOR-->
-    <title>POUPAÍ - Relatórios</title>
+    <title>POUPAÍ - Excluir dado</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <meta name="description" content="Tome controle das suas finanças hoje mesmo. Cadastre-se e comece a economizar! Receba de graça relatórios detalhados!">
     <meta name="theme-color" content="#FFFFFF">
@@ -35,10 +30,10 @@ buscarDados($mysqli);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<!--CHARTS JS-->
+<!--CHART-JS-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
+<!--GERAR CHARTS JS-->
+    <script src="charts.js"></script>
 </head>
 <body>
     <div class="container">
@@ -54,10 +49,10 @@ buscarDados($mysqli);
 
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="navbar-nav mr-auto align-items-center">
-                                <li class="nav-item text-center mr-2">
+                                <li class="nav-item active text-center mr-2">
                                     <a class="nav-link poppins-regular" href="painel.php">Painel</a>
                                 </li>
-                                <li class="nav-item active  text-center mx-2">
+                                <li class="nav-item text-center mx-2">
                                     <a class="nav-link poppins-regular" rel="nofollow" href="relatorios.php">Relatórios</a>
                                 </li>
                                 <li class="nav-item text-center mx-2">
@@ -86,44 +81,35 @@ buscarDados($mysqli);
         <main>
            <div class="container">
                 <div class="row mt-4 p-3 d-flex background-menus justify-content-center borda-cima">
-                    <!--INTERACAO ELIZA-->
-                    <div class="col-12 p-3 relatorio-eliza text-left p-4 background-preto">
+                    <!--INTERAÇÃO-1 ELIZA-->
+                    <div class="col-12 p-3 relatorio-eliza text-left p-4 background-preto col-md-12">
                         <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
-                        
-                        <p class="poppins-regular text-light my-3">
-                            Durante este mês você realizou <?php echo $_SESSION['totalMovimentacoes']; ?> movimentações, totalizando R$<?php echo -$_SESSION['totalDespesa']; ?> em despesas e R$<?php echo $_SESSION['totalReceita']; ?> em receitas.
-                        </p>
 
                         <p class="poppins-regular text-light my-3">
-                            <?php echo $_SESSION['elizaMontante']; ?>
+                            <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span> aqui você exclui dados que enviou sem querer. Para fazer isso é só cliclar no ícone vermelho ao lado do dado escolhido.
                         </p>
                     </div>
-                </div>   
-                
-                <div class="row d-flex background-menus justify-content-center borda-baixo">
+                </div>
+
+                <div class="row p-3 d-flex background-menus text-center justify-content-center borda-baixo">
+                    <!--LISTA COM DADOS-->
                     <div class="col-12">
-                        <p class="poppins-regular border text-center p-2 my-3" style="border-radius: 12px;">
-                            Caso você não tenha enviado nenhum dado pelo painel, os gráficos não irão aparecer
-                        </p>
-                    </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scape="col">Valor</th>
+                                    <th scape="col">Categoria</th>
+                                    <th scape="col"></th>
+                                </tr>
+                            </thead>
 
-                    <!--GRAFICO DESPESA-->
-                    <div class="col-12 col-md-6 text-center">
-                            <h3 class="inter-regular mt-4">Distribuição despesas</h3>
-                            <small class="poppins-light">Clique no gráfico para ver detalhes</small>
-                            <canvas class="d-flex mt-3 mb-4" id="graficoDespesa" width="100%" height="5%"></canvas>
-                    </div>   
-                    
-                    <!--GRAFICO RECEITA-->
-                    <div class="col-12 col-md-6 text-center">
-                        <hr class="d-block d-md-none">
-                        <h3 class="inter-regular mt-4">Distribuição receitas</h3>
-                        <small class="poppins-light">Clique no gráfico para ver detalhes</small>
-                        <canvas class="d-flex mt-3 mb-4" id="graficoReceita" width="100%"></canvas>
+                            <tbody>
+                                <?php /*FUNÇÃO MOSTRAR DADOS*/ mostrarDados($mysqli);?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
            </div>
-           <script src="charts/charts-2.js"></script>
         </main>
         <!--FECHAMENTO MAIN-->
 

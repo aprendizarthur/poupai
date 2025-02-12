@@ -124,43 +124,6 @@
     }
 
     function criargraficocta4(canvasID){
-        const ctx = document.getElementById('graficoReceitaINDEX').getContext('2d');
-
-        new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Salario', 'Extra', 'Investimentos', 'Presentes', 'Reembolsos'],
-                datasets: [{
-                    label: 'Total',
-                    data: [
-                        1920,
-                        120,
-                        178.28,
-                        0,
-                        0,
-                    ],
-                    backgroundColor: [
-                        '#92cef0',
-                        '#5a61ff',
-                        '#d076ff',
-                        '#ff85f6',
-                        '#ff76c1'
-                    ]
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                    }
-                }
-            }
-        });
-
-    }
-
-    function criargraficocta5(canvasID){
         const ctx = document.getElementById(canvasID).getContext('2d');
 
         new Chart(ctx, {
@@ -198,5 +161,3 @@
             }
         });
     }
-
-   

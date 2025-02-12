@@ -38,6 +38,7 @@ fetch('dados-relatorios.php')
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: 2,
                 plugins: {
                     legend: {
                         position: 'bottom',
@@ -73,6 +74,7 @@ fetch('dados-relatorios.php')
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: 2,
                 plugins: {
                     legend: {
                         position: 'bottom',

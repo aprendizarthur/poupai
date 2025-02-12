@@ -42,6 +42,22 @@ body{
     color: white;
 }
 
+.botao-despesa{
+    border-radius: 12px;
+    background-color: #eb4444;
+    border: solid 1px #eb4444;
+    color: #FFFFFF !important;
+    text-align: center;
+}
+
+.botao-receita{
+    border-radius: 12px;
+    background-color: #319949;
+    border: solid 1px #319949;
+    color: #FFFFFF !important;
+    text-align: center;
+}
+
 .texto-primario-2{
     background-image: linear-gradient(to right, #0088CC, #a1cce2);
     background-clip: text;

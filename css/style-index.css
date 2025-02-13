@@ -184,6 +184,12 @@ select{
     text-align: center;
 }
 
+.background-azul{
+    background-color: #a1cce2;
+    border-left: solid 1px #969696;
+    border-right: solid 1px #969696
+}
+
 .botao-despesa{
     border-radius: 12px;
     background-color: #eb4444;

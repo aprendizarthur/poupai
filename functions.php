@@ -279,11 +279,34 @@
                     $_SESSION['elizaMontante'] = "Suas despesas estão em um nível saudável. Isso significa que você tem uma boa margem para economizar ou investir!";
                     break;
             }
-
-
         } else {
             header("Location: erro-conexao-banco.php");
             exit();
+        }
+    }
+//FUNCAO QUE ENVIA EMAILS DA AREA CONTATO
+    function emailContato($mysqli){
+        if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){
+
+            //recebendo dados do formulário (não pegando nome e e-mail caso esteja logado para ter a possibilidade de reclamacao "anonima")
+            $nome = $mysqli->real_escape_string($_POST['nome']);
+            $de = $mysqli->real_escape_string($_POST['email']);
+            $assunto = $mysqli->real_escape_string($_POST['assunto-email']);
+            $mensagem = $mysqli->real_escape_string($_POST['mensagem']);
+            
+            $cabecalho = "From: " . $de . "\r\n" . 
+                         "Reply-To: " . $de . "\r\n" .
+                         "X-Mailer: PHP/" . phpversion() . "\r\n" .
+                         "Content-Type: text/plain; charset=UTF-8";
+
+            $para = "aprendizadoarthur@gmail.com";
+
+            //enviando email
+            if(mail($para, $assunto, $mensagem, $cabecalho)){
+                header("Location: email-enviado.php");
+            } else {
+                header("Location: erro-enviar-email.php");
+            }
         }
     }
 ?>

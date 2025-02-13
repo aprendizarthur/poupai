@@ -1,8 +1,6 @@
 <?php 
 //INCLUINDO ARQUIVO COM FUNCOES PHP
 include('functions.php');
-//FUNÇÃO VERIRICAR SESSÃO
-verificarSessao();
 
 ?>
 
@@ -14,7 +12,7 @@ verificarSessao();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!--TÍTULO/ÍCONE/DESCRIÇÃO DA PÁGINA/COR TEMA NAVEGADOR-->
-    <title>POUPAÍ - Dado enviado</title>
+    <title>POUPAÍ - Contato feito com sucesso!</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <meta name="description" content="Tome controle das suas finanças hoje mesmo. Cadastre-se e comece a economizar! Receba de graça relatórios detalhados!">
     <meta name="theme-color" content="#FFFFFF">
@@ -31,10 +29,7 @@ verificarSessao();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<!--CHART-JS-->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!--GERAR CHARTS JS-->
-    <script src="charts/charts.js"></script>
+
 </head>
 <body>
     <div class="container">
@@ -51,45 +46,45 @@ verificarSessao();
                 <div class="d-md-none col-11 col-md-6 col-lg-5 background-preto relatorio-eliza p-5" style="border-radius: 12px 12px 0px 0px">
                     <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
                     <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Isso aí <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span>!
+                        A sua mensagem de contato foi enviada!
                     </p>
 
                     <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Cada informação é um passo à frente na sua jornada para a liberdade financeira.
-                    </p>  
-
+                        Agradeçemos o seu contato, logo você terá uma resposta. 
+                    </p> 
+                    
+                    <p class="poppins-regular eliza-crud-sm text-light my-3">
+                        Tomara que não tenha sido uma reclamação... Né?
+                    </p> 
                 </div>
 
                 <!--LOGIN-->
                 <div class="col-11 col-md-6 col-lg-5 background-menus text-center shadow border p-5" style="border-radius: 0px 0px 0px 12px">
-                    <a class="btn botao-primario d-block d-md-none poppins-regular p-3 mb-5 w-100" href="painel.php">Voltar ao painel</a>
-                    
-                    <h3 class="inter-bold">DADO ENVIADO</h3>
+                    <h3 class="inter-bold">MENSAGEM ENVIADA</h3>
 
-                    <!--TELA DE SUCESSO-->
+                    <!--TELA DE ERRO-->
                     <div class="caixa-interna-sucesso text-center p-4 my-4">
                         <p class="poppins-regular">
-                            Dado enviado com sucesso!
+                            Mensagem de contato enviado com sucesso!
                         </p>
                     </div>
 
-                    <a class="btn botao-primario d-none d-md-block poppins-regular p-3 mb-5 w-100" href="painel.php">Voltar ao painel</a>
-
+                    <a class="btn botao-primario poppins-regular p-3 w-100" href="index.php">Voltar</a>
                 </div>
 
                 <!--INTERAÇÃO ELIZA TELAS MEDIAS ACIMA-->
                 <div class="d-none d-md-block col-11 col-md-6 col-lg-5 background-preto relatorio-eliza p-5" style="border-radius: 0px 0px 12px 0px">
                     <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
                     <p class="poppins-regular eliza-crud text-light my-3">
-                        Isso aí <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span>!
+                        A sua mensagem de contato foi enviada!
                     </p>
 
                     <p class="poppins-regular eliza-crud text-light my-3">
-                        Cada informação que você compartilha é um tijolo na construção de um futuro financeiro mais seguro e tranquilo. 
+                        Agradeçemos o seu contato, logo você terá uma resposta. 
                     </p> 
                     
                     <p class="poppins-regular eliza-crud text-light my-3">
-                        Estou orgulhosa...
+                        Tomara que não tenha sido uma reclamação... Né?
                     </p>       
                 </div>
             </div>

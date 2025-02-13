@@ -33,7 +33,7 @@ verificarSessao();
 <!--CHART-JS-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!--GERAR CHARTS JS-->
-    <script src="charts.js"></script>
+    <script src="charts/charts.js"></script>
 </head>
 <body>
     <div class="container">

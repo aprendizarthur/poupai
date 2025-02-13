@@ -37,7 +37,7 @@ adicionarDespesa($mysqli);
 <!--CHART-JS-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!--GERAR CHARTS JS-->
-    <script src="charts.js"></script>
+    <script src="charts/charts.js"></script>
 </head>
 <body>
     <div class="container">
@@ -102,7 +102,7 @@ adicionarDespesa($mysqli);
                             <!--FORM DESPESA-->
                             <form action="" method="POST">
                                 <div class="form-group">
-                                    <label for="valor" class="poppins-regular">Valor</label>
+                                    <label for="valor-despesa" class="poppins-regular">Valor</label>
                                     <input type="text" required class="form-control poppins-regular p-1" name="valor-despesa" placeholder="R$">    
                                 </div>
 
@@ -135,7 +135,7 @@ adicionarDespesa($mysqli);
                             <!--FORM RECEITA-->
                             <form action="" method="POST">
                                 <div class="form-group">
-                                    <label for="valor" class="poppins-regular">Valor</label>
+                                    <label for="valor-receita" class="poppins-regular">Valor</label>
                                     <input type="text" required class="form-control poppins-regular p-1" name="valor-receita" placeholder="R$">    
                                 </div>
 

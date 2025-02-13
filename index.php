@@ -87,9 +87,10 @@ include('functions.php');
         </script>
         <!--ABERTURA MAIN-->
         <main>
-            <!--SESSÃO CTA-->
+            <div class="container">
+                <!--SESSÃO CTA-->
             <section id="CTA1">
-                <div class="row mt-4 d-flex background-menus justify-content-between borda-cima">
+                <div class="row mt-4 d-flex background-menus justify-content-between">
                     <div class="col-sm-12 col-md-12 col-lg-6 background-preto text-center align-items-center p-5">
                         <h1 class="inter-bold text-light">Tome controle das suas finanças hoje mesmo</h1>
                         <p class="poppins-light text-light pt-2">E para melhorar, você não precisa gastar nada!</p>
@@ -215,6 +216,8 @@ include('functions.php');
                     </div>
                 </div>
             </section>
+            </div>
+            
         </main>
         <!--FECHAMENTO MAIN-->
 

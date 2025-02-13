@@ -112,6 +112,7 @@ adicionarDespesa($mysqli);
                                         <option value="moradia" class="poppins-regular">Moradia (Aluguel, condomínio, água, luz, internet)</option>
                                         <option value="alimentacao" class="poppins-regular">Alimentação (Supermercado, restaurdantes, delivery)</option>
                                         <option value="saude" class="poppins-regular">Saúde (Médico, exames, remédios, plano de saúde)</option>
+                                        <option value="cuidados-pessoais" class="poppins-regular">Cuidados pessoais (Cosméticos, Salão, Barbeiro, Manicure)</option>
                                         <option value="transporte" class="poppins-regular">Transporte (Combustível, transporte público, manutenção do veículo)</option>
                                         <option value="educacao" class="poppins-regular">Educação (Cursos, mensalidades, materiais escolares)</option>
                                         <option value="lazer" class="poppins-regular">Lazer e Entretenimento (Cinema, assinaturas (Netflix, Spotify), viagens)</option>
@@ -157,7 +158,7 @@ adicionarDespesa($mysqli);
 
                     <!--ENCAMINHAR EXCLUSÃO DADOS-->
                     <div class="col-12 mt-4">
-                        <a class="btn botao-disabled poppins-regular p-3 w-100" href="excluir.php">Excluir dado</span></a>
+                        <a class="btn botao-disabled poppins-regular p-3 w-100" href="excluir.php"><i class="fa-solid fa-trash fa-sm mr-2" style="color: #969696;"></i>Excluir dado </span></a>
                     </div>
                     <!--ENCAMINHAR RELATORIOS-->
                     <div class="col-12 mt-4">
@@ -170,6 +171,10 @@ adicionarDespesa($mysqli);
 
                         <p class="poppins-regular text-light my-3">
                             Ao clicar no botão azul logo acima, vou te levar para os meus <span class="texto-primario-2">relatórios</span>, lá posso te apresentar gráficos com os dados que você me forneceu!
+                        </p>
+
+                        <p class="poppins-regular text-light my-3">
+                            Acima do botão azul existe um botão quase invisível, clicando nele você vai para a página de exclusão de dados.
                         </p>
                     </div>
                 </div>

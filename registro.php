@@ -91,6 +91,13 @@ verificarSessaoLogin();
                                 <input type="password" required class="form-control poppins-regular p-1" name="confirmaSenha">    
                             </div>
                             
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" required type="checkbox" value="" name="politica">
+                                <label class="form-check-label poppins-light" for="politica">
+                                    Li, e concordo com a <a href="politicaprivacidade.php" target="_blank">Política de Privacidade do POUPAÍ</a>
+                                </label>
+                            </div>
+
                             <button type="submit" name="submit" class="btn poppins-regular botao-primario w-100 mt-2 py-3">Criar conta</button>
                         </form>
                     </div>

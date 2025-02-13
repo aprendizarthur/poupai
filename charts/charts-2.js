@@ -7,13 +7,14 @@ fetch('dados-relatorios.php')
         new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['Moradia', 'Alimentação', 'Saúde', 'Transporte', 'Educação', 'Lazer', 'Compras', 'Impostos', 'Dívidas', 'Crédito'],
+                labels: ['Moradia', 'Alimentação', 'Saúde', 'Cuidados Pessoais', 'Transporte', 'Educação', 'Lazer', 'Compras', 'Impostos', 'Dívidas', 'Crédito'],
                 datasets: [{
                     label: 'Total',
                     data: [
                         -(data.totalMoradia) || 0,
                         -(data.totalAlimentacao) || 0,
                         -(data.totalSaude) || 0,
+                        -(data.totalCuidados) || 0,
                         -(data.totalTransporte) || 0,
                         -(data.totalEducacao) || 0,
                         -(data.totalLazer) || 0,
@@ -25,14 +26,15 @@ fetch('dados-relatorios.php')
                     backgroundColor: [
                         '#92cef0',
                         '#c1e1f0',
-                        '#87b2f0',
                         '#b2f0ec',
-                        '#6ec8f0',
                         '#9de2f0',
+                        '#87b2f0',
+                        '#6ec8f0',
                         '#5a61ff',
                         '#d076ff',
                         '#ff85f6',
-                        '#ff76c1'
+                        '#ff76c1',
+                        '#fc29c9'
                     ]
                 }]
             },

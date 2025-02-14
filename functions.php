@@ -309,4 +309,66 @@
             }
         }
     }
+//FUNCAO QUE SALVA EXTRATO NO ÚLTIMO DIA DO MÊS (só salva se o usuário logar no último dia do mês, aprender nova solução)
+    function salvaExtrato($mysqli){
+
+        //comparando data do dia atual com a do último dia do mês
+        $hoje = date('Y-m-d');
+        $ultimoDia  = date('Y-m-t'); //t retorna o último dia do mês atual
+
+        if($hoje == $ultimoDia){
+
+            $id = $_SESSION['id'];
+
+            //pegando o mês e ano atual
+            $anoAtual = date('Y');
+            $mesAtual = date('m');
+
+            //pegando o mês e ano do último extrato
+            $sql_code = "SELECT MONTH(data_extrato) AS mes, YEAR(data_extrato) AS ano FROM extratos WHERE id_usuario = $id ORDER BY data_extrato DESC LIMIT 1";
+
+            if($resultado = $mysqli->query($sql_code)){
+                $dados = $resultado->fetch_assoc();
+
+                $mesExtrato = $dados['mes'];
+                $anoExtrato = $dados['ano'];
+            } else {
+                header("Location: erro-conexao-banco.php");
+            }
+
+            //checar se já existe um extrato deste mês, pois gera um novo extrato cada vez que entra numa página com a função
+            if($anoAtual == $anoExtrato && $mesAtual == $mesExtrato){
+                //sem código, então não gera extrato novo 
+            } else{
+                //pegando o id para fazer query
+
+                $sql_code = "SELECT 
+                            SUM(CASE WHEN valor < 0 THEN valor else 0 END) as totalDespesa,
+                            SUM(CASE WHEN valor > 0 THEN valor else 0 END) as totalReceita
+
+                            FROM movimentacoes WHERE id_usuario = $id AND MONTH(data_movimentacao) = MONTH(CURDATE()) AND YEAR(data_movimentacao) = YEAR(CURDATE())
+                ";
+
+                if($resultado = $mysqli->query($sql_code)){
+                    
+                    //recuperando os dados do mês e adicionando eles na tabela extratos
+                    $dados = $resultado->fetch_assoc();
+
+                    $despesa = -$dados['totalDespesa'];
+                    $receita = $dados['totalReceita'];
+                    
+                    $sql_code ="INSERT INTO extratos (id_usuario, despesa, receita) VALUES ('$id', '$despesa', '$receita')";
+
+                    if($mysqli->query($sql_code)){
+
+                    } else {
+                        header("Location: erro-conexao-banco.php");
+                    }
+
+                } else {
+                    header("Location: erro-conexao-banco.php");
+                }    
+            }  
+        }
+    }
 ?>

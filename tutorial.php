@@ -4,6 +4,8 @@ include('functions.php');
 
 //CHAMADO FUNCAO VERIFICAR SESSAO
 verificarSessao();
+//FUNCAO SALVAR EXTRATO ULTIMO DIA DO MÊS
+salvaExtrato($mysqli);
 ?>
 
 <!DOCTYPE html>

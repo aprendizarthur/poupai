@@ -70,7 +70,7 @@ excluirDado($mysqli);
                             <form method="POST">
                                 <button type="submit" name="confirmacao" value="1" class="btn botao-despesa poppins-regular p-3 my-2 w-100">Excluir</button>
                                 
-                                <a class="btn botao-receita poppins-regular p-3 my-2 w-100" href="excluir.php">Não, quero voltar</a>   
+                                <a class="btn botao-receita poppins-regular p-3 my-2 w-100" href="excluir.php">Cancelar</a>   
                             </form>
                             
                         </p>

@@ -48,7 +48,7 @@
             //coletando dados do formulário
             $nome = $mysqli->real_escape_string($_POST['nome']);
             $email = $mysqli->real_escape_string($_POST['email']);
-            $senha = $mysqli->real_escape_string($_POST['senha']);
+            $senha = $mysqli->real_escape_string(($_POST['senha']));
             $confirmaSenha = $mysqli->real_escape_string($_POST['confirmaSenha']);
         
             //verificando se a senha e a confirmação são iguais
@@ -69,6 +69,9 @@
                 //se retornou alguma consulta, email já dacastrado
                 if((int)$linhas['total'] === 0){
                     //se o email nao foi cadastrado, registrar no banco o usuário
+
+                    //criptografando a senha
+                    $senha = password_hash($senha, PASSWORD_DEFAULT);
                     $sql_code = "INSERT INTO usuarios (nome_usuario, email_usuario ,senha_usuario) VALUES ('$nome','$email','$senha')";
 
                     //fazendo consulta e tratando resultado
@@ -109,32 +112,24 @@
             $email = $mysqli->real_escape_string($_POST['email']);
             $senha = $mysqli->real_escape_string($_POST['senha']);
 
-            //query SQL verificando se existe uma conta com este email e usuario no banco
-            $sql_code = "SELECT COUNT(*) AS TOTAL FROM usuarios WHERE email_usuario = '$email' AND senha_usuario = '$senha'";
+            //query SQL verificando se existe uma conta com este email
+            $sql_code = "SELECT id_usuario, nome_usuario, senha_usuario FROM usuarios WHERE email_usuario = '$email'";
 
             if($resultado = $mysqli->query($sql_code)){
 
                 $linha = $resultado->fetch_assoc();
-                //se existe o usuario, loga e salva dados na sessão
-                if((int)$linha['TOTAL']> 0){
+                //verificando se a senha bate com a do banco
+                if(password_verify($senha, $linha['senha_usuario'])){
                     
-                //recuperando o nome do usuario e ID para salvar na sessao
-                $sql_code = "SELECT id_usuario, nome_usuario FROM usuarios WHERE email_usuario = '$email' AND senha_usuario = '$senha'";
-                
-                if($resultado = $mysqli->query($sql_code)){
+                    $_SESSION['id'] = $linha['id_usuario'];
+                    $_SESSION['nome'] = $linha['nome_usuario'];
+                    $_SESSION['email'] = $email;
 
-                    $usuario = $resultado->fetch_assoc();
-                } 
-
-                $_SESSION['id'] = $usuario['id_usuario'];
-                $_SESSION['nome'] = $usuario['nome_usuario'];
-                $_SESSION['email'] = $email;
-
-                header("Location: painel.php");
-                exit();
-                } else {
-                    header("Location: erro-senha-email-incorreto.php");
+                    header("Location: painel.php");
                     exit();
+                    } else {
+                        header("Location: erro-senha-email-incorreto.php");
+                        exit();
                 }
             } else {
                 header("Location : erro-conexao-banco.php");

@@ -94,7 +94,7 @@ verificarSessao();
                 <div class="row p-3 d-flex background-menus text-center justify-content-center borda-baixo">
                     <!--LISTA COM DADOS-->
                     <div class="col-12">
-                        <h6 class="poppins-light d-block mb-3">Últimos 10 dados adicionados</h6>
+                        <h6 giclass="poppins-light d-block mb-3">Últimos 10 dados adicionados</h6>
                         <table class="table">
                             <thead>
                                 <tr>

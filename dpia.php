@@ -98,7 +98,7 @@ include('functions.php');
                             <h4 class="inter-bold mt-5">Identificação do Controlador e Encarregado</h4> <hr>
 
                             <p class="poppins-light">
-                            Controlador: Arthur Vieira (Desenvolvedor do POUPAÍ);<br><br> Contato: aprendizadoarthur@gmail.com;<br><br>Encarregado pelo Tratamento de Dados: Arthur Vieira.
+                            Controlador: Arthur Vieira (Desenvolvedor do POUPAÍ);<br><br> Contato: <a href="contato.php">entrar em contato conosco clicando aqui</a>;<br><br>Encarregado pelo Tratamento de Dados: Arthur Vieira.
                             </p>
 
                             <h4 class="inter-bold mt-5">Descrição do Tratamento de Dados</h4> <hr>
@@ -129,46 +129,42 @@ include('functions.php');
 
                             <p class="poppins-light">Riscos e medidas:</p>
 
-                            <table class="table">
-                                <thead>
-                                    <th scope="col">Risco Identificado</th>
-                                    <th scope="col">Impacto</th>
-                                    <th scope="col">Probabilidade</th>
-                                    <th scope="col">Medida de Mitigação</th>                                    
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td scope="row">Vazamento de dados pessoais</td>
-                                        <td>Alto</td>
-                                        <td>Médio</td>
-                                        <td>Uso de criptografia e acesso restrito ao banco de dados</td>    
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">Ataques de interceptação (Man-in-the-middle)</td>
-                                        <td>Alto</td>
-                                        <td>Baixo</td>
-                                        <td>Uso de conexões HTTPS com SSL/TLS</td>    
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">Acesso indevido por terceiros</td>
-                                        <td>Médio</td>
-                                        <td>Médio</td>
-                                        <td>Autenticação segura e controle de acessos</td>    
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">Vazamento de dados pessoais</td>
-                                        <td>Alto</td>
-                                        <td>Baixo</td>
-                                        <td>Backups regulares</td>    
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="poppins-light mt-4 mb-2">
+                                <h5 class="inter-bold cinza">Vazamento de dados pessoais</h5>
+                                <p><strong>Impacto:</strong> Alto</p>
+                                <p><strong>Probabilidade:</strong> Médio</p>
+                                <p><strong>Medida de Mitigação:</strong> Uso de criptografia e acesso restrito ao banco de dados.</p>
+                            </div>
+
+                            <div class="poppins-light mt-4 mb-2">
+                                <h5 class="inter-bold cinza">Ataques de interceptação (Man-in-the-middle)</h5>
+                                <p><strong>Impacto:</strong> Alto</p>
+                                <p><strong>Probabilidade:</strong> Baixo</p>
+                                <p><strong>Medida de Mitigação:</strong> Uso de conexões HTTPS com SSL/TLS.</p>
+                            </div>
+
+                            <div class="poppins-light mt-4 mb-2">
+                                <h5 class="inter-bold cinza">Acesso indevido por terceiros</h5>
+                                <p><strong>Impacto:</strong> Médio</p>
+                                <p><strong>Probabilidade:</strong> Médio</p>
+                                <p><strong>Medida de Mitigação:</strong> Autenticação segura e controle de acessos.</p>
+                            </div>
+
+                            <div class="poppins-light mt-4">
+                                <h5 class="inter-bold cinza">Vazamento de dados pessoais</h5>
+                                <p><strong>Impacto:</strong> Alto</p>
+                                <p><strong>Probabilidade:</strong> Baixo</p>
+                                <p><strong>Medida de Mitigação:</strong> Backups regulares.</p>
+                            </div>
 
                             <h4 class="inter-bold mt-5">Direitos dos Titulares dos Dados</h4> <hr>
 
                             <p class="poppins-light">
-                                Em conformidade com a LGPD, o POUPAÍ permite que os usuários: <br><br>Acessem seus dados pessoais armazenados;<br><br>Retifiquem informações incorretas;<br><br>Excluam suas informações mediante solicitação;<br><br>Revoguem seu consentimento para o tratamento de dados a qualquer momento.<br><br>
-                                Para exercer esses direitos, o usuário pode entrar em contato através do email: aprendizadoarthur@gmail.com.
+                                Em conformidade com a LGPD, o POUPAÍ permite que os usuários: <br><br>Acessem seus dados pessoais armazenados;<br><br>Retifiquem informações incorretas;<br><br>Excluam suas informações mediante solicitação;<br><br>Revoguem seu consentimento para o tratamento de dados a qualquer momento.
+                            </p>
+
+                            <p class="poppins-light">
+                                Para exercer esses direitos, o usuário pode <a href="contato.php">entrar em contato conosco clicando aqui</a>.
                             </p>
 
                             <h4 class="inter-bold mt-5">Conclusão</h4> <hr>

@@ -115,12 +115,12 @@ include('functions.php');
                     </div>
 
                     <!--CTA SÓ APARECE TELAS MEDIOS MENOR-->
-                    <div class="d-block mt-2 d-lg-none col-md-12 text-center justify-content-center p-5">
-                        <h2 class="inter-bold mb-3">Receba relatórios personalizados!</h2>
+                    <div class="d-block d-lg-none col-md-12 text-center justify-content-center p-5">
+                        <h2 class="inter-bold mb-3">Receba relatórios</h2>
                         <p class="poppins-light pt-2">Com a ajuda da nossa assistente <span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span>.</p>
                             
                         <!--CANVAS TELA CELULAR-->
-                        <canvas class="d-flex d-md-none mt-3" id="grafico-cta" width="100%" height="80%"></canvas>
+                        <canvas class="d-flex d-md-none mt-3" id="grafico-cta" width="100%" height="100%"></canvas>
                         <script>criargraficocta('grafico-cta')</script>
                             
                         <!--CANVAS TELA TABLET-->
@@ -134,15 +134,15 @@ include('functions.php');
             <!--SESSÃO APRESENTANDO ELIZA-->
             <section id="apresentando-eliza">
                 <div class="row d-flex background-menus text-center">            
-                    <div class="col-12 text-center my-5">
-                        <h2 class="d-block d-md-none inter-bold">Relatórios inteligentes com a <span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span></h2>  
-                        <h2 class="d-none d-md-block inter-bold mb-5">Relatórios inteligentes com a <span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span></h2>  
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="d-block d-md-none inter-bold">Relatórios inteligentes com a <br> <span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span></h2>  
+                        <h2 class="d-none d-md-block inter-bold my-5">Relatórios inteligentes com a <span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span></h2>  
 
                         <div class="row d-flex justify-content-center">
                             <!--CONTEXTUALIZANDO SOBRE ELIZA-->
                             <div class="col-sm-10 col-md-6 text-center p-4">
                                 <p class="poppins-light mb-3">
-                                    <strong><span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span> é sua parceira no caminho para conquistar a liberdade financeira</strong>. Temos no diálogo preto um exemplo de relatório que ela gera e te apresenta, que ainda é complementado pelos gráficos.
+                                    <strong><span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span> é sua parceira no caminho para conquistar a liberdade financeira</strong>. Temos no diálogo preto logo abaixo um exemplo de relatório que ela gera e te apresenta, que ainda é complementado pelos gráficos.
                                 </p>
 
                                 <p class="poppins-light my-3">

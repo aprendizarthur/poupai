@@ -7,7 +7,7 @@
             data: {
                 labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
                 datasets: [{
-                    label: 'Despesas Mensais com estudo',
+                    label: 'Despesas com estudo',
                     data: [500, 300, 400, 250, 350, 450],
                     backgroundColor: [
                         '#92cef0',
@@ -96,7 +96,7 @@
                         199.90,
                         0,
                         0,
-                        0
+                        100
                     ],
                     backgroundColor: [
                         '#92cef0',

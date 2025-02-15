@@ -219,6 +219,10 @@ select{
     color: #FFFFFF !important;
     text-align: center;
 }
+
+.cinza{
+    color: #969696;
+}
 /*CLASSES TIPOGRAFIA --------------------------*/
     /*FONTES*/
     .inter-regular {

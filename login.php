@@ -74,12 +74,12 @@ login($mysqli);
                         <form action="" method="POST">
                             <div class="form-group">
                                 <label for="email" class="poppins-regular">E-mail</label>
-                                <input type="email" required class="form-control poppins-regular p-1" name="email" placeholder="ex: teste@gmail.com">    
+                                <input type="email" autocomplete="email" required class="form-control poppins-regular p-1" name="email" placeholder="ex: teste@gmail.com">    
                             </div>
 
                             <div class="form-group">
                                 <label for="senha" class="poppins-regular">Senha</label>
-                                <input type="password" required class="form-control poppins-regular p-1" name="senha">    
+                                <input type="password" autocomplete="current-password" required class="form-control poppins-regular p-1" name="senha">    
                             </div>
                             
                             <button type="submit" name="submit" class="btn poppins-regular botao-primario w-100 mt-2 py-3">Entrar</button>

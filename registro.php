@@ -73,12 +73,12 @@ verificarSessaoLogin();
                         <form action="" method="POST">
                             <div class="form-group">
                                 <label for="nome" class="poppins-regular">Primeiro nome</label>
-                                <input type="text" required class="form-control poppins-regular p-1" name="nome" placeholder="ex: Marcos">    
+                                <input type="text" autocomplete="given-name" required class="form-control poppins-regular p-1" name="nome" placeholder="ex: Marcos">    
                             </div>
 
                             <div class="form-group">
                                 <label for="email" class="poppins-regular">E-mail</label>
-                                <input type="email" required class="form-control poppins-regular p-1" name="email" placeholder="ex: teste@gmail.com">    
+                                <input type="email" autocomplete="email" required class="form-control poppins-regular p-1" name="email" placeholder="ex: teste@gmail.com">    
                             </div>
 
                             <div class="form-group">

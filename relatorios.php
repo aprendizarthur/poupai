@@ -132,7 +132,7 @@ salvaExtrato($mysqli);
 
                 <!--EXTRATOS-->
                 <div class="row d-flex background-menus justify-content-center borda-baixo">
-                    <div class="col-12 mt-5 text-center p-5">
+                    <div class="col-12 text-center p-5">
                         <h2 class="inter-bold mb-3">Extratos mensais</h2>
 
                         <p class="poppins-light border text-center p-2 mt-3 mb-5" style="border-radius: 12px;">

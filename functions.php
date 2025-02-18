@@ -542,9 +542,9 @@
                 }
 
             } else {
-                echo '<table class="table poppins-bold border background-branco">
+                echo '<p class=" poppins-regular border background-branco p-4">
                         <th>Não existe nenhum extrato armazenado, espere até o próximo mês!</th>    
-                    </table>';
+                    </p>';
             }
             
         } else {

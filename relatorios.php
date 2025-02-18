@@ -109,7 +109,7 @@ salvaExtrato($mysqli);
                     <div class="col-12 text-center">
                         <h2 class="inter-bold mt-4 mb-3">Relatórios</h2>
 
-                        <p class="poppins-light border text-center p-2 my-3" style="border-radius: 12px;">
+                        <p class="poppins-light border text-center p-3 my-3" style="border-radius: 12px;">
                             Caso você não tenha enviado nenhum dado pelo painel, os gráficos não irão aparecer
                         </p>
                     </div>
@@ -135,7 +135,7 @@ salvaExtrato($mysqli);
                     <div class="col-12 text-center p-5">
                         <h2 class="inter-bold mb-3">Extratos mensais</h2>
 
-                        <p class="poppins-light border text-center p-2 mt-3 mb-5" style="border-radius: 12px;">
+                        <p class="poppins-light border text-center p-3 mt-3 mb-3" style="border-radius: 12px;">
                             Extratos feitos automaticamente no final de cada mês, exibimos extratos dos meses em que você adicionou movimentaçoes
                         </p>
 

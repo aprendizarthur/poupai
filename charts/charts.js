@@ -117,6 +117,12 @@
                 plugins: {
                     legend: {
                         position: 'bottom',
+                        labels: {
+                            filter: function(legendItem, data) {
+                                // Filtra para mostrar apenas as legendas onde o valor não é zero
+                                return data.datasets[0].data[legendItem.index] !== 0;
+                            }
+                        }
                     }
                 }
             }

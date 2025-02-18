@@ -134,8 +134,14 @@ salvaExtrato($mysqli);
                 <div class="row d-flex background-menus justify-content-center borda-baixo">
                     <div class="col-12 mt-5 text-center p-5">
                         <h2 class="inter-bold mb-3">Extratos mensais</h2>
-                    </div>
 
+                        <p class="poppins-light border text-center p-2 mt-3 mb-5" style="border-radius: 12px;">
+                            Extratos feitos automaticamente no final de cada mês, exibimos extratos dos meses em que você adicionou movimentaçoes
+                        </p>
+
+                        <!--FUNÇÃO PHP QUE IMPRIME OS EXTRATOS PARA O USUÁRIO-->
+                        <?php mostraExtratos($mysqli);?>
+                    </div>
                 </div>
            </div>
            <script src="charts/charts-2.js"></script>

@@ -426,7 +426,112 @@
                     $contador = 0;
 
                     while($dados = $resultado->fetch_assoc()){
-                       //echo com tabelas de cada mês
+                       echo "
+                       <details class=\"extrato mb-2\">
+                            <summary class=\"poppins-bold p-3\">" . $dados['mes'] . "/" . $dados['ano'] . "</summary>
+                            <div class=\"p-4 background-branco\" style=\"border-top-left-radius: 0px;border-top-right-radius: 0px;\">
+                                
+                                 <h5 class=\"inter-bold mb-3\">Resumo rápido</h5>
+
+                                <table class=\"table border\">
+                                    <thead>
+                                        <tr>
+                                            <th>Despesas</th>
+                                            <th>Receitas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style=\"color: green;\">R$" . $dados['receita'] . "</td>
+                                            <td style=\"color: red\">R$" . $dados['despesa'] . "</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <h5 class=\"inter-bold mb-3\">Receitas detalhadas</h5>
+
+                                <table class=\"table border\">
+                                    <tbody>
+                                        <tr>
+                                            <td>Salário</td>
+                                            <td>R$" . $dados['totalSalario'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Investimentos</td>
+                                            <td>R$" . $dados['totalInvestimentosREC'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Extra</td>
+                                            <td>R$" . $dados['totalExtra'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Presentes</td>
+                                            <td>R$" . $dados['totalPresentes'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Reembolsos</td>
+                                            <td>R$" . $dados['totalReembolsos'] .  "</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <h5 class=\"inter-bold mb-3\">Despesas detalhadas</h5>
+
+                                <table class=\"table border\">
+                                    <tbody>
+                                        <tr>
+                                            <td>Moradia</td>
+                                            <td>R$" . -$dados['totalMoradia'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alimentação</td>
+                                            <td>R$" . -$dados['totalAlimentacao'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Saúde</td>
+                                            <td>R$" . -$dados['totalSaude'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cuidados Pessoais</td>
+                                            <td>R$" . -$dados['totalCuidados'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Investimentos</td>
+                                            <td>R$" . -$dados['totalInvestimentosDESP'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Transporte</td>
+                                            <td>R$" . -$dados['totalTransporte'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Educação</td>
+                                            <td>R$" . -$dados['totalEducacao'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lazer</td>
+                                            <td>R$" . -$dados['totalLazer'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Compras</td>
+                                            <td>R$" . -$dados['totalCompras'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Impostos</td>
+                                            <td>R$" . -$dados['totalImpostos'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dívidas</td>
+                                            <td>R$" . -$dados['totalDividas'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Crédito</td>
+                                            <td>R$" . -$dados['totalCredito'] .  "</td>
+                                        </tr>
+                                    </tbody>
+                                </table> 
+                            </div>
+                        </details>
+                       ";
 
                         $contador++;
                         //se o contador for igual ao numero de extratos, para de imprimir evitando repetir 
@@ -437,7 +542,9 @@
                 }
 
             } else {
-                //se não existir extrato, mostra mensagem de que não existe para o usuário
+                echo '<table class="table poppins-bold border background-branco">
+                        <th>Não existe nenhum extrato armazenado, espere até o próximo mês!</th>    
+                    </table>';
             }
             
         } else {

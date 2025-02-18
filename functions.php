@@ -309,7 +309,7 @@
 
         //comparando data do dia atual com a do último dia do mês
         $hoje = date('Y-m-d');
-        $ultimoDia  = date('Y-m-d'); //t retorna o último dia do mês atual
+        $ultimoDia  = date('Y-m-t'); //t retorna o último dia do mês atual
 
         if($hoje == $ultimoDia){
 
@@ -402,8 +402,46 @@
             }  
         }
     }
-
+//FUNÇÃO QUE IMPRIME OS EXTRATOS MENSAIS PARA O USUÁRIO
     function mostraExtratos($mysqli){
 
+        //verificando se o usuário possui algum extrato
+        $id = $_SESSION['id'];
+
+        $sql_code = "SELECT COUNT(*) AS totalExtratos FROM EXTRATOS WHERE id_usuario = $id";
+
+        if($resultado = $mysqli->query($sql_code)){
+            $dados = $resultado->fetch_assoc();
+            //variavel que armazena o total de dados da consulta
+            $NUMextratos = (int)$dados['totalExtratos'];
+
+            //se existe extrato, printa na tela os últimos 6 
+            if($NUMextratos > 0 ){
+                
+                $sql_code = "SELECT despesa, receita, totalMoradia, totalAlimentacao, totalSaude, totalTransporte, totalEducacao, totalCuidados, totalLazer, totalCompras, totalImpostos, totalDividas, totalCredito, totalInvestimentosDESP, totalSalario, totalExtra, totalInvestimentosREC, totalPresentes, totalReembolsos, MONTH(data_extrato) AS mes, YEAR(data_extrato) AS ano FROM extratos WHERE id_usuario = $id ORDER BY data_extrato DESC LIMIT 6";
+
+                if($resultado = $mysqli->query($sql_code)){
+            
+                    //contador para controlar a impressao dos extratos, quando ele for igual ao NUMextratos, para de imprimir
+                    $contador = 0;
+
+                    while($dados = $resultado->fetch_assoc()){
+                       //echo com tabelas de cada mês
+
+                        $contador++;
+                        //se o contador for igual ao numero de extratos, para de imprimir evitando repetir 
+                        if($contador>= $NUMextratos) break;
+                    }
+                } else {
+                    header("Location: erro-conexao-banco.php");
+                }
+
+            } else {
+                //se não existir extrato, mostra mensagem de que não existe para o usuário
+            }
+            
+        } else {
+            header("Location: erro-conexao-banco.php");
+        }
     }
 ?>

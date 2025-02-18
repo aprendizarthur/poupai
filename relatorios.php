@@ -92,7 +92,11 @@ salvaExtrato($mysqli);
                         <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
                         
                         <p class="poppins-regular text-light my-3">
-                            Durante este mês você realizou <?php echo $_SESSION['totalMovimentacoes']; ?> movimentações, totalizando R$<?php echo -$_SESSION['totalDespesa']; ?> em despesas e R$<?php echo $_SESSION['totalReceita']; ?> em receitas.
+                            <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span>, durante o mês atual:
+                        </p>
+
+                        <p class="poppins-regular text-light my-3">
+                            Você realizou <?php echo $_SESSION['totalMovimentacoes']; ?> movimentações, totalizando R$<?php echo -$_SESSION['totalDespesa']; ?> em despesas e R$<?php echo $_SESSION['totalReceita']; ?> em receitas.
                         </p>
 
                         <p class="poppins-regular text-light my-3">
@@ -101,9 +105,11 @@ salvaExtrato($mysqli);
                     </div>
                 </div>   
                 
-                <div class="row d-flex background-menus justify-content-center borda-baixo">
-                    <div class="col-12">
-                        <p class="poppins-regular border text-center p-2 my-3" style="border-radius: 12px;">
+                <div class="row d-flex background-menus justify-content-center">
+                    <div class="col-12 text-center">
+                        <h2 class="inter-bold mt-4 mb-3">Relatórios</h2>
+
+                        <p class="poppins-light border text-center p-2 my-3" style="border-radius: 12px;">
                             Caso você não tenha enviado nenhum dado pelo painel, os gráficos não irão aparecer
                         </p>
                     </div>
@@ -120,8 +126,16 @@ salvaExtrato($mysqli);
                         <hr class="d-block d-md-none">
                         <h3 class="inter-regular mt-4">Distribuição receitas</h3>
                         <small class="poppins-light">Clique no gráfico para ver detalhes</small>
-                        <canvas class="d-flex mt-3 mb-4" id="graficoReceita" width="100%"></canvas>
+                        <canvas class="d-flex mt-3 mb-3" id="graficoReceita" width="100%"></canvas>
                     </div>
+                </div>
+
+                <!--EXTRATOS-->
+                <div class="row d-flex background-menus justify-content-center borda-baixo">
+                    <div class="col-12 mt-5 text-center p-5">
+                        <h2 class="inter-bold mb-3">Extratos mensais</h2>
+                    </div>
+
                 </div>
            </div>
            <script src="charts/charts-2.js"></script>

@@ -21,7 +21,8 @@
             SUM(CASE WHEN categoria = 'credito' THEN valor else 0 END) AS totalCredito,
             SUM(CASE WHEN categoria = 'salario' THEN valor else 0 END) AS totalSalario,
             SUM(CASE WHEN categoria = 'extra' THEN valor else 0 END) AS totalExtra,
-            SUM(CASE WHEN categoria = 'investimentos' AND valor > 0 THEN valor else 0 END) AS totalInvestimentos,
+            SUM(CASE WHEN categoria = 'investimentosDESP' THEN valor else 0 END) AS totalInvestimentosDESP,
+            SUM(CASE WHEN categoria = 'investimentosREC' AND valor > 0 THEN valor else 0 END) AS totalInvestimentosREC,
             SUM(CASE WHEN categoria = 'presentes' THEN valor else 0 END) AS totalPresentes,
             SUM(CASE WHEN categoria = 'reembolsos' THEN valor else 0 END) AS totalReembolsos,
             SUM(CASE WHEN categoria = 'cuidados-pessoais' THEN valor else 0 END) AS totalCuidados

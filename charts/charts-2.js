@@ -7,7 +7,7 @@ fetch('dados-relatorios.php')
         new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['Moradia', 'Alimentação', 'Saúde', 'Cuidados Pessoais', 'Transporte', 'Educação', 'Lazer', 'Compras', 'Impostos', 'Dívidas', 'Crédito'],
+                labels: ['Moradia', 'Alimentação', 'Saúde', 'Cuidados Pessoais', 'Transporte', 'Educação', 'Lazer', 'Investimentos', 'Compras', 'Impostos', 'Dívidas', 'Crédito'],
                 datasets: [{
                     label: 'Total',
                     data: [
@@ -18,6 +18,7 @@ fetch('dados-relatorios.php')
                         -(data.totalTransporte) || 0,
                         -(data.totalEducacao) || 0,
                         -(data.totalLazer) || 0,
+                        -(data.totalInvestimentosDESP) || 0,
                         -(data.totalCompras) || 0,
                         -(data.totalImpostos) || 0,
                         -(data.totalDividas) || 0,
@@ -34,7 +35,8 @@ fetch('dados-relatorios.php')
                         '#d076ff',
                         '#ff85f6',
                         '#ff76c1',
-                        '#fc29c9'
+                        '#fb30c1',
+                        '#fc2920'
                     ]
                 }]
             },
@@ -61,7 +63,7 @@ fetch('dados-relatorios.php')
                     data: [
                         data.totalSalario || 0,
                         data.totalExtra || 0,
-                        data.totalInvestimentos || 0,
+                        data.totalInvestimentosREC || 0,
                         data.totalPresentes || 0,
                         data.totalReembolsos || 0,
                     ],

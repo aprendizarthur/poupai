@@ -119,7 +119,7 @@ salvaExtrato($mysqli);
                                         <option value="educacao" class="poppins-regular">Educação (Cursos, mensalidades, materiais escolares)</option>
                                         <option value="lazer" class="poppins-regular">Lazer e Entretenimento (Cinema, assinaturas (Netflix, Spotify), viagens)</option>
                                         <option value="compras" class="poppins-regular">Compras e Vestuário (Roupas, eletrônicos, acessórios)</option>
-                                        <option value="investimentos" class="poppins-regular">Investimentos (Dinheiro destinado a investimentos financeiros)</option>
+                                        <option value="investimentosDESP" class="poppins-regular">Investimentos (Dinheiro destinado a investimentos financeiros)</option>
                                         <option value="pets" class="poppins-regular">Pets (Ração, veterinário, remédios, brinquedos)</option>
                                         <option value="impostos" class="poppins-regular">Impostos e Taxas (IPTU, IPVA, taxas bancárias)</option>
                                         <option value="dividas" class="poppins-regular">Dívidas (Empréstimos, financiamentos, parcelamentos)</option>
@@ -147,7 +147,7 @@ salvaExtrato($mysqli);
                                         <option value="" selected class="poppins-regular">Selecione a categoria</option>
                                         <option value="salario" class="poppins-regular">Salário (Pagamento fixo do trabalho)</option>
                                         <option value="extra" class="poppins-regular">Freelance e Extras (Trabalhos avulsos, renda extra)</option>
-                                        <option value="investimentos" class="poppins-regular">Investimentos (Juros, dividendos, valorização de ativos)</option>
+                                        <option value="investimentosREC" class="poppins-regular">Investimentos (Juros, dividendos, valorização de ativos)</option>
                                         <option value="presentes" class="poppins-regular">Presentes e Doações (Dinheiro recebido de terceiros)</option>
                                         <option value="reembolsos" class="poppins-regular">Reembolsos (Valores devolvidos de compras ou despesas)</option>
                                     </select>

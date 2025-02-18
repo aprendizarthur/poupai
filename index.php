@@ -142,7 +142,7 @@ include('functions.php');
                             <!--CONTEXTUALIZANDO SOBRE ELIZA-->
                             <div class="col-sm-10 col-md-6 text-center p-4">
                                 <p class="poppins-light mb-3">
-                                    <strong><span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span> é sua parceira no caminho para conquistar a liberdade financeira</strong>. Temos no diálogo preto logo abaixo um exemplo de relatório que ela gera e te apresenta, que ainda é complementado pelos gráficos.
+                                    <strong><span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span> é a nossa assistente, e sua parceira no caminho para conquistar a liberdade financeira</strong>. Temos no diálogo preto um exemplo de relatório que ela gera e te apresenta, que ainda é complementado pelos gráficos.
                                 </p>
 
                                 <p class="poppins-light my-3">
@@ -201,6 +201,9 @@ include('functions.php');
                     <p class="poppins-light mb-3">
                         Com essas informações, será mais fácil <strong>elaborar um plano para cortar custos desnecessários</strong> e direcionar seus recursos para o que realmente importa, ajudando a melhorar sua saúde financeira ao longo do tempo.
                     </p>
+
+                    <a class="nav-link d-block my-2 botao-primario poppins-regular mt-5" rel="nofollow" href="registro.php">Registrar agora</a>
+                    <a class="nav-link d-block my-2 botao-terciario poppins-regular mt-2" rel="nofollow" href="login.php">Já tenho uma conta</a>
                     </div>
                 </div>
             </section>

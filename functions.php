@@ -210,7 +210,7 @@
                 //enquanto tiver linhas de dado imprime na tabela
                 while($dado = $resultado->fetch_assoc()){
                     echo "<tr class='poppins-regular'>
-                            <td>" . "R$ ". -$dado['valor'] . "</td>  
+                            <td>" . "R$ ". $dado['valor'] . "</td>  
                             <td>" . $dado['categoria'] . "</td>  
                             <td> <a href='confirmar-excluir.php?id=" . $dado['id_movimentacao'] . "' class='botao-despesa p-2'>Excluir</a></td>                 
                            </tr>";
@@ -309,7 +309,7 @@
 
         //comparando data do dia atual com a do último dia do mês
         $hoje = date('Y-m-d');
-        $ultimoDia  = date('Y-m-t'); //t retorna o último dia do mês atual
+        $ultimoDia  = date('Y-m-d'); //t retorna o último dia do mês atual
 
         if($hoje == $ultimoDia){
 
@@ -339,7 +339,24 @@
 
                 $sql_code = "SELECT 
                             SUM(CASE WHEN valor < 0 THEN valor else 0 END) as totalDespesa,
-                            SUM(CASE WHEN valor > 0 THEN valor else 0 END) as totalReceita
+                            SUM(CASE WHEN valor > 0 THEN valor else 0 END) as totalReceita,
+                            SUM(CASE WHEN categoria = 'moradia' THEN valor else 0 END) AS totalMoradia,
+                            SUM(CASE WHEN categoria = 'alimentacao' THEN valor else 0 END) AS totalAlimentacao,
+                            SUM(CASE WHEN categoria = 'saude' THEN valor else 0 END) AS totalSaude,
+                            SUM(CASE WHEN categoria = 'transporte' THEN valor else 0 END) AS totalTransporte,
+                            SUM(CASE WHEN categoria = 'educacao' THEN valor else 0 END) AS totalEducacao,
+                            SUM(CASE WHEN categoria = 'lazer' THEN valor else 0 END) AS totalLazer,
+                            SUM(CASE WHEN categoria = 'compras' THEN valor else 0 END) AS totalCompras,
+                            SUM(CASE WHEN categoria = 'investimentosDESP' THEN valor else 0 END) AS totalInvestimentosDESP,
+                            SUM(CASE WHEN categoria = 'impostos' THEN valor else 0 END) AS totalImpostos,
+                            SUM(CASE WHEN categoria = 'dividas' THEN valor else 0 END) AS totalDividas,
+                            SUM(CASE WHEN categoria = 'credito' THEN valor else 0 END) AS totalCredito,
+                            SUM(CASE WHEN categoria = 'salario' THEN valor else 0 END) AS totalSalario,
+                            SUM(CASE WHEN categoria = 'extra' THEN valor else 0 END) AS totalExtra,
+                            SUM(CASE WHEN categoria = 'investimentosREC' THEN valor else 0 END) AS totalInvestimentosREC,
+                            SUM(CASE WHEN categoria = 'presentes' THEN valor else 0 END) AS totalPresentes,
+                            SUM(CASE WHEN categoria = 'reembolsos' THEN valor else 0 END) AS totalReembolsos,
+                            SUM(CASE WHEN categoria = 'cuidados-pessoais' THEN valor else 0 END) AS totalCuidados
 
                             FROM movimentacoes WHERE id_usuario = $id AND MONTH(data_movimentacao) = MONTH(CURDATE()) AND YEAR(data_movimentacao) = YEAR(CURDATE())
                 ";
@@ -351,8 +368,27 @@
 
                     $despesa = -$dados['totalDespesa'];
                     $receita = $dados['totalReceita'];
+                    $moradia = $dados['totalMoradia'];
+                    $alimentacao = $dados['totalAlimentacao'];
+                    $saude = $dados['totalSaude'];
+                    $cuidados = $dados['totalCuidados'];
+                    $transporte = $dados['totalTransporte'];
+                    $educacao = $dados['totalEducacao'];
+                    $lazer = $dados['totalLazer'];
+                    $compras = $dados['totalCompras'];
+                    $impostos = $dados['totalImpostos'];
+                    $divida = $dados['totalDividas'];
+                    $credito = $dados['totalCredito'];
+                    $salario = $dados['totalSalario'];
+                    $extra = $dados['totalExtra'];
+                    $investimentosDESP = $dados['totalInvestimentosDESP'];
+                    $investimentosREC = $dados['totalInvestimentosREC'];
+                    $presentes = $dados['totalPresentes'];
+                    $reembolsos = $dados['totalReembolsos'];
                     
-                    $sql_code ="INSERT INTO extratos (id_usuario, despesa, receita) VALUES ('$id', '$despesa', '$receita')";
+
+                    $sql_code ="INSERT INTO extratos (id_usuario, despesa, receita, totalMoradia, totalAlimentacao, totalSaude, totalTransporte, totalEducacao, totalCuidados, totalLazer, totalCompras, totalImpostos, totalDividas, totalCredito, totalInvestimentosDESP, totalSalario, totalExtra,  totalInvestimentosREC, totalPresentes, totalReembolsos) 
+                                VALUES ('$id', '$despesa', '$receita', '$moradia', '$alimentacao', '$saude', '$transporte', '$educacao', '$cuidados', '$lazer', '$compras', '$impostos', '$divida', '$credito', '$investimentosDESP', '$salario', '$extra', '$investimentosREC', '$presentes', '$reembolsos')";
 
                     if($mysqli->query($sql_code)){
 
@@ -365,5 +401,9 @@
                 }    
             }  
         }
+    }
+
+    function mostraExtratos($mysqli){
+
     }
 ?>

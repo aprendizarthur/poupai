@@ -7,7 +7,7 @@
 </div>
 
 <div align="center" style="margin-top: 20px; margin-bottom: 20px;">
-  <h2>Gráficos de pizza sobre as despesas e receitas do usuário naquele mês</h2>
+  <h2>Gráficos de pizza sobre as despesas e receitas do usuário naquele mês</h2> <br>
 </div>
 
 <div align="center">
@@ -15,7 +15,7 @@
 </div>
 
 <div align="center" style="margin-top: 20px; margin-bottom: 20px;">
-  <h2>Relatórios da assistente Eliza (não é IA, apenas uma sacada de UX)</h2>
+  <h2>Relatórios da assistente Eliza (não é IA, apenas uma sacada de UX)</h2> <br>
 </div>
 
 <div align="center">
@@ -26,8 +26,8 @@
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
 <br>
-<strong>Status: Finalizado - Utilizo localmente para controlar o meu dinheiro.</strong> <br>
-Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem. <br> 
+  <h2><strong>Status: Finalizado - Utilizo localmente para controlar o meu dinheiro.</strong></h2> <br>
+  <h3>Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem.</h3> <br> 
 </div>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">

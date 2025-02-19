@@ -1,9 +1,9 @@
 <h2>POUPAÍ é um site de gerenciamento de finanças pessoais</h2>
 
 Status: Finalizado - <strong>Utilizo localmente para controlar o meu dinheiro.</strong> <br>
-Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem.
+Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem. <br>
 
-<h4>Ferramentas/Bibliotecas/Frameworks/API'S/Linguagens utilizadas no projeto:</h4>
+<h4>O que foi utilizado no projeto:</h4>
 <ul>
   <li>Figma (prototipagem)</li>
   <li>HTML</li>

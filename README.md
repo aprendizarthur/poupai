@@ -1,10 +1,22 @@
-<h2>POUPAÍ é um site de gerenciamento de finanças pessoais totalmente responsivo</h2>
+<h2>POUPAÍ é um site de gerenciamento de finanças pessoais</h2>
 
 Status: Finalizado - <strong>Utilizo localmente para controlar o meu dinheiro.</strong> <br>
 Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem. <br>
 
-<div>
-  <img src="assets/index.jpg" style="border-radius: 12px;">
+<div style="margin-top: 20px; margin-bottom: 20px;">
+  <img src="assets/index.jpg" style="border-radius: 20px;">
+</div>
+
+<div style="margin-top: 20px; margin-bottom: 20px;">
+  <img src="assets/painel.jpg" style="border-radius: 20px;">
+</div>
+
+<div style="margin-top: 20px; margin-bottom: 20px;">
+  <img src="assets/relatorios.jpg" style="border-radius: 20px;">
+</div>
+
+<div style="margin-top: 20px; margin-bottom: 20px;">
+  <img src="assets/login.jpg" style="border-radius: 20px;">
 </div>
 
 <br>

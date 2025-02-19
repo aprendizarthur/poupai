@@ -4,7 +4,7 @@
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
 Status: Finalizado - <strong>Utilizo localmente para controlar o meu dinheiro.</strong> <br>
-Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem. <br>
+Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem. <br> <br> <br> 
 </div>
 
 <div align="center" style="margin-top: 20px;">

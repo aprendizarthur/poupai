@@ -1,27 +1,28 @@
-<h2>POUPAÍ é um site de gerenciamento de finanças pessoais</h2>
+# POUPAÍ é um site de gerenciamento de finanças pessoais
 
-Status: Finalizado - <strong>Utilizo localmente para controlar o meu dinheiro.</strong> <br>
+Status: Finalizado - **Utilizo localmente para controlar o meu dinheiro.** <br>
 Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem. <br>
 
-<div style="margin-top: 50px; margin-bottom: 50px; justify-content: center;">
-  <img src="assets/index.jpg" style="border-radius: 20px;">
+<div align="center">
+  <img src="assets/index.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
 </div>
 
-<h4 style="margin-top: 50px; margin-bottom: 50px; ">Gráficos de pizza sobre as despesas e receitas do usuário naquele mês</h4>
+## Gráficos de pizza sobre as despesas e receitas do usuário naquele mês
 
-<div style="margin-top: 20px; margin-bottom: 20px; justify-content: center;">
-  <img src="assets/relatorios.jpg" style="border-radius: 20px;">
+<div align="center">
+  <img src="assets/relatorios.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
 </div>
 
-<h4 style="margin-top: 50px; margin-bottom: 50px;">Relatórios da assistente Eliza (não é IA, apenas uma sacada de UX)</h4>
+## Relatórios da assistente Eliza (não é IA, apenas uma sacada de UX)
 
-<div style="margin-top: 50px; margin-bottom: 50px; justify-content: center;">
-  <img src="assets/eliza.jpg" style="border-radius: 20px;">
+<div align="center">
+  <img src="assets/eliza.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
 </div>
 
 <br>
 
-<h4>O que foi utilizado no projeto:</h4>
+## O que foi utilizado no projeto:
+
 <ul>
   <li>Figma (prototipagem)</li>
   <li>HTML</li>
@@ -33,7 +34,8 @@ Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipag
   <li>MySQL</li>
 </ul>
 
-<h4>O que o sistema faz:</h4>
+## O que o sistema faz:
+
 <ul>
   <li>CRUD para usuários, movimentações e extratos mensais</li>
   <li>Retorna gráficos de pizza sobre as despesas e receitas do usuário naquele mês</li>
@@ -41,14 +43,16 @@ Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipag
   <li>A assistente Eliza dá feedbacks sobre a relação despesa x receita do usuário com a finalidade de garantir um vida financeira saudável</li>
 </ul>
 
-<h4>Melhorias:</h4>
+## Melhorias:
+
 <ul>
   <li>Corrigir erro em que os gráficos da página de relatórios não carregam na hospedagem, apenas no localhost</li>
   <li>Aprimorar a lógica para armazenamento de extratos mensais, atualmente só salva o extrato se o usuário estiver logado no sistema durante o último dia do mês</li>
   <li>Implementar gráficos de barra que acompanham o histórico de gastos de determinadas categorias</li>
 </ul>
 
-<h4>O que aprendi com este projeto:</h4>
+## O que aprendi com este projeto:
+
 <ul>
   <li>Deixar o meu sistema modular utilizando arquivos exclusivos para funções e incluindo apenas os chamados nas páginas</li>
   <li>Lidar com sessões de usuário e criptografia de senha no banco de dados</li>

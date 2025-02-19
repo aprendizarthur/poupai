@@ -1,27 +1,37 @@
-# POUPAÍ é um site de gerenciamento de finanças pessoais
+<div align="center "style="margin-top: 20px; margin-bottom: 20px;">
+  <h1>POUPAÍ é um site de gerenciamento de finanças pessoais</h1>
+</div>
 
-Status: Finalizado - **Utilizo localmente para controlar o meu dinheiro.** <br>
+<div align="center">
+Status: Finalizado - <strong>Utilizo localmente para controlar o meu dinheiro.</strong> <br>
 Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem. <br>
+</div>
 
 <div align="center">
   <img src="assets/index.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
 </div>
 
-## Gráficos de pizza sobre as despesas e receitas do usuário naquele mês
+<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
+  <h2>Gráficos de pizza sobre as despesas e receitas do usuário naquele mês</h2>
+</div>
 
 <div align="center">
   <img src="assets/relatorios.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
 </div>
 
-## Relatórios da assistente Eliza (não é IA, apenas uma sacada de UX)
+<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
+  <h2>Relatórios da assistente Eliza (não é IA, apenas uma sacada de UX)</h2>
+</div>
 
 <div align="center">
-  <img src="assets/eliza.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
+  <img src="assets/eliza.jpg" style="border-radius: 20px; height: auto;">
 </div>
 
 <br>
 
-## O que foi utilizado no projeto:
+<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
+  <h2>O que foi utilizado no projeto:</h2>
+</div>
 
 <ul>
   <li>Figma (prototipagem)</li>
@@ -34,7 +44,9 @@ Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipag
   <li>MySQL</li>
 </ul>
 
-## O que o sistema faz:
+<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
+  <h2>O que o sistema faz:</h2>
+</div>
 
 <ul>
   <li>CRUD para usuários, movimentações e extratos mensais</li>
@@ -43,7 +55,9 @@ Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipag
   <li>A assistente Eliza dá feedbacks sobre a relação despesa x receita do usuário com a finalidade de garantir um vida financeira saudável</li>
 </ul>
 
-## Melhorias:
+<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
+  <h2>Melhorias:</h2>
+</div>
 
 <ul>
   <li>Corrigir erro em que os gráficos da página de relatórios não carregam na hospedagem, apenas no localhost</li>
@@ -51,7 +65,9 @@ Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipag
   <li>Implementar gráficos de barra que acompanham o histórico de gastos de determinadas categorias</li>
 </ul>
 
-## O que aprendi com este projeto:
+<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
+  <h2>O que aprendi com este projeto:</h2>
+</div>
 
 <ul>
   <li>Deixar o meu sistema modular utilizando arquivos exclusivos para funções e incluindo apenas os chamados nas páginas</li>

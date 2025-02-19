@@ -104,9 +104,14 @@ salvaExtrato($mysqli);
                         </p>
                     </div>
                 </div>   
+
+                    
                 
                 <div class="row d-flex background-menus justify-content-center">
                     <div class="col-12 text-center">
+                        <div class="d-md-none col-12 mt-2 mb-4">
+                            <a class="btn botao-primario poppins-regular p-3 w-100" href="painel.php"><i class="fa-brands fa-wpforms fa-lg mr-2" style="color: #ffffff;"></i>Voltar ao painel </a>
+                        </div>
                         <h2 class="inter-bold mt-4 mb-3">Relatórios</h2>
 
                         <p class="poppins-light border text-center p-3 my-3" style="border-radius: 12px;">

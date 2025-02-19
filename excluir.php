@@ -99,8 +99,8 @@ verificarSessao();
                             <thead>
                                 <tr>
                                     <th scape="col">Valor</th>
-                                    <th scape="col">Categoria</th>
-                                    <th scape="col"></th>
+                                    <th scape="col" class="d-none d-md-block">Categoria</th>
+                                    <th scape="col">Ação</th>
                                 </tr>
                             </thead>
 

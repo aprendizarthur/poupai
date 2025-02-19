@@ -210,8 +210,8 @@
                 //enquanto tiver linhas de dado imprime na tabela
                 while($dado = $resultado->fetch_assoc()){
                     echo "<tr class='poppins-regular'>
-                            <td>" . "R$ ". $dado['valor'] . "</td>  
-                            <td>" . $dado['categoria'] . "</td>  
+                            <td>" . $dado['valor'] . "</td>  
+                            <td class=\"d-none d-md-block\">" . $dado['categoria'] . "</td>  
                             <td> <a href='confirmar-excluir.php?id=" . $dado['id_movimentacao'] . "' class='botao-despesa p-2'>Excluir</a></td>                 
                            </tr>";
                 }

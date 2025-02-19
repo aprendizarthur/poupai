@@ -62,7 +62,7 @@ verificarSessao();
 
                 <!--LOGIN-->
                 <div class="col-11 col-md-6 col-lg-5 background-menus text-center shadow border p-5" style="border-radius: 0px 0px 0px 12px">
-                    <a class="btn botao-primario d-block d-md-none poppins-regular p-3 mb-5 w-100" href="painel.php">Voltar ao painel</a>
+                    <a class="btn botao-primario d-block d-md-none poppins-regular p-3 mb-5 w-100" href="painel.php"><i class="fa-brands fa-wpforms fa-lg mr-2" style="color: #ffffff;"></i> Voltar ao painel</a>
                     
                     <h3 class="inter-bold">DADO ENVIADO</h3>
 
@@ -73,7 +73,7 @@ verificarSessao();
                         </p>
                     </div>
 
-                    <a class="btn botao-primario d-none d-md-block poppins-regular p-3 mb-5 w-100" href="painel.php">Voltar ao painel</a>
+                    <a class="btn botao-primario d-none d-md-block poppins-regular p-3 mb-5 w-100" href="painel.php"><i class="fa-brands fa-wpforms fa-lg mr-2" style="color: #ffffff;"></i> Voltar ao painel</a>
 
                 </div>
 

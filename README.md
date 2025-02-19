@@ -3,20 +3,20 @@
 Status: Finalizado - <strong>Utilizo localmente para controlar o meu dinheiro.</strong> <br>
 Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem. <br>
 
-<div style="margin-top: 20px; margin-bottom: 20px;">
+<div style="margin-top: 50px; margin-bottom: 50px; justify-content: center;">
   <img src="assets/index.jpg" style="border-radius: 20px;">
 </div>
 
-<div style="margin-top: 20px; margin-bottom: 20px;">
-  <img src="assets/painel.jpg" style="border-radius: 20px;">
-</div>
+<h4 style="margin-top: 50px; margin-bottom: 50px; ">Gráficos de pizza sobre as despesas e receitas do usuário naquele mês</h4>
 
-<div style="margin-top: 20px; margin-bottom: 20px;">
+<div style="margin-top: 20px; margin-bottom: 20px; justify-content: center;">
   <img src="assets/relatorios.jpg" style="border-radius: 20px;">
 </div>
 
-<div style="margin-top: 20px; margin-bottom: 20px;">
-  <img src="assets/login.jpg" style="border-radius: 20px;">
+<h4 style="margin-top: 50px; margin-bottom: 50px;">Relatórios da assistente Eliza (não é IA, apenas uma sacada de UX)</h4>
+
+<div style="margin-top: 50px; margin-bottom: 50px; justify-content: center;">
+  <img src="assets/eliza.jpg" style="border-radius: 20px;">
 </div>
 
 <br>

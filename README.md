@@ -25,8 +25,12 @@
 <br>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
-  <strong>Status: Finalizado</strong> <br>
-  Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem. <br> 
+  <h2>Detalhes:</h2>
+</div>
+
+<div align="left" style="margin-top: 20px; margin-bottom: 20px;">
+  <strong>Status</strong>: Finalizado <br>
+  <strong>Tempo em desenvolvimento<strong>: Aproximadamente 3 semanas, contando desde a prototipagem. <br> 
 </div>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">

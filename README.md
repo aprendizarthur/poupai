@@ -6,22 +6,6 @@
   <img src="assets/index.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
 </div>
 
-<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
-  <h2>Gráficos de pizza sobre as despesas e receitas do usuário naquele mês</h2> <br>
-</div>
-
-<div align="center">
-  <img src="assets/relatorios.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
-</div>
-
-<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
-  <h2>Relatórios da assistente Eliza (não é IA, apenas uma sacada de UX)</h2> <br>
-</div>
-
-<div align="center">
-  <img src="assets/eliza.jpg" style="border-radius: 20px; height: auto;">
-</div>
-
 <br>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
@@ -59,6 +43,22 @@
   <li>No último dia do mês o sistema salva um extrato que será exibido logo abaixo dos relatórios, para que o usuário possa ter um histórico de sua vida financeira</li>
   <li>A assistente Eliza dá feedbacks sobre a relação despesa x receita do usuário com a finalidade de garantir um vida financeira saudável</li>
 </ul>
+
+<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
+  <h2>Gráficos de pizza sobre as despesas e receitas do usuário naquele mês</h2> <br>
+</div>
+
+<div align="center">
+  <img src="assets/relatorios.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
+</div>
+
+<div align="center" style="margin-top: 20px; margin-bottom: 20px;">
+  <h2>Relatórios da assistente Eliza (não é IA, apenas uma sacada de UX)</h2> <br>
+</div>
+
+<div align="center">
+  <img src="assets/eliza.jpg" style="border-radius: 20px; height: auto;">
+</div>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
   <h2>Melhorias:</h2>

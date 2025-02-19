@@ -3,6 +3,12 @@
 Status: Finalizado - <strong>Utilizo localmente para controlar o meu dinheiro.</strong> <br>
 Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem. <br>
 
+<div>
+  <img src="assets/index.jpg" style="border-radius: 12px;">
+</div>
+
+<br>
+
 <h4>O que foi utilizado no projeto:</h4>
 <ul>
   <li>Figma (prototipagem)</li>

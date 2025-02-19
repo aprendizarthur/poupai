@@ -26,7 +26,7 @@
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
 <br>
-  <h2><strong>Status: Finalizado - Utilizo localmente para controlar o meu dinheiro.</strong></h2> <br>
+  <h2>Status: Finalizado.</h2>
   <h3>Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem.</h3> <br> 
 </div>
 

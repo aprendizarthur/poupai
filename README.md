@@ -30,7 +30,7 @@
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
   <strong>Status</strong>: Finalizado <br>
-  <strong>Tempo em desenvolvimento<strong>: Aproximadamente 3 semanas, contando desde a prototipagem. <br> 
+  <strong>Tempo em desenvolvimento</strong>: Aproximadamente 3 semanas, contando desde a prototipagem. <br> 
 </div>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
@@ -68,6 +68,7 @@
   <li>Corrigir erro em que os gráficos da página de relatórios não carregam na hospedagem, apenas no localhost</li>
   <li>Aprimorar a lógica para armazenamento de extratos mensais, atualmente só salva o extrato se o usuário estiver logado no sistema durante o último dia do mês</li>
   <li>Implementar gráficos de barra que acompanham o histórico de gastos de determinadas categorias</li>
+  <li>Não fazer 20 commits atualizando o README</li>
 </ul>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">

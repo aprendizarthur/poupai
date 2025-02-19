@@ -1,6 +1,6 @@
-<h2>POUPAÍ é um site de gerenciamento de finanças pessoais, que recebe dados de movimentações e retorna pra o usuário gráficos e feedbacks de uma assistente virtual chamada Eliza (não é IA, só foi uma jogada de user experience).</h2>
+<h2>POUPAÍ é um site de gerenciamento de finanças pessoais</h2>
 
-Status: Finalizado - <strong>Utilizo localmente para controlar o meu dinheiro.</strong>
+Status: Finalizado - <strong>Utilizo localmente para controlar o meu dinheiro.</strong> <br>
 Tempo em desenvolvimento: Aproximadamente 3 semanas, contando desde a prototipagem.
 
 <h4>Ferramentas/Bibliotecas/Frameworks/API'S/Linguagens utilizadas no projeto:</h4>

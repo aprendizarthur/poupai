@@ -67,8 +67,6 @@
 <ul>
   <li>Adicionar cookies com um tempo de expiração para o usuário não ter que logar toda vez que abre o site</li>
   <li>Aprimorar a lógica para armazenamento de extratos mensais, atualmente só salva o extrato se o usuário estiver logado no sistema durante o último dia do mês</li>
-  <li>Implementar gráficos de barra que acompanham o histórico de gastos de determinadas categorias</li>
-  <li>Não fazer 20 commits atualizando o README</li>
 </ul>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">

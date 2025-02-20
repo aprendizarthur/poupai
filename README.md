@@ -65,7 +65,6 @@
 </div>
 
 <ul>
-  <li>Corrigir erro em que os gráficos da página de relatórios não carregam na hospedagem, apenas no localhost</li>
   <li>Aprimorar a lógica para armazenamento de extratos mensais, atualmente só salva o extrato se o usuário estiver logado no sistema durante o último dia do mês</li>
   <li>Implementar gráficos de barra que acompanham o histórico de gastos de determinadas categorias</li>
   <li>Não fazer 20 commits atualizando o README</li>
@@ -76,6 +75,7 @@
 </div>
 
 <ul>
+  <li><strong>Fazer um sistema rodar fora do meu localhost</strong></li>
   <li>Deixar o meu sistema modular utilizando arquivos exclusivos para funções e incluindo apenas os chamados nas páginas</li>
   <li>Lidar com sessões de usuário e criptografia de senha no banco de dados</li>
   <li>Utilizar SQL para realizar consultas mais complexas</li>

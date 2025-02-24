@@ -176,6 +176,14 @@ select{
     text-align: center;
 }
 
+.botao-atencao{
+    border-radius: 12px;
+    background-color: #eff61cbe;
+    border: solid 2px #000000;
+    color: #000000 !important;
+    text-align: center;
+}
+
 .botao-primario:hover{
     border-radius: 12px;
     background-color: #ffffff;

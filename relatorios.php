@@ -96,7 +96,7 @@ salvaExtrato($mysqli);
                                 Caso você não tenha enviado nenhum dado pelo painel, os gráficos não irão aparecer
                             </p>
                             <div class="row">
-                                <div class="col-12 col-md-6 my-2">
+                                    <div class="col-12 col-md-6 my-2">
                                         <a class="btn botao-primario poppins-regular p-3 w-100" href="#mensal"> <i class="fa-regular fa-lg fa-calendar-days mr-2" style="color: #ffffff;"></i> Relatório deste mês</a>
                                     </div>
 

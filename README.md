@@ -80,5 +80,6 @@
   <li>Utilizar cookie com tempo de expiração para o usuário não ter que logar toda vez que abre o site</li>
   <li>Utilizar SQL para realizar consultas mais complexas</li>
   <li>Utilizar charts.js para exibir gráficos</li>
+  <li>Utilizar JSON para enviar dados de uma consulta ao db para o Javascript</li>
   <li>Ser persistente</li>
 </ul>

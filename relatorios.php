@@ -87,12 +87,43 @@ salvaExtrato($mysqli);
         <main>
            <div class="container">
                 <div class="row mt-4 p-3 d-flex background-menus justify-content-center borda-cima">
-                    <!--INTERACAO ELIZA-->
-                    <div class="col-12 p-3 relatorio-eliza text-left p-4 background-preto">
+                    <div class="col-12 px-4 text-center">
+                        <section id="nav-relatorios">
+                                <h2 class="inter-bold mt-2 mb-4">Relatórios</h2>   
+                            
+                            
+                            <p class="poppins-light border text-center p-3 my-3" style="border-radius: 12px;">
+                                Caso você não tenha enviado nenhum dado pelo painel, os gráficos não irão aparecer
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-6 my-2">
+                                        <a class="btn botao-primario poppins-regular p-3 w-100" href="#mensal"> <i class="fa-regular fa-lg fa-calendar-days mr-2" style="color: #ffffff;"></i> Relatório deste mês</a>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 d-none d-md-block mt-2 mb-5">
+                                        <a class="btn botao-primario poppins-regular p-3 w-100" href="relatorios.php"> <i class="fa-solid fa-lg fa-file-contract mr-2" style="color: #ffffff;"></i>  Relatório anual (EM BREVE)</a>
+                                    </div> 
+
+                                    <div class="col-12 d-md-none col-md-6 my-2">
+                                        <a class="btn botao-primario poppins-regular p-3 w-100" href="relatorios.php"> <i class="fa-solid fa-lg fa-file-contract mr-2" style="color: #ffffff;"></i>  Relatório anual (EM BREVE)</a>
+                                    </div>  
+                                    
+                                    <div class="col-12 d-md-none mt-2 mb-5">
+                                        <a class="btn botao-primario poppins-regular p-3 w-100" href="painel.php"><i class="fa-brands fa-wpforms fa-lg mr-2" style="color: #ffffff;"></i> Voltar ao painel</a>
+                                    </div>  
+                            </div>
+                        </section>
+                    </div>
+
+                    <section id="mensal">
+                    <div class="col-12 text-center mb-4">
+                        <h2 class="inter-bold">Mês atual</h2>
+                    </div>
+                     <div class="col-12 relatorio-eliza text-left p-4 background-preto">
                         <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
                         
                         <p class="poppins-regular text-light my-3">
-                         <span class="texto-primario"><?php echo $_SESSION['nome']; ?></span> aqui estão os dados do mês atual:
+                         <span class="texto-primario"><?php echo $_SESSION['nome']; ?></span> aqui estão os dados do seu mês:
                         </p>
 
                         <p class="poppins-regular text-light my-3">
@@ -102,22 +133,14 @@ salvaExtrato($mysqli);
                         <p class="poppins-regular text-light my-3">
                             <?php echo $_SESSION['elizaMontante']; ?>
                         </p>
-                    </div>
+                    </div>   
+                    </section>
+                    <!--INTERACAO ELIZA-->
+                    
                 </div>   
 
-                    
-                
+            
                 <div class="row d-flex background-menus justify-content-center">
-                    <div class="col-12 text-center">
-                        <div class="d-md-none col-12 mt-2 mb-4">
-                            <a class="btn botao-primario poppins-regular p-3 w-100" href="painel.php"><i class="fa-brands fa-wpforms fa-lg mr-2" style="color: #ffffff;"></i>Voltar ao painel </a>
-                        </div>
-                        <h2 class="inter-bold mt-4 mb-3">Relatórios</h2>
-
-                        <p class="poppins-light border text-center p-3 my-3" style="border-radius: 12px;">
-                            Caso você não tenha enviado nenhum dado pelo painel, os gráficos não irão aparecer
-                        </p>
-                    </div>
 
                     <!--GRAFICO DESPESA-->
                     <div class="col-12 col-md-8 col-lg-5 text-center">
@@ -138,14 +161,18 @@ salvaExtrato($mysqli);
                 <!--EXTRATOS-->
                 <div class="row d-flex background-menus justify-content-center borda-baixo">
                     <div class="col-12 text-center p-5">
-                        <h2 class="inter-bold mb-3">Extratos mensais</h2>
+                        <h2 class="inter-bold mb-4">Extratos mensais</h2>
 
                         <p class="poppins-light border text-center p-3 mt-3 mb-3" style="border-radius: 12px;">
-                            Extratos feitos automaticamente no final de cada mês, exibimos extratos dos meses em que você adicionou movimentaçoes
+                            Extratos salvos automaticamente no final de cada mês
                         </p>
                             
                         <?php mostraExtratos($mysqli);?>
                         
+                    </div>
+
+                    <div class="col-12 d-md-none mb-5">
+                            <a class="btn botao-primario poppins-regular p-3 w-100" href="#nav-relatorios"><i class="fa-solid fa-arrow-up fa-lg mr-2" style="color: #ffffff;"></i></i> Voltar para o topo</a>
                     </div>
                 </div>
            </div>

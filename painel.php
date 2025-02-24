@@ -89,6 +89,9 @@ salvaExtrato($mysqli);
         <main>
            <div class="container">
                 <div class="row mt-4 p-3 d-flex background-menus justify-content-center borda-cima">
+                    <div class="col-12 px-4 text-center">
+                        <h2 class="inter-bold mt-2 mb-4">Painel de <?php echo $_SESSION['nome']; ?></span></h2>
+                    </div>
                     <!--INTERAÇÃO-1 ELIZA-->
                     <div class="col-12 p-3 relatorio-eliza text-left p-4 background-preto col-md-12">
                         <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>

@@ -123,7 +123,7 @@ salvaExtrato($mysqli);
                     <div class="col-12 col-md-8 col-lg-5 text-center">
                             <h3 class="inter-regular mt-4">Distribuição despesas</h3>
                             <small class="poppins-light">Clique no gráfico para ver detalhes</small>
-                            <canvas class="d-flex mt-3 mb-4" id="graficoDespesa" width="100%" height="5%"></canvas>
+                            <canvas class="d-flex mt-3 mb-4" id="graficoDespesa" width="100%" height="5%" style="max-height: 350px;"></canvas>
                     </div>   
                     
                     <!--GRAFICO RECEITA-->
@@ -131,7 +131,7 @@ salvaExtrato($mysqli);
                         <hr class="d-block d-md-none">
                         <h3 class="inter-regular mt-4">Distribuição receitas</h3>
                         <small class="poppins-light">Clique no gráfico para ver detalhes</small>
-                        <canvas class="d-flex mt-3 mb-3" id="graficoReceita" width="100%"></canvas>
+                        <canvas class="d-flex mt-3 mb-3" id="graficoReceita" width="100%" style="max-height: 320px;"></canvas>
                     </div>
                 </div>
 

@@ -105,7 +105,9 @@ salvaExtrato($mysqli);
                             <form action="" method="POST">
                                 <div class="form-group">
                                     <label for="valor-despesa" class="poppins-regular">Valor</label>
-                                    <input type="text" required class="form-control poppins-regular p-1" name="valor-despesa" placeholder="R$">    
+                                    <input type="text" required class="form-control poppins-regular p-1" name="valor-despesa" placeholder="R$">
+                                    <small class="poppins-light" style="color: grey;">Utilize . apenas para representar os centavos</small>
+    
                                 </div>
 
                                 <div class="form-group">
@@ -139,7 +141,9 @@ salvaExtrato($mysqli);
                             <form action="" method="POST">
                                 <div class="form-group">
                                     <label for="valor-receita" class="poppins-regular">Valor</label>
-                                    <input type="text" required class="form-control poppins-regular p-1" name="valor-receita" placeholder="R$">    
+                                    <input type="text" required class="form-control poppins-regular p-1" name="valor-receita" placeholder="R$">
+                                    <small class="poppins-light" style="color: grey;">Utilize . apenas para representar os centavos</small>
+    
                                 </div>
 
                                 <div class="form-group">

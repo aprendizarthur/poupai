@@ -2,9 +2,9 @@
 //ARQUIVO COM TODAS FUNÇÕES DE CRUD && ERROS PHP
     //COLETANDO DADOS PARA REALIZAR CONEXÃO COM O BANCO
         $host = 'localhost';
-        $user = 'u829123912_poupai';
-        $pass = 'Qee5#w@0z';
-        $db = 'u829123912_poupai';
+        $user = 'root';
+        $pass = '';
+        $db = 'poupai';
 
         //CONEXÃO COM O BANCO
         $mysqli = new mysqli($host, $user, $pass, $db);

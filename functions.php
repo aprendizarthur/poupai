@@ -2,9 +2,9 @@
 //ARQUIVO COM TODAS FUNÇÕES DE CRUD && ERROS PHP
     //COLETANDO DADOS PARA REALIZAR CONEXÃO COM O BANCO
         $host = 'localhost';
-        $user = 'root';
-        $pass = '';
-        $db = 'poupai';
+        $user = 'u829123912_poupai';
+        $pass = 'Qee5#w@0z';
+        $db = 'u829123912_poupai';
 
         //CONEXÃO COM O BANCO
         $mysqli = new mysqli($host, $user, $pass, $db);
@@ -408,7 +408,7 @@
         //verificando se o usuário possui algum extrato
         $id = $_SESSION['id'];
 
-        $sql_code = "SELECT COUNT(*) AS totalExtratos FROM EXTRATOS WHERE id_usuario = $id";
+        $sql_code = "SELECT COUNT(*) AS totalExtratos FROM extratos WHERE id_usuario = $id";
 
         if($resultado = $mysqli->query($sql_code)){
             $dados = $resultado->fetch_assoc();

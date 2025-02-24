@@ -145,7 +145,7 @@ include('functions.php');
                                     <strong><span class="texto-primario"><i class="bi bi-stars"></i>Eliza</span> é a nossa assistente, e sua parceira no caminho para conquistar a liberdade financeira</strong>. Temos no diálogo preto um exemplo de relatório que ela gera e te apresenta, que ainda é complementado pelos gráficos.
                                 </p>
 
-                                <p class="poppins-light my-3">
+                                <p class=" d-none d-md-block poppins-light my-3">
                                     Com ela, você tem acesso a <strong>relatórios detalhados e gráficos interativos</strong> que mostram como você está administrando suas finanças.
                                 </p>
 
@@ -159,7 +159,7 @@ include('functions.php');
                                 <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
 
                                 <p class="poppins-regular text-light my-3">
-                                    Oi <span class="texto-primario-2">Arthur</span>! Vou te passar o resumo deste mês.
+                                    Oi <span class="texto-primario">Arthur</span>! Vou te passar o resumo deste mês.
                                 </p>
 
                                 <p class="poppins-regular text-light my-3">

@@ -92,7 +92,7 @@ salvaExtrato($mysqli);
                         <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
 
                         <p class="poppins-regular text-light my-3">
-                            Oi <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span>, bom te ver! Use o painel abaixo para adicionar uma nova despesa ou receita do seu dia.
+                            Oi <span class="texto-primario"><?php echo $_SESSION['nome']; ?></span>, bom te ver! Use o painel abaixo para adicionar uma nova despesa ou receita do seu dia.
                         </p>
                     </div>
                 </div>
@@ -158,13 +158,16 @@ salvaExtrato($mysqli);
                         </div>
                     </div>
 
-                    <!--ENCAMINHAR EXCLUSÃO DADOS-->
-                    <div class="col-12 mt-4">
-                        <a class="btn botao-disabled poppins-regular p-3 w-100" href="excluir.php"><i class="fa-solid fa-trash fa-sm mr-2" style="color: #969696;"></i>Excluir dado </span></a>
-                    </div>
+                    
+                    
                     <!--ENCAMINHAR RELATORIOS-->
                     <div class="col-12 mt-4">
                         <a class="btn botao-primario poppins-regular p-3 w-100" href="relatorios.php">Conferir relatórios da <span class="disabled"><i class="bi bi-stars"></i>Eliza</span></a>
+                    </div>
+                    
+                    <!--ENCAMINHAR EXCLUSÃO DADOS-->
+                    <div class="col-12 mt-4">
+                        <a class="btn botao-disabled poppins-regular p-3 w-100" href="excluir.php" style="color: #969696; border: 1px solid #969696; border-radius: 12px;"><i class="fa-solid fa-trash fa-sm mr-2"></i>Excluir dado</a>
                     </div>
 
                     <!--INTERAÇÃO ELIZA-->
@@ -172,11 +175,11 @@ salvaExtrato($mysqli);
                         <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
 
                         <p class="poppins-regular text-light my-3">
-                            Ao clicar no botão azul logo acima, vou te levar para os meus <span class="texto-primario-2">relatórios</span>, lá posso te apresentar gráficos com os dados que você me forneceu!
+                            Ao clicar no botão azul, vou te levar para os meus <span class="texto-primario">relatórios</span>, lá posso te apresentar gráficos com os dados que você me forneceu!
                         </p>
 
-                        <p class="poppins-regular text-light my-3">
-                            Acima do botão azul existe um botão quase invisível, clicando nele você vai para a página de exclusão de dados.
+                        <p class="poppins-regular text-light mt-3 mb-2">
+                            Abaixo do botão azul existe um outro botão quase invisível, clicando nele você vai para a página de exclusão de dados.
                         </p>
                     </div>
                 </div>

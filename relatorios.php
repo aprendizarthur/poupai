@@ -92,7 +92,7 @@ salvaExtrato($mysqli);
                         <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
                         
                         <p class="poppins-regular text-light my-3">
-                            <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span>, durante o mês atual:
+                         <span class="texto-primario"><?php echo $_SESSION['nome']; ?></span> aqui estão os dados do mês atual:
                         </p>
 
                         <p class="poppins-regular text-light my-3">
@@ -143,13 +143,13 @@ salvaExtrato($mysqli);
                         <p class="poppins-light border text-center p-3 mt-3 mb-3" style="border-radius: 12px;">
                             Extratos feitos automaticamente no final de cada mês, exibimos extratos dos meses em que você adicionou movimentaçoes
                         </p>
-
-                        <!--FUNÇÃO PHP QUE IMPRIME OS EXTRATOS PARA O USUÁRIO-->
+                            
                         <?php mostraExtratos($mysqli);?>
+                        
                     </div>
                 </div>
            </div>
-           <script src="charts/charts-2.js"></script>
+          
         </main>
         <!--FECHAMENTO MAIN-->
 
@@ -177,8 +177,8 @@ salvaExtrato($mysqli);
         </footer>
 
         <!--FECHAMENTO FOOTER-->
-        
-
+        <!--SCRIPT GERAÇÃO GRÁFICOS DESPESA/RECEITA-->
+         <script src="charts/charts-2.js"></script>
         <!--JQUERY, POPPER E BOOTSTRAP JS-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

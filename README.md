@@ -65,8 +65,8 @@
 </div>
 
 <ul>
-  <li>Adicionar cookies com um tempo de expiração para o usuário não ter que logar toda vez que abre o site</li>
   <li>Aprimorar a lógica para armazenamento de extratos mensais, atualmente só salva o extrato se o usuário estiver logado no sistema durante o último dia do mês</li>
+  <li>Aprender e implementar PDO para diminuir a possibilidade de SQL Injection</li>
 </ul>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
@@ -77,6 +77,7 @@
   <li><strong>Fazer um sistema rodar fora do meu localhost</strong></li>
   <li>Deixar o meu sistema modular utilizando arquivos exclusivos para funções e incluindo apenas os chamados nas páginas</li>
   <li>Lidar com sessões de usuário e criptografia de senha no banco de dados</li>
+  <li>Utilizar cookie com tempo de expiração para o usuário não ter que logar toda vez que abre o site</li>
   <li>Utilizar SQL para realizar consultas mais complexas</li>
   <li>Utilizar charts.js para exibir gráficos</li>
   <li>Ser persistente</li>

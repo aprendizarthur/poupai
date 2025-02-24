@@ -1,6 +1,8 @@
 <?php 
 //INCLUINDO ARQUIVO COM FUNCOES PHP
 include('functions.php');
+//FUNÇÃO VERIFICAR COOKIE
+verificarCookies($mysqli);
 //FUNÇÃO VERIFICAR SESSÃO
 verificarSessao();
 //FUNCAO ADICIONAR RECEITA

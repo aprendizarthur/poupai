@@ -9,7 +9,10 @@
     // Destruindo a sessão
     session_destroy();
 
+    //Limpando cookie que deixa o usuário logado
+    setcookie('usuario_logado', '', time() - 3600, '/');
+
     // Redirecionando para a página de login
-    header("Location: index.php");
+    header("Location: login.php");
     exit();
 ?>

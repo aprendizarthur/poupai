@@ -20,6 +20,45 @@
         }
          
 //FUNÇÃO VERIFICAR SESSÃO
+
+    function verificarCookies($mysqli){
+        //se não tiver dados da sessão nas existir o cookie de usuário logado
+        if(!isset($_SESSION['id']) && isset($_COOKIE['usuario_logado'])){
+            //pega id do usuário no cookie
+            $id = $_COOKIE['usuario_logado'];
+
+            //consulta para ver se existe usuário com este ID
+            $sql_code = "SELECT COUNT(*) AS total FROM usuarios WHERE id_usuario = $id";
+
+            if($resultado = $mysqli->query($sql_code)){
+                $dado = $resultado->fetch_assoc();
+                if($dado["total"] == 1){
+                    //pega os dados do usuário com este id e passa para a sessão
+                    $sql_code = "SELECT nome_usuario, email_usuario FROM usuarios WHERE id_usuario = $id";
+
+                    if($resultado = $mysqli->query($sql_code)){
+                       $dado = $resultado->fetch_assoc();
+
+                       //passando os dados para a sessão
+                       $_SESSION['id'] = $id;
+                       $_SESSION['nome'] = $dado['nome_usuario'];
+                       $_SESSION['email'] = $dado['email_usuario'];
+
+                    } else {
+                        header("Location: erro-conexao-banco.php");
+                    }
+                } else {
+                    //se não tiver o id no db encaminha para o login
+                    header("Location: login.php");
+                }
+            } else {
+                
+            } 
+        } else {
+            
+        }
+    }
+
     function verificarSessao(){
         if(!isset($_SESSION['nome']) || !isset($_SESSION['email'])){
             header("Location: erro-fazer-login.php");   
@@ -121,9 +160,17 @@
                 //verificando se a senha bate com a do banco
                 if(password_verify($senha, $linha['senha_usuario'])){
                     
+                    //armazenando dados na sessão
                     $_SESSION['id'] = $linha['id_usuario'];
                     $_SESSION['nome'] = $linha['nome_usuario'];
                     $_SESSION['email'] = $email;
+
+                    //armazenando id nos cookies para usuário se manter logado
+                    //duração que o id vai ficar armazenado
+                    $duracao = time() + (7 * 24 * 60 * 60);
+                    $id = $linha['id_usuario'];
+
+                    setcookie('usuario_logado', $id, $duracao, "/", "", true, true);
 
                     header("Location: painel.php");
                     exit();

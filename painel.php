@@ -98,12 +98,15 @@ adicionarDespesa($mysqli);
                         <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
 
                         <p class="poppins-regular text-light my-3">
-                            Oi <span class="texto-primario"><?php echo $_SESSION['nome']; ?></span>, bom te ver! Use o painel abaixo para adicionar uma nova despesa ou receita do seu dia.
+                            Oi <span class="texto-primario"><?php echo $_SESSION['nome']; ?></span>, bom te ver! Use o painel abaixo para adicionar uma movimentação.
                         </p>
                     </div>
-                    <div class="col-12 mt-3">
-                            <a class="btn botao-atencao poppins-regular p-3 w-100" href="atualizacoes.php" target="_blank"> <i class="fa-solid fa-up-right-from-square fa-lg mr-2" style="color: #000000;"></i> Notas da atualização</a>
+                    
+                     <!--ENCAMINHAR RELATORIOS-->
+                    <div class="col-12 mt-4">
+                        <a class="btn botao-primario poppins-regular p-3 w-100" href="relatorios.php">Conferir relatórios da <span class="disabled"><i class="bi bi-stars"></i>Eliza</span></a>
                     </div>
+                    
                 </div>
                 
                 <div class="row d-flex p-3 background-menus justify-content-around borda-baixo">
@@ -170,13 +173,6 @@ adicionarDespesa($mysqli);
                             </form>
                         </div>
                     </div>
-
-                    
-                    
-                    <!--ENCAMINHAR RELATORIOS-->
-                    <div class="col-12 mt-4">
-                        <a class="btn botao-primario poppins-regular p-3 w-100" href="relatorios.php">Conferir relatórios da <span class="disabled"><i class="bi bi-stars"></i>Eliza</span></a>
-                    </div>
                     
                     <!--ENCAMINHAR EXCLUSÃO DADOS-->
                     <div class="col-12 mt-4">
@@ -186,13 +182,9 @@ adicionarDespesa($mysqli);
                     <!--INTERAÇÃO ELIZA-->
                     <div class="col-12 relatorio-eliza mt-5 text-left p-4 background-preto">
                         <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
-
-                        <p class="poppins-regular text-light my-3">
-                            Ao clicar no botão azul, vou te levar para os meus <span class="texto-primario">relatórios</span>, lá posso te apresentar gráficos com os dados que você me forneceu!
-                        </p>
-
+                        
                         <p class="poppins-regular text-light mt-3 mb-2">
-                            Abaixo do botão azul existe um outro botão quase invisível, clicando nele você vai para a página de exclusão de dados.
+                            Logo acima existe um botão quase invisível, clicando nele você vai para a página de exclusão de dados.
                         </p>
                     </div>
                 </div>

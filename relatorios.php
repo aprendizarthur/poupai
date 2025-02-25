@@ -154,7 +154,7 @@ buscarDados($mysqli);
                         <hr class="d-block d-md-none">
                         <h3 class="inter-regular mt-4">Distribuição receitas</h3>
                         <small class="poppins-light">Clique no gráfico para ver detalhes</small>
-                        <canvas class="d-flex mt-3 mb-3" id="graficoReceita" width="100%" style="max-height: 320px;"></canvas>
+                        <canvas class="d-flex mt-3 mb-3" id="graficoReceita" width="100%" style="max-height: 335px;"></canvas>
                     </div>
                 </div>
 

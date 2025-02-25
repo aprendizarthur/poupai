@@ -83,7 +83,7 @@
   <img src="assets/eliza.jpg" style="border-radius: 20px; height: auto;">
 </div>
 
-<div align="center" style="margin-top: 10px">
+<div align="center" style="margin-top: 20px">
   <img src="assets/login.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
 </div>
 

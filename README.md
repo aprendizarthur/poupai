@@ -56,16 +56,16 @@
   <h2>Relatórios da assistente Eliza (não é IA, apenas uma sacada de UX)</h2> <br>
 </div>
 
+<div align="center">
+  <img src="assets/eliza.jpg" style="border-radius: 20px; height: auto;">
+</div>
+
 <div align="center" style="margin-top: 20px; margin-bottom: 20px;">
   <h2>Navegação otimizada para mobile</h2> <br>
 </div>
 
 <div align="center">
   <img src="assets/navegacao2.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
-</div>
-
-<div align="center">
-  <img src="assets/eliza.jpg" style="border-radius: 20px; height: auto;">
 </div>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">

@@ -295,29 +295,29 @@
     function buscarDados($mysqli){
         
         $id = $_SESSION['id'];
-
+        $dataAtual = date('Y-m-d');
+            
         $sql_code = "SELECT 
         SUM(CASE WHEN valor < 0 THEN valor ELSE 0 END) AS totalDespesa,
         SUM(CASE WHEN valor > 0 THEN valor ELSE 0 END) AS totalReceita,
-        COUNT(*) AS totalMovimentacoes FROM movimentacoes WHERE id_usuario = '$id'
-        ";
+        COUNT(*) AS totalMovimentacoes FROM movimentacoes WHERE id_usuario = '$id' AND MONTH(data_movimentacao) = MONTH('$dataAtual') AND YEAR(data_movimentacao) = YEAR('$dataAtual')";
 
         if($resultado = $mysqli->query($sql_code)){
             $dados = $resultado->fetch_assoc();
 
-            $_SESSION['totalDespesa'] = $dados['totalDespesa'] ?? 0;
-            $_SESSION['totalReceita'] = $dados['totalReceita'] ?? 0;
-            $_SESSION['totalMovimentacoes'] = $dados['totalMovimentacoes'] ?? 0;
+            $_SESSION['despesa'] = $dados['totalDespesa'] ?? 0;
+            $_SESSION['receita'] = $dados['totalReceita'] ?? 0;
+            $_SESSION['movimentacoes'] = $dados['totalMovimentacoes'] ?? 0;
 
             //comentário que a eliza vai fazer dependendo da relação entre receita x despesa do usuário
-            $_SESSION['elizaMontante'] = "";
+            $elizaMontante = "";
 
             switch (true) {
-                case  (-$_SESSION['totalDespesa']) > $_SESSION['totalReceita']:
+                case  ($_SESSION['despesa'] > $_SESSION['receita']):
                     $_SESSION['elizaMontante'] = "Suas despesas mensais estão ultrapassando suas receitas. Considere revisar seus gastos, cortar despesas não essenciais ou buscar formas de aumentar sua renda para equilibrar o orçamento.";
                     break;
                 
-                case (-$_SESSION['totalDespesa']) < $_SESSION['totalReceita']:
+                case ($_SESSION['receita'] > $_SESSION['despesa']):
                     $_SESSION['elizaMontante'] = "Suas despesas estão em um nível saudável. Isso significa que você tem uma boa margem para economizar ou investir!";
                     break;
             }

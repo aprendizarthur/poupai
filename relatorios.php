@@ -127,7 +127,7 @@ salvaExtrato($mysqli);
                             </p>
 
                             <p class="poppins-regular text-light my-3">
-                                Você realizou <?php echo $_SESSION['totalMovimentacoes']; ?> movimentações, totalizando R$<?php echo -$_SESSION['totalDespesa']; ?> em despesas e R$<?php echo $_SESSION['totalReceita']; ?> em receitas.
+                                Você realizou <?php echo $_SESSION['movimentacoes']; ?> movimentações, totalizando R$<?php echo -$_SESSION['despesa']; ?> em despesas e R$<?php echo $_SESSION['receita']; ?> em receitas.
                             </p>
 
                             <p class="poppins-regular text-light my-3">

@@ -59,14 +59,10 @@ include('functions.php');
 
                 <!--LOGIN-->
                 <div class="col-11 col-md-6 col-lg-5 background-menus text-center shadow border p-5" style="border-radius: 0px 0px 0px 12px">
-                    <h3 class="inter-bold">DADO EXCLUÍDO</h3>
+                    <h3 class="inter-bold d-md-none mb-5">DADO EXCLUÍDO</h3>
 
-                    <!--TELA DE ERRO-->
-                    <div class="caixa-interna-sucesso text-center p-4 my-4">
-                        <p class="poppins-regular">
-                            Dado excluído com sucesso!
-                        </p>
-                    </div>
+                    <h3 class="inter-bold d-none d-md-block my-4">DADO EXCLUÍDO</h3>
+
 
                     <a class="btn botao-primario poppins-regular p-3 w-100" href="excluir.php">Voltar</a>
                 </div>

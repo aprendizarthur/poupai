@@ -46,30 +46,18 @@ include('functions.php');
                 <div class="d-md-none col-11 col-md-6 col-lg-5 background-preto relatorio-eliza p-5" style="border-radius: 12px 12px 0px 0px">
                     <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
                     <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        A sua mensagem de contato foi enviada!
-                    </p>
-
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
                         Agradeçemos o seu contato, logo você terá uma resposta. 
-                    </p> 
-                    
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Tomara que não tenha sido uma reclamação... Né?
                     </p> 
                 </div>
 
                 <!--LOGIN-->
                 <div class="col-11 col-md-6 col-lg-5 background-menus text-center shadow border p-5" style="border-radius: 0px 0px 0px 12px">
-                    <h3 class="inter-bold">MENSAGEM ENVIADA</h3>
+                    <h3 class="inter-bold d-md-none mb-5">MENSAGEM ENVIADA</h3>
 
-                    <!--TELA DE ERRO-->
-                    <div class="caixa-interna-sucesso text-center p-4 my-4">
-                        <p class="poppins-regular">
-                            Mensagem de contato enviado com sucesso!
-                        </p>
-                    </div>
+                    <h3 class="inter-bold d-none d-md-block my-5">MENSAGEM ENVIADA</h3>
 
-                    <a class="btn botao-primario poppins-regular p-3 w-100" href="index.php">Voltar</a>
+
+                    <a class="btn botao-primario poppins-regular p-3 w-100" href="index.php"><i class="fa-solid fa-arrow-left fa-lg mr-2" style="color: #ffffff;"></i>Voltar</a>
                 </div>
 
                 <!--INTERAÇÃO ELIZA TELAS MEDIAS ACIMA-->

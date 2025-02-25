@@ -49,34 +49,16 @@ include('functions.php');
                 <div class="d-md-none col-11 col-md-6 col-lg-5 background-preto relatorio-eliza p-5" style="border-radius: 12px 12px 0px 0px">
                     <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
                     <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Ahhh que droga, você deve ter se enganado!
+                        Erro na confirmação da senha, na hora de confirmar você digitou ela diferente.
                     </p>
-
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Sem pressão, só tenta novamente colocando a senha e confirmando ela direitinho. 
-                    </p> 
-                    
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Estou te esperando no painel!
-                    </p> 
                 </div>
 
                 <!--LOGIN-->
                 <div class="col-11 col-md-6 col-lg-5 background-menus text-center shadow border p-5" style="border-radius: 0px 0px 0px 12px">
-                    <h3 class="inter-bold">ERRO AO REGISTRAR</h3>
+                    <h3 class="inter-bold d-md-none mb-5">ERRO AO REGISTRAR</h3>
+                    <h3 class="inter-bold d-none d-md-block my-5">ERRO AO REGISTRAR</h3>
 
-                    <!--TELA DE ERRO-->
-                    <div class="caixa-interna-erro text-center p-4 my-4">
-                        <p class="poppins-regular">
-                            Erro na confirmação da senha.
-                        </p>
-
-                        <p class="poppins-regular">
-                            Ao repetir a senha, você digitou ela diferente.
-                        </p>
-                    </div>
-
-                    <a class="btn botao-primario poppins-regular p-3 w-100" href="registro.php">Tentar novamente</a>
+                    <a class="btn botao-primario poppins-regular p-3 w-100" href="registro.php"><i class="fa-solid fa-rotate-right fa-lg mr-2" style="color: #ffffff;"></i>Tentar novamente</a>
                 </div>
 
                 <!--INTERAÇÃO ELIZA TELAS MEDIAS ACIMA-->

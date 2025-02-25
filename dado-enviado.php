@@ -51,29 +51,26 @@ verificarSessao();
                 <div class="d-md-none col-11 col-md-6 col-lg-5 background-preto relatorio-eliza p-5" style="border-radius: 12px 12px 0px 0px">
                     <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
                     <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Isso aí <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span>!
+                        Isso aí <span class="texto-primario"><?php echo $_SESSION['nome']; ?></span>!
                     </p>
 
                     <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Cada informação é um passo à frente na sua jornada para a liberdade financeira.
+                        Cada informação é um passo na sua jornada para a liberdade financeira.
                     </p>  
 
                 </div>
 
                 <!--LOGIN-->
                 <div class="col-11 col-md-6 col-lg-5 background-menus text-center shadow border p-5" style="border-radius: 0px 0px 0px 12px">
-                    <a class="btn botao-primario d-block d-md-none poppins-regular p-3 mb-5 w-100" href="painel.php"><i class="fa-brands fa-wpforms fa-lg mr-2" style="color: #ffffff;"></i> Voltar ao painel</a>
                     
-                    <h3 class="inter-bold">DADO ENVIADO</h3>
+                    <h3 class="inter-bold d-md-none mb-5">DADO ENVIADO</h3>
+                    
+                    <a class="btn botao-primario d-block d-md-none poppins-regular p-3 w-100" href="painel.php"><i class="fa-brands fa-wpforms fa-lg mr-2" style="color: #ffffff;"></i> Voltar ao painel</a>
+                    
+                    
+                    <h3 class="inter-bold d-none d-md-block mt-5">DADO ENVIADO</h3>
 
-                    <!--TELA DE SUCESSO-->
-                    <div class="caixa-interna-sucesso text-center p-4 my-4">
-                        <p class="poppins-regular">
-                            Dado enviado com sucesso!
-                        </p>
-                    </div>
-
-                    <a class="btn botao-primario d-none d-md-block poppins-regular p-3 mb-5 w-100" href="painel.php"><i class="fa-brands fa-wpforms fa-lg mr-2" style="color: #ffffff;"></i> Voltar ao painel</a>
+                    <a class="btn botao-primario mt-5 d-none d-md-block poppins-regular p-3 mb-5 w-100" href="painel.php"><i class="fa-brands fa-wpforms fa-lg mr-2" style="color: #ffffff;"></i> Voltar ao painel</a>
 
                 </div>
 
@@ -81,7 +78,7 @@ verificarSessao();
                 <div class="d-none d-md-block col-11 col-md-6 col-lg-5 background-preto relatorio-eliza p-5" style="border-radius: 0px 0px 12px 0px">
                     <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
                     <p class="poppins-regular eliza-crud text-light my-3">
-                        Isso aí <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span>!
+                        Isso aí <span class="texto-primario"><?php echo $_SESSION['nome']; ?></span>!
                     </p>
 
                     <p class="poppins-regular eliza-crud text-light my-3">

@@ -48,28 +48,15 @@ include('functions.php');
                     <p class="poppins-regular eliza-crud-sm text-light my-3">
                         Ahh que pena, a sua mensagem não chegou até nós.
                     </p>
-
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Tente novamente clicando no botão azul!
-                    </p> 
-                    
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Dessa vez vai dar certo...
-                    </p> 
                 </div>
 
                 <!--LOGIN-->
                 <div class="col-11 col-md-6 col-lg-5 background-menus text-center shadow border p-5" style="border-radius: 0px 0px 0px 12px">
-                    <h3 class="inter-bold">ERRO AO ENVIAR MENSAGEM</h3>
+                    <h3 class="inter-bold d-md-none mb-5">ERRO AO ENVIAR MENSAGEM</h3>
 
-                    <!--TELA DE ERRO-->
-                    <div class="caixa-interna-erro text-center p-4 my-4">
-                        <p class="poppins-regular">
-                            Ocorreu um erro ao enviar a sua mensagem de contato!
-                        </p>
-                    </div>
+                    <h3 class="inter-bold d-none d-md-block my-5">ERRO AO ENVIAR MENSAGEM</h3>
 
-                    <a class="btn botao-primario poppins-regular p-3 w-100" href="contato.php">Tentar novamente</a>
+                    <a class="btn botao-primario poppins-regular p-3 w-100" href="contato.php"><i class="fa-solid fa-rotate-right fa-lg mr-2" style="color: #ffffff;"></i>Tentar novamente</a>
                 </div>
 
                 <!--INTERAÇÃO ELIZA TELAS MEDIAS ACIMA-->

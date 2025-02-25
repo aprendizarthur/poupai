@@ -10,7 +10,7 @@ adicionarReceita($mysqli);
 //FUNCAO ADICIONAR DESPESA
 adicionarDespesa($mysqli);
 //FUNCAO SALVAR EXTRATO ULTIMO DIA DO MÊS
-salvaExtrato($mysqli);
+
 ?>
 
 <!DOCTYPE html>

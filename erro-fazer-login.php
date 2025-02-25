@@ -48,31 +48,19 @@ include('functions.php');
                 <!--INTERAÇÃO ELIZA TELAS PEQUENAS-->
                 <div class="d-md-none col-11 col-md-6 col-lg-5 background-preto relatorio-eliza p-5" style="border-radius: 12px 12px 0px 0px">
                     <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Ahhh que droga, você deve ter se enganado!
-                    </p>
-
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Ou tentou ser espertinho... 
-                    </p> 
                     
                     <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Por favor faça login para acessar este conteúdo. 
+                        Por favor faça login para acessar esta página. 
                     </p> 
                 </div>
 
                 <!--LOGIN-->
                 <div class="col-11 col-md-6 col-lg-5 background-menus text-center shadow border p-5" style="border-radius: 0px 0px 0px 12px">
-                    <h3 class="inter-bold">ERRO AO ACESSAR</h3>
+                    <h3 class="inter-bold mb-5 d-mb-none">ERRO AO ACESSAR</h3>
 
-                    <!--TELA DE ERRO-->
-                    <div class="caixa-interna-erro text-center p-4 my-4">
-                        <p class="poppins-regular">
-                            Você precisa estar conectado para acessar esta página.
-                        </p>
-                    </div>
+                    <h3 class="inter-bold d-none d-mb-block my-5 ">ERRO AO ACESSAR</h3>
 
-                    <a class="btn botao-primario poppins-regular p-3 w-100" href="login.php">Conectar</a>
+                    <a class="btn botao-primario poppins-regular p-3 w-100" href="login.php"><i class="fa-solid fa-right-to-bracket fa-lg mr-2" style="color: #ffffff;"></i>Fazer login</a>
                 </div>
 
                 <!--INTERAÇÃO ELIZA TELAS MEDIAS ACIMA-->

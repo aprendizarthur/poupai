@@ -47,16 +47,9 @@ excluirDado($mysqli);
                 <!--INTERAÇÃO ELIZA TELAS PEQUENAS-->
                 <div class="d-md-none col-11 col-md-6 col-lg-5 background-preto relatorio-eliza p-5" style="border-radius: 12px 12px 0px 0px">
                     <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Se você adicionou um dado errado, faz sentido excluir.
-                    </p>
 
                     <p class="poppins-regular eliza-crud-sm text-light my-3">
                         Só tenha certeza que clicou para excluir o certo! 
-                    </p> 
-                    
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Eu te avisei...
                     </p> 
                 </div>
 
@@ -68,9 +61,9 @@ excluirDado($mysqli);
                     <div class="caixa-interna text-center p-4 my-4">
                         <p class="poppins-regular">
                             <form method="POST">
-                                <button type="submit" name="confirmacao" value="1" class="btn botao-despesa poppins-regular p-3 my-2 w-100">Excluir</button>
+                                <button type="submit" name="confirmacao" value="1" class="btn botao-despesa poppins-regular p-3 my-2 w-100"><i class="fa-solid fa-check fa-lg mr-2" style="color: #ffffff;"></i>Excluir</button>
                                 
-                                <a class="btn botao-receita poppins-regular p-3 my-2 w-100" href="excluir.php">Cancelar</a>   
+                                <a class="btn botao-receita poppins-regular p-3 my-2 w-100" href="excluir.php"><i class="fa-solid fa-xmark fa-lg mr-2" style="color: #ffffff;"></i>Cancelar</a>   
                             </form>
                             
                         </p>

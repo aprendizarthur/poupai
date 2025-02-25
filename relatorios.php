@@ -7,7 +7,7 @@ verificarSessao();
 //FUNÇÃO RECUPERAR DADOS DO BANCO PARA PARECER ELIZA
 buscarDados($mysqli);
 //FUNCAO SALVAR EXTRATO ULTIMO DIA DO MÊS
-salvaExtrato($mysqli);
+
 
 ?>
 

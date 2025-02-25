@@ -50,9 +50,6 @@ verificarSessao();
                 <!--INTERAÇÃO ELIZA TELAS PEQUENAS-->
                 <div class="d-md-none col-11 col-md-6 col-lg-5 background-preto relatorio-eliza p-5" style="border-radius: 12px 12px 0px 0px">
                     <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                    Poxa <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span>, me desculpa!
-                    </p>
 
                     <p class="poppins-regular eliza-crud-sm text-light my-3">
                         Por favor, tente enviar a movimentação novamente.
@@ -62,18 +59,12 @@ verificarSessao();
 
                 <!--LOGIN-->
                 <div class="col-11 col-md-6 col-lg-5 background-menus text-center shadow border p-5" style="border-radius: 0px 0px 0px 12px">
-                    <a class="btn botao-primario d-block d-md-none poppins-regular p-3 mb-5 w-100" href="painel.php">Voltar ao painel</a>
                     
-                    <h3 class="inter-bold">ERRO AO ENVIAR DADO</h3>
+                    <h3 class="inter-bold d-md-none mb-5">ERRO AO ENVIAR DADO</h3>
 
-                    <!--TELA DE ERRO-->
-                    <div class="caixa-interna-erro text-center p-4 my-4">
-                        <p class="poppins-regular">
-                            Sua movimentação não chegou ao nosso banco de dados!
-                        </p>
-                    </div>
+                    <h3 class="inter-bold d-none d-md-block my-5">ERRO AO ENVIAR</h3>
 
-                    <a class="btn botao-primario d-none d-md-block poppins-regular p-3 mb-5 w-100" href="painel.php">Voltar ao painel</a>
+                    <a class="btn botao-primario poppins-regular p-3 mb-5 w-100" href="painel.php"><i class="fa-brands fa-wpforms fa-lg mr-2" style="color: #ffffff;"></i>Voltar ao painel</a>
 
                 </div>
 
@@ -81,7 +72,7 @@ verificarSessao();
                 <div class="d-none d-md-block col-11 col-md-6 col-lg-5 background-preto relatorio-eliza p-5" style="border-radius: 0px 0px 12px 0px">
                     <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
                     <p class="poppins-regular eliza-crud text-light my-3">
-                        Poxa <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span>, me desculpa!
+                        Poxa <span class="texto-primario"><?php echo $_SESSION['nome']; ?></span>, me desculpa!
                     </p>
 
                     <p class="poppins-regular eliza-crud text-light my-3">

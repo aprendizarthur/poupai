@@ -230,7 +230,8 @@ select{
 
 .extrato summary{
     border: solid 1px #969696;
-    border-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     background-color: #1F1F21;
     color: #FFFFFF;
     font-size: 1.15rem;

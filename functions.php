@@ -407,51 +407,51 @@
                                     <tbody>
                                         <tr>
                                             <td>Moradia</td>
-                                            <td style=\"color: red;\">R$" . $dados['totalMoradia'] .  "</td>
+                                            <td style=\"text-align: right; color: red;\">R$" . $dados['totalMoradia'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Alimentação</td>
-                                            <td style=\"color: red;\">R$" . $dados['totalAlimentacao'] .  "</td>
+                                            <td style=\"text-align: right; color: red;\">R$" . $dados['totalAlimentacao'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Saúde</td>
-                                            <td style=\"color: red;\">R$" . $dados['totalSaude'] .  "</td>
+                                            <td style=\"text-align: right; color: red;\">R$" . $dados['totalSaude'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Cuidados Pessoais</td>
-                                            <td style=\"color: red;\">R$" . $dados['totalCuidados'] .  "</td>
+                                            <td style=\"text-align: right; color: red;\">R$" . $dados['totalCuidados'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Investimentos</td>
-                                            <td style=\"color: red;\">R$" . $dados['totalInvestimentosDESP'] .  "</td>
+                                            <td style=\"text-align: right; color: red;\">R$" . $dados['totalInvestimentosDESP'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Transporte</td>
-                                            <td style=\"color: red;\">R$" . $dados['totalTransporte'] .  "</td>
+                                            <td style=\"text-align: right; color: red;\">R$" . $dados['totalTransporte'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Educação</td>
-                                            <td style=\"color: red;\">R$" . $dados['totalEducacao'] .  "</td>
+                                            <td style=\"text-align: right; color: red;\">R$" . $dados['totalEducacao'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Lazer</td>
-                                            <td style=\"color: red;\">R$" . $dados['totalLazer'] .  "</td>
+                                            <td style=\"text-align: right; color: red;\">R$" . $dados['totalLazer'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Compras</td>
-                                            <td style=\"color: red;\">R$" . $dados['totalCompras'] .  "</td>
+                                            <td style=\"text-align: right; color: red;\">R$" . $dados['totalCompras'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Impostos</td>
-                                            <td style=\"color: red;\">R$" . $dados['totalImpostos'] .  "</td>
+                                            <td style=\"text-align: right; color: red;\">R$" . $dados['totalImpostos'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Dívidas</td>
-                                            <td style=\"color: red;\">R$" . $dados['totalDividas'] .  "</td>
+                                            <td style=\"text-align: right; color: red;\">R$" . $dados['totalDividas'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Crédito</td>
-                                            <td style=\"color: red;\">R$" . $dados['totalCredito'] .  "</td>
+                                            <td style=\"text-align: right; color: red;\">R$" . $dados['totalCredito'] .  "</td>
                                         </tr>
                                     </tbody>
                                 </table> 
@@ -510,23 +510,23 @@
                                     <tbody>
                                         <tr>
                                             <td>Salário</td>
-                                            <td style=\"color: green;\">R$" . $dados['totalSalario'] .  "</td>
+                                            <td style=\"text-align: right; color: green;\">R$" . $dados['totalSalario'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Extra</td>
-                                            <td style=\"color: green;\">R$" . $dados['totalExtra'] .  "</td>
+                                            <td style=\"text-align: right; color: green;\">R$" . $dados['totalExtra'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Investimentos</td>
-                                            <td  style=\"color: green;\">R$" . $dados['totalInvestimentosREC'] .  "</td>
+                                            <td  style=\"text-align: right; color: green;\">R$" . $dados['totalInvestimentosREC'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Presentes</td>
-                                            <td style=\"color: green;\">R$" . $dados['totalPresentes'] .  "</td>
+                                            <td style=\"text-align: right; color: green;\">R$" . $dados['totalPresentes'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Reembolsos</td>
-                                            <td style=\"color: green;\">R$" . $dados['totalReembolsos'] .  "</td>
+                                            <td style=\"text-align: right; color: green;\">R$" . $dados['totalReembolsos'] .  "</td>
                                         </tr>
                                     </tbody>
                                 </table> 
@@ -810,7 +810,7 @@
 
                     while($dados = $resultado->fetch_assoc()){
                        echo "
-                       <details class=\"extrato mb-2\">
+                       <details class=\"extrato mb-4\">
                             <summary class=\"poppins-bold p-3\">" . $dados['mes'] . "/" . $dados['ano'] . "</summary>
                             <div class=\"p-4 background-branco\" style=\"border-top-left-radius: 0px;border-top-right-radius: 0px;\">
                                 

@@ -91,3 +91,11 @@
   <img src="assets/navegacao2.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
 </div>
 
+<div align="center">
+  <img src="assets/navegacao3.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
+</div>
+
+<div align="center">
+  <img src="assets/navegacao1.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
+</div>
+

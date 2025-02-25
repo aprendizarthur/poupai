@@ -90,12 +90,22 @@ verificarSessao();
                             <span class="texto-primario-2"><?php echo $_SESSION['nome']; ?></span> aqui você exclui dados que enviou sem querer. Para fazer isso é só cliclar no ícone vermelho ao lado do dado escolhido.
                         </p>
                     </div>
+
+                    <div class="col-12 my-3">
+                        <a class="btn botao-primario poppins-regular p-3 w-100" href="painel.php"><i class="fa-brands fa-wpforms fa-lg mr-2" style="color: #ffffff;"></i> Voltar ao painel</a>
+                    </div>
+
+                    <div class="col-12 mty-3">
+                        <a class="btn botao-primario poppins-regular p-3 w-100" href="relatorios.php">Conferir relatórios da <span class="disabled"><i class="bi bi-stars"></i>Eliza</span></a>
+                    </div>
                 </div>
 
                 <div class="row p-3 d-flex background-menus text-center justify-content-center borda-baixo">
                     <!--LISTA COM DADOS-->
                     <div class="col-12">
-                        <h6 giclass="poppins-light d-block mb-3">Últimos 10 dados adicionados</h6>
+                        <h2 class="inter-bold mt-2 mb-4">Excluir dados</h2>   
+
+                        <h6 class="poppins-light d-block mb-3">Últimos 10 dados adicionados</h6>
                         <table class="table">
                             <thead>
                                 <tr>

@@ -155,7 +155,6 @@ buscarDados($mysqli);
                     
                     <!--GRAFICO RECEITA-->
                     <div class="col-12 col-md-12 col-lg-6 text-center">
-                        <hr class="d-block d-md-none">
                         <h3 class="inter-regular mt-4">Distribuição receitas</h3>
                         <small class="poppins-light">Clique no gráfico para ver detalhes</small>
                         <canvas class="d-flex mt-3 mb-3" id="graficoReceita" width="100%" style="max-height: 300px;"></canvas>
@@ -176,7 +175,7 @@ buscarDados($mysqli);
                 <div class="row d-flex background-menus justify-content-center borda-baixo">
                     <div class="col-12 text-center px-5">
                         <h2 class="inter-bold d-md-none mt-5">Extratos mensais</h2>
-                        <h2 class="inter-bold d-none d-mb-block">Extratos mensais</h2>
+                        <h2 class="inter-bold d-none d-mb-block d-lg-block">Extratos mensais</h2>
                         <small class="poppins-light mb-4">Últimos seis meses</small>
 
                         <p class="poppins-light border text-center p-3 mt-3 mb-3" style="border-radius: 12px;">

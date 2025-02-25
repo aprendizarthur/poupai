@@ -6,7 +6,6 @@ fetch('dados-relatorios.php')
     return response.json();
   })
   .then(data => {
-    console.log(data);
 
     // GRÁFICO DESPESAS
     const ctx = document.getElementById('graficoDespesa').getContext('2d');

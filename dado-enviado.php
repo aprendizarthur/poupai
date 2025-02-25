@@ -17,7 +17,7 @@ verificarSessao();
     <title>POUPAÍ - Dado enviado</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <meta name="description" content="Tome controle das suas finanças hoje mesmo. Cadastre-se e comece a economizar! Receba de graça relatórios detalhados!">
-    <meta name="theme-color" content="#FFFFFF">
+    <meta name="theme-color" content="#319949">
     
 <!--BOOTSTRAP CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">

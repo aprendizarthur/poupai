@@ -76,11 +76,15 @@
 </div>
 
 <div align="center" style="margin-top: 20px; margin-bottom: 20px;">
-  <h2>Relatórios da assistente Eliza (não é IA, apenas uma sacada de UX)</h2> <br>
+  <h2>Relatórios e interações da assistente Eliza (não é IA, apenas uma sacada de UX)</h2> <br>
 </div>
 
 <div align="center">
   <img src="assets/eliza.jpg" style="border-radius: 20px; height: auto;">
+</div>
+
+<div align="center" style="margin-top: 10px">
+  <img src="assets/login.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
 </div>
 
 <div align="center" style="margin-top: 20px; margin-bottom: 20px;">
@@ -95,7 +99,4 @@
   <img src="assets/navegacao1.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
 </div>
 
-<div align="center">
-  <img src="assets/login.jpg" style="border-radius: 20px; max-width: 80%; height: auto;">
-</div>
 

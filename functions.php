@@ -291,13 +291,13 @@
             }
         }
     }
-//FUNCAO COLETAR DADOS PARA RELATORIOS (SEM SER GRAFICO)
+//FUNCAO COLETAR DADOS PARA RELATORIOS ELIZA
     function buscarDados($mysqli){
         
         $id = $_SESSION['id'];
         $dataAtual = date('Y-m-d');
             
-        $sql_code = "SELECT 
+        $sql_code = "SELECT
         SUM(CASE WHEN valor < 0 THEN valor ELSE 0 END) AS totalDespesa,
         SUM(CASE WHEN valor > 0 THEN valor ELSE 0 END) AS totalReceita,
         COUNT(*) AS totalMovimentacoes FROM movimentacoes WHERE id_usuario = '$id' AND MONTH(data_movimentacao) = MONTH('$dataAtual') AND YEAR(data_movimentacao) = YEAR('$dataAtual')";
@@ -313,11 +313,11 @@
             $elizaMontante = "";
 
             switch (true) {
-                case  ($_SESSION['despesa'] > $_SESSION['receita']):
-                    $_SESSION['elizaMontante'] = "Suas despesas mensais estão ultrapassando suas receitas. Considere revisar seus gastos, cortar despesas não essenciais ou buscar formas de aumentar sua renda para equilibrar o orçamento.";
+                case  (-$_SESSION['despesa'] > $_SESSION['receita']):
+                    $_SESSION['elizaMontante'] = "<span class=\"texto-primario\">Considere revisar seus gastos, cortar despesas não essenciais ou buscar formas de aumentar sua renda para equilibrar o orçamento.</span>";
                     break;
                 
-                case ($_SESSION['receita'] > $_SESSION['despesa']):
+                case ($_SESSION['receita'] > -$_SESSION['despesa']):
                     $_SESSION['elizaMontante'] = "Suas despesas estão em um nível saudável. Isso significa que você tem uma boa margem para economizar ou investir!";
                     break;
             }
@@ -351,6 +351,365 @@
             }
         }
     }
+
+//FUNÇÃO QUE BUSCA E MOSTRA DETALHES DAS DESPESASD O MÊS
+    function verDespesas($mysqli){
+
+        $id = $_SESSION['id'];
+        $dataAtual = date('Y-m-d');
+
+        $sql_code = "SELECT
+
+            SUM(CASE WHEN valor < 0 THEN valor ELSE 0 END) AS despesa,
+            SUM(CASE WHEN valor > 0 THEN valor ELSE 0 END) AS receita,
+            SUM(CASE WHEN categoria = 'moradia' THEN valor else 0 END) AS totalMoradia,
+            SUM(CASE WHEN categoria = 'alimentacao' THEN valor else 0 END) AS totalAlimentacao,
+            SUM(CASE WHEN categoria = 'saude' THEN valor else 0 END) AS totalSaude,
+            SUM(CASE WHEN categoria = 'transporte' THEN valor else 0 END) AS totalTransporte,
+            SUM(CASE WHEN categoria = 'educacao' THEN valor else 0 END) AS totalEducacao,
+            SUM(CASE WHEN categoria = 'lazer' THEN valor else 0 END) AS totalLazer,
+            SUM(CASE WHEN categoria = 'compras' THEN valor else 0 END) AS totalCompras,
+            SUM(CASE WHEN categoria = 'impostos' THEN valor else 0 END) AS totalImpostos,
+            SUM(CASE WHEN categoria = 'dividas' THEN valor else 0 END) AS totalDividas,
+            SUM(CASE WHEN categoria = 'credito' THEN valor else 0 END) AS totalCredito,
+            SUM(CASE WHEN categoria = 'investimentosDESP' THEN valor else 0 END) AS totalInvestimentosDESP,
+            SUM(CASE WHEN categoria = 'cuidados-pessoais' THEN valor else 0 END) AS totalCuidados,
+            COUNT(*) AS totalMovimentacoes 
+        FROM movimentacoes WHERE id_usuario = '$id' AND MONTH(data_movimentacao) = MONTH('$dataAtual') AND YEAR(data_movimentacao) = YEAR('$dataAtual')";
+    
+        if($resultado = $mysqli->query($sql_code)){
+            
+            $dados = $resultado->fetch_assoc();
+
+            echo "
+                <details class=\"extrato mb-2\">
+                    <summary class=\"poppins-regular p-3\">Detalhes</summary>
+                        <div class=\"p-4 background-branco\" style=\"border-top-left-radius: 0px;border-top-right-radius: 0px;\">
+                                
+                            <h5 class=\"inter-bold mb-3\">Resumo rápido</h5>
+
+                            <table class=\"table border justify-content-center\">
+                                <thead style=\"background-color: #1F1F21; color: white;\">
+                                    <tr>
+                                        <th>Total despesas</th>    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style=\"color: red;\">R$" . -$dados['despesa'] . "</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 class=\"inter-bold mb-3\">Extrato</h5>
+
+                                <table class=\"table border\">
+                                    <tbody>
+                                        <tr>
+                                            <td>Moradia</td>
+                                            <td style=\"color: red;\">R$" . $dados['totalMoradia'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alimentação</td>
+                                            <td style=\"color: red;\">R$" . $dados['totalAlimentacao'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Saúde</td>
+                                            <td style=\"color: red;\">R$" . $dados['totalSaude'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cuidados Pessoais</td>
+                                            <td style=\"color: red;\">R$" . $dados['totalCuidados'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Investimentos</td>
+                                            <td style=\"color: red;\">R$" . $dados['totalInvestimentosDESP'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Transporte</td>
+                                            <td style=\"color: red;\">R$" . $dados['totalTransporte'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Educação</td>
+                                            <td style=\"color: red;\">R$" . $dados['totalEducacao'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lazer</td>
+                                            <td style=\"color: red;\">R$" . $dados['totalLazer'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Compras</td>
+                                            <td style=\"color: red;\">R$" . $dados['totalCompras'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Impostos</td>
+                                            <td style=\"color: red;\">R$" . $dados['totalImpostos'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dívidas</td>
+                                            <td style=\"color: red;\">R$" . $dados['totalDividas'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Crédito</td>
+                                            <td style=\"color: red;\">R$" . $dados['totalCredito'] .  "</td>
+                                        </tr>
+                                    </tbody>
+                                </table> 
+                        </div>
+                </details>
+            ";
+
+        } else {
+            header("Location: erro-conexao-banco.php");
+        }
+    }
+
+    //FUNÇÃO QUE BUSCA E MOSTRA DETALHES DAS DESPESASD O MÊS
+    function verReceitas($mysqli){
+
+        $id = $_SESSION['id'];
+        $dataAtual = date('Y-m-d');
+
+        $sql_code = "SELECT
+            SUM(CASE WHEN valor > 0 THEN valor ELSE 0 END) AS receita,
+            SUM(CASE WHEN categoria = 'salario' THEN valor else 0 END) AS totalSalario,
+            SUM(CASE WHEN categoria = 'extra' THEN valor else 0 END) AS totalExtra,
+            SUM(CASE WHEN categoria = 'investimentosREC' AND valor > 0 THEN valor else 0 END) AS totalInvestimentosREC,
+            SUM(CASE WHEN categoria = 'presentes' THEN valor else 0 END) AS totalPresentes,
+            SUM(CASE WHEN categoria = 'reembolsos' THEN valor else 0 END) AS totalReembolsos
+           
+        FROM movimentacoes WHERE id_usuario = '$id' AND MONTH(data_movimentacao) = MONTH('$dataAtual') AND YEAR(data_movimentacao) = YEAR('$dataAtual')";
+    
+        if($resultado = $mysqli->query($sql_code)){
+            
+            $dados = $resultado->fetch_assoc();
+
+            echo "
+                <details class=\"extrato mb-2\">
+                    <summary class=\"poppins-regular p-3\">Detalhes</summary>
+                        <div class=\"p-4 background-branco\" style=\"border-top-left-radius: 0px;border-top-right-radius: 0px;\">
+                                
+                            <h5 class=\"inter-bold mb-3\">Resumo rápido</h5>
+
+                            <table class=\"table border justify-content-center\">
+                                <thead style=\"background-color: #1F1F21; color: white;\">
+                                    <tr>
+                                        <th>Total receitas</th>    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style=\"color: green;\">R$" . $dados['receita'] . "</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 class=\"inter-bold mb-3\">Extrato</h5>
+
+                                <table class=\"table border\">
+                                    <tbody>
+                                        <tr>
+                                            <td>Salário</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalSalario'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Extra</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalExtra'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Investimentos</td>
+                                            <td  style=\"color: green;\">R$" . $dados['totalInvestimentosREC'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Presentes</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalPresentes'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Reembolsos</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalReembolsos'] .  "</td>
+                                        </tr>
+                                    </tbody>
+                                </table> 
+                        </div>
+                </details>
+            ";
+
+        } else {
+            header("Location: erro-conexao-banco.php");
+        }
+    }
+
+//FUNÇÃO QUE MOSTRA TABELA COM GASTOS E DESPESAS DO MÊS ATUAL PARA O USUÁRIO
+    function verMES($mysqli){
+        $id = $_SESSION['id'];
+        $dataAtual = date('Y-m-d');
+
+        $sql_code = "SELECT
+            SUM(CASE WHEN valor < 0 THEN valor ELSE 0 END) AS despesa,
+            SUM(CASE WHEN valor > 0 THEN valor ELSE 0 END) AS receita,
+            SUM(CASE WHEN categoria = 'moradia' THEN valor else 0 END) AS totalMoradia,
+            SUM(CASE WHEN categoria = 'alimentacao' THEN valor else 0 END) AS totalAlimentacao,
+            SUM(CASE WHEN categoria = 'saude' THEN valor else 0 END) AS totalSaude,
+            SUM(CASE WHEN categoria = 'transporte' THEN valor else 0 END) AS totalTransporte,
+            SUM(CASE WHEN categoria = 'educacao' THEN valor else 0 END) AS totalEducacao,
+            SUM(CASE WHEN categoria = 'lazer' THEN valor else 0 END) AS totalLazer,
+            SUM(CASE WHEN categoria = 'compras' THEN valor else 0 END) AS totalCompras,
+            SUM(CASE WHEN categoria = 'impostos' THEN valor else 0 END) AS totalImpostos,
+            SUM(CASE WHEN categoria = 'dividas' THEN valor else 0 END) AS totalDividas,
+            SUM(CASE WHEN categoria = 'credito' THEN valor else 0 END) AS totalCredito,
+            SUM(CASE WHEN categoria = 'investimentosDESP' THEN valor else 0 END) AS totalInvestimentosDESP,
+            SUM(CASE WHEN categoria = 'cuidados-pessoais' THEN valor else 0 END) AS totalCuidados,
+            SUM(CASE WHEN categoria = 'salario' THEN valor else 0 END) AS totalSalario,
+            SUM(CASE WHEN categoria = 'extra' THEN valor else 0 END) AS totalExtra,
+            SUM(CASE WHEN categoria = 'investimentosREC' AND valor > 0 THEN valor else 0 END) AS totalInvestimentosREC,
+            SUM(CASE WHEN categoria = 'presentes' THEN valor else 0 END) AS totalPresentes,
+            SUM(CASE WHEN categoria = 'reembolsos' THEN valor else 0 END) AS totalReembolsos
+           
+        FROM movimentacoes WHERE id_usuario = '$id' AND MONTH(data_movimentacao) = MONTH('$dataAtual') AND YEAR(data_movimentacao) = YEAR('$dataAtual')";
+    
+        if($resultado = $mysqli->query($sql_code)){
+            
+            $dados = $resultado->fetch_assoc();
+
+            echo "
+                <div class=\"row d-flex justify-content-center\">
+                
+                    <div class=\"col-6\">
+                        <details class=\"extrato mb-2\">
+                        <summary class=\"poppins-regular text-center p-3\">Detalhes</summary>
+                            <div class=\"p-4 background-branco\" style=\"border-top-left-radius: 0px;border-top-right-radius: 0px;\">
+                                    
+                                <h5 class=\"inter-bold mb-3\">Resumo rápido</h5>
+
+                                <table class=\"table border text-center justify-content-center\">
+                                    <thead style=\"background-color: #1F1F21; color: white;\">
+                                        <tr>
+                                            <th>Total despesas</th>    
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style=\"color: red;\">R$" . -$dados['despesa'] . "</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <h5 class=\"inter-bold mb-3\">Extrato</h5>
+
+                                    <table class=\"table border\">
+                                        <tbody>
+                                            <tr>
+                                                <td>Moradia</td>
+                                                <td style=\"color: red;\">R$" . $dados['totalMoradia'] .  "</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Alimentação</td>
+                                                <td style=\"color: red;\">R$" . $dados['totalAlimentacao'] .  "</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Saúde</td>
+                                                <td style=\"color: red;\">R$" . $dados['totalSaude'] .  "</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cuidados Pessoais</td>
+                                                <td style=\"color: red;\">R$" . $dados['totalCuidados'] .  "</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Investimentos</td>
+                                                <td style=\"color: red;\">R$" . $dados['totalInvestimentosDESP'] .  "</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Transporte</td>
+                                                <td style=\"color: red;\">R$" . $dados['totalTransporte'] .  "</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Educação</td>
+                                                <td style=\"color: red;\">R$" . $dados['totalEducacao'] .  "</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lazer</td>
+                                                <td style=\"color: red;\">R$" . $dados['totalLazer'] .  "</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Compras</td>
+                                                <td style=\"color: red;\">R$" . $dados['totalCompras'] .  "</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Impostos</td>
+                                                <td style=\"color: red;\">R$" . $dados['totalImpostos'] .  "</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dívidas</td>
+                                                <td style=\"color: red;\">R$" . $dados['totalDividas'] .  "</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Crédito</td>
+                                                <td style=\"color: red;\">R$" . $dados['totalCredito'] .  "</td>
+                                            </tr>
+                                        </tbody>
+                                    </table> 
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class=\"col-6\">
+                        <details class=\"extrato mb-2\">
+                    <summary class=\"poppins-regular text-center p-3\">Detalhes</summary>
+                        <div class=\"p-4 background-branco\" style=\"border-top-left-radius: 0px;border-top-right-radius: 0px;\">
+                                
+                            <h5 class=\"inter-bold mb-3\">Resumo rápido</h5>
+
+                            <table class=\"table border text-center justify-content-center\">
+                                <thead style=\"background-color: #1F1F21; color: white;\">
+                                    <tr>
+                                        <th>Total receitas</th>    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style=\"color: green;\">R$" . $dados['receita'] . "</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 class=\"inter-bold mb-3\">Extrato</h5>
+
+                                <table class=\"table border\">
+                                    <tbody>
+                                        <tr>
+                                            <td>Salário</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalSalario'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Extra</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalExtra'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Investimentos</td>
+                                            <td  style=\"color: green;\">R$" . $dados['totalInvestimentosREC'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Presentes</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalPresentes'] .  "</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Reembolsos</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalReembolsos'] .  "</td>
+                                        </tr>
+                                    </tbody>
+                                </table> 
+                            </div>
+                        </details>
+                    </div>
+
+                </div>
+            ";
+
+        } else {
+            header("Location: erro-conexao-banco.php");
+        }
+    }
+
 //FUNCAO QUE SALVA EXTRATO MENSAL QUANDO VIRA O MÊS
     function salvaExtrato($mysqli){
         //pegando id usuário da sessão e a data atual
@@ -459,7 +818,7 @@
 
                                 <table class=\"table border justify-content-center\">
                                     <thead>
-                                        <tr>
+                                        <tr style=\"background-color: #1F1F21; color: white;\">
                                             <th>Despesas</th>
                                             <th>Receitas</th>
                                         </tr>
@@ -472,84 +831,84 @@
                                     </tbody>
                                 </table>
 
-                                <h5 class=\"inter-bold mb-3\">Receitas detalhadas</h5>
+                                <h5 class=\"inter-bold mb-3\">Receitas</h5>
 
                                 <table class=\"table border\">
                                     <tbody>
                                         <tr>
                                             <td>Salário</td>
-                                            <td>R$" . $dados['totalSalario'] .  "</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalSalario'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Investimentos</td>
-                                            <td>R$" . $dados['totalInvestimentosREC'] .  "</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalInvestimentosREC'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Extra</td>
-                                            <td>R$" . $dados['totalExtra'] .  "</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalExtra'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Presentes</td>
-                                            <td>R$" . $dados['totalPresentes'] .  "</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalPresentes'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Reembolsos</td>
-                                            <td>R$" . $dados['totalReembolsos'] .  "</td>
+                                            <td style=\"color: green;\">R$" . $dados['totalReembolsos'] .  "</td>
                                         </tr>
                                     </tbody>
                                 </table>
 
-                                <h5 class=\"inter-bold mb-3\">Despesas detalhadas</h5>
+                                <h5 class=\"inter-bold mb-3\">Despesas</h5>
 
                                 <table class=\"table border\">
                                     <tbody>
                                         <tr>
                                             <td>Moradia</td>
-                                            <td>R$" . -$dados['totalMoradia'] .  "</td>
+                                            <td style=\"color: red;\">R$" . -$dados['totalMoradia'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Alimentação</td>
-                                            <td>R$" . -$dados['totalAlimentacao'] .  "</td>
+                                            <td style=\"color: red;\">R$" . -$dados['totalAlimentacao'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Saúde</td>
-                                            <td>R$" . -$dados['totalSaude'] .  "</td>
+                                            <td style=\"color: red;\">R$" . -$dados['totalSaude'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Cuidados Pessoais</td>
-                                            <td>R$" . -$dados['totalCuidados'] .  "</td>
+                                            <td style=\"color: red;\">R$" . -$dados['totalCuidados'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Investimentos</td>
-                                            <td>R$" . -$dados['totalInvestimentosDESP'] .  "</td>
+                                            <td style=\"color: red;\">R$" . -$dados['totalInvestimentosDESP'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Transporte</td>
-                                            <td>R$" . -$dados['totalTransporte'] .  "</td>
+                                            <td style=\"color: red;\">R$" . -$dados['totalTransporte'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Educação</td>
-                                            <td>R$" . -$dados['totalEducacao'] .  "</td>
+                                            <td style=\"color: red;\">R$" . -$dados['totalEducacao'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Lazer</td>
-                                            <td>R$" . -$dados['totalLazer'] .  "</td>
+                                            <td style=\"color: red;\">R$" . -$dados['totalLazer'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Compras</td>
-                                            <td>R$" . -$dados['totalCompras'] .  "</td>
+                                            <td style=\"color: red;\">R$" . -$dados['totalCompras'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Impostos</td>
-                                            <td>R$" . -$dados['totalImpostos'] .  "</td>
+                                            <td style=\"color: red;\">R$" . -$dados['totalImpostos'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Dívidas</td>
-                                            <td>R$" . -$dados['totalDividas'] .  "</td>
+                                            <td style=\"color: red;\">R$" . -$dados['totalDividas'] .  "</td>
                                         </tr>
                                         <tr>
                                             <td>Crédito</td>
-                                            <td>R$" . -$dados['totalCredito'] .  "</td>
+                                            <td style=\"color: red;\">R$" . -$dados['totalCredito'] .  "</td>
                                         </tr>
                                     </tbody>
                                 </table> 

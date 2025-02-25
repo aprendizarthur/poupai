@@ -141,27 +141,42 @@ buscarDados($mysqli);
 
             
                 <div class="row d-flex background-menus justify-content-center">
-
                     <!--GRAFICO DESPESA-->
-                    <div class="col-12 col-md-8 col-lg-5 text-center">
-                            <h3 class="inter-regular mt-4">Distribuição despesas</h3>
-                            <small class="poppins-light">Clique no gráfico para ver detalhes</small>
-                            <canvas class="d-flex mt-3 mb-4" id="graficoDespesa" width="100%" height="5%" style="max-height: 350px;"></canvas>
+                    <div class="col-12 col-md-12 col-lg-6 text-center">
+                        <h3 class="inter-regular mt-4">Distribuição despesas</h3>
+                        <small class="poppins-light">Clique no gráfico para ver detalhes</small>
+                        <canvas class="d-flex mt-3 mb-4" id="graficoDespesa" width="100%" style="max-height: 300px;"></canvas>
+
+                        <!--EXTRATO DESPESAS TELAS PEQUENAS E MÉDIAS-->
+                        <div class="d-lg-none px-1">
+                          <?php verDespesas($mysqli); ?>
+                        </div>
                     </div>   
                     
                     <!--GRAFICO RECEITA-->
-                    <div class="col-12 col-md-8 col-lg-5 text-center">
+                    <div class="col-12 col-md-12 col-lg-6 text-center">
                         <hr class="d-block d-md-none">
                         <h3 class="inter-regular mt-4">Distribuição receitas</h3>
                         <small class="poppins-light">Clique no gráfico para ver detalhes</small>
-                        <canvas class="d-flex mt-3 mb-3" id="graficoReceita" width="100%" style="max-height: 335px;"></canvas>
+                        <canvas class="d-flex mt-3 mb-3" id="graficoReceita" width="100%" style="max-height: 300px;"></canvas>
+
+                        <!--EXTRATO RECEITAS TELAS PEQUENAS E MÉDIAS-->
+                        <div class="d-lg-none px-1">
+                                <?php verReceitas($mysqli); ?>
+                        </div>
+                    </div>
+
+                    <!--EXTRATO MÊS ATUAL TELAS GRANDES-->
+                    <div class="col-12 d-none d-lg-block p-5">
+                        <?php verMES($mysqli); ?>
                     </div>
                 </div>
 
                 <!--EXTRATOS-->
                 <div class="row d-flex background-menus justify-content-center borda-baixo">
-                    <div class="col-12 text-center p-5">
-                        <h2 class="inter-bold ">Extratos mensais</h2>
+                    <div class="col-12 text-center px-5">
+                        <h2 class="inter-bold d-md-none mt-5">Extratos mensais</h2>
+                        <h2 class="inter-bold d-none d-mb-block">Extratos mensais</h2>
                         <small class="poppins-light mb-4">Últimos seis meses</small>
 
                         <p class="poppins-light border text-center p-3 mt-3 mb-3" style="border-radius: 12px;">
@@ -172,7 +187,7 @@ buscarDados($mysqli);
                         
                     </div>
 
-                    <div class="col-12 d-md-none mb-5">
+                    <div class="col-12 d-md-none my-5">
                             <a class="btn botao-primario poppins-regular p-3 w-100" href="#nav-relatorios"><i class="fa-solid fa-arrow-up fa-lg mr-2" style="color: #ffffff;"></i></i> Voltar para o topo</a>
                     </div>
                 </div>

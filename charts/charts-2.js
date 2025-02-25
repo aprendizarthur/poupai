@@ -45,7 +45,7 @@ fetch('dados-relatorios.php')
             position: 'bottom',
             labels: {
               filter: function(legendItem, chartData) {
-                return chartData.datasets[0].data[legendItem.index] !== 0;
+                return chartData.datasets[0].data[legendItem.index] > 1000000;
               }
             }
           }
@@ -82,7 +82,7 @@ fetch('dados-relatorios.php')
             position: 'bottom',
             labels: {
               filter: function(legendItem, chartData) {
-                return chartData.datasets[0].data[legendItem.index] !== 0;
+                return chartData.datasets[0].data[legendItem.index] > 1000000;
               }
             }
           }

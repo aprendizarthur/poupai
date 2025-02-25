@@ -89,12 +89,12 @@ salvaExtrato($mysqli);
         <main>
            <div class="container">
                 <div class="row mt-4 p-3 d-flex background-menus justify-content-center borda-cima">
-                    <div class="col-12 px-4 text-center">
+                    <div class="col-12 text-center">
                         <h2 class="inter-bold mt-2 mb-4">Painel de <?php echo $_SESSION['nome']; ?></span></h2>
                     </div>
                     
                     <!--INTERAÇÃO-1 ELIZA-->
-                    <div class="col-12 p-3 relatorio-eliza text-left p-4 background-preto col-md-12">
+                    <div class="col-12 relatorio-eliza text-left p-4 background-preto">
                         <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
 
                         <p class="poppins-regular text-light my-3">
@@ -104,7 +104,6 @@ salvaExtrato($mysqli);
                     <div class="col-12 mt-3">
                             <a class="btn botao-atencao poppins-regular p-3 w-100" href="atualizacoes.php" target="_blank"> <i class="fa-solid fa-up-right-from-square fa-lg mr-2" style="color: #000000;"></i> Notas da atualização</a>
                     </div>
-                    
                 </div>
                 
                 <div class="row d-flex p-3 background-menus justify-content-around borda-baixo">
@@ -185,7 +184,7 @@ salvaExtrato($mysqli);
                     </div>
 
                     <!--INTERAÇÃO ELIZA-->
-                    <div class="col-12 p-3 relatorio-eliza mt-5 text-left p-4 background-preto col-md-12">
+                    <div class="col-12 relatorio-eliza mt-5 text-left p-4 background-preto">
                         <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
 
                         <p class="poppins-regular text-light my-3">

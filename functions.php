@@ -351,91 +351,65 @@
             }
         }
     }
-//FUNCAO QUE SALVA EXTRATO NO ÚLTIMO DIA DO MÊS (só salva se o usuário logar no último dia do mês, aprender nova solução)
+//FUNCAO QUE SALVA EXTRATO MENSAL QUANDO VIRA O MÊS
     function salvaExtrato($mysqli){
+        //pegando id usuário da sessão e a data atual
+        $id = $_SESSION['id'];
+        $dataAtual = date('Y-m-d');
 
-        //comparando data do dia atual com a do último dia do mês
-        $hoje = date('Y-m-d');
-        $ultimoDia  = date('Y-m-t'); //t retorna o último dia do mês atual
+        //sql verificando se já existe um extrato do mês passado
+        $sql_code = "SELECT COUNT(*) AS total FROM extratos WHERE id_usuario = $id AND MONTH(data_extrato) = MONTH(DATE_SUB('$dataAtual', INTERVAL 1 MONTH))";
 
-        if($hoje == $ultimoDia){
-
-            $id = $_SESSION['id'];
-
-            //pegando o mês e ano atual
-            $anoAtual = date('Y');
-            $mesAtual = date('m');
-
-            //pegando o mês e ano do último extrato
-            $sql_code = "SELECT MONTH(data_extrato) AS mes, YEAR(data_extrato) AS ano FROM extratos WHERE id_usuario = $id ORDER BY data_extrato DESC LIMIT 1";
-
-            if($resultado = $mysqli->query($sql_code)){
-                $dados = $resultado->fetch_assoc();
-
-                $mesExtrato = $dados['mes'];
-                $anoExtrato = $dados['ano'];
-            } else {
-                header("Location: erro-conexao-banco.php");
-            }
-
-            //checar se já existe um extrato deste mês, pois gera um novo extrato cada vez que entra numa página com a função
-            if($anoAtual == $anoExtrato && $mesAtual == $mesExtrato){
-                //sem código, então não gera extrato novo 
-            } else{
-                //pegando o id para fazer query
+        //se existir um extrato do mês passado encerra a função, se não existir coleta os dados e salva na tabela
+        if($resultado = $mysqli->query($sql_code)){
+            $linhas = $resultado->fetch_assoc();
+        
+            //se não tiver extrato, pega dados e salva
+            if($linhas['total'] == 0){
 
                 $sql_code = "SELECT 
-                            SUM(CASE WHEN valor < 0 THEN valor else 0 END) as totalDespesa,
-                            SUM(CASE WHEN valor > 0 THEN valor else 0 END) as totalReceita,
-                            SUM(CASE WHEN categoria = 'moradia' THEN valor else 0 END) AS totalMoradia,
-                            SUM(CASE WHEN categoria = 'alimentacao' THEN valor else 0 END) AS totalAlimentacao,
-                            SUM(CASE WHEN categoria = 'saude' THEN valor else 0 END) AS totalSaude,
-                            SUM(CASE WHEN categoria = 'transporte' THEN valor else 0 END) AS totalTransporte,
-                            SUM(CASE WHEN categoria = 'educacao' THEN valor else 0 END) AS totalEducacao,
-                            SUM(CASE WHEN categoria = 'lazer' THEN valor else 0 END) AS totalLazer,
-                            SUM(CASE WHEN categoria = 'compras' THEN valor else 0 END) AS totalCompras,
-                            SUM(CASE WHEN categoria = 'investimentosDESP' THEN valor else 0 END) AS totalInvestimentosDESP,
-                            SUM(CASE WHEN categoria = 'impostos' THEN valor else 0 END) AS totalImpostos,
-                            SUM(CASE WHEN categoria = 'dividas' THEN valor else 0 END) AS totalDividas,
-                            SUM(CASE WHEN categoria = 'credito' THEN valor else 0 END) AS totalCredito,
-                            SUM(CASE WHEN categoria = 'salario' THEN valor else 0 END) AS totalSalario,
-                            SUM(CASE WHEN categoria = 'extra' THEN valor else 0 END) AS totalExtra,
-                            SUM(CASE WHEN categoria = 'investimentosREC' THEN valor else 0 END) AS totalInvestimentosREC,
-                            SUM(CASE WHEN categoria = 'presentes' THEN valor else 0 END) AS totalPresentes,
-                            SUM(CASE WHEN categoria = 'reembolsos' THEN valor else 0 END) AS totalReembolsos,
-                            SUM(CASE WHEN categoria = 'cuidados-pessoais' THEN valor else 0 END) AS totalCuidados
-
-                            FROM movimentacoes WHERE id_usuario = $id AND MONTH(data_movimentacao) = MONTH(CURDATE()) AND YEAR(data_movimentacao) = YEAR(CURDATE())
-                ";
-
+                SUM(CASE WHEN valor < 0 THEN valor ELSE 0 END) AS despesa,
+                SUM(CASE WHEN valor > 0 THEN valor ELSE 0 END) AS receita,
+                SUM(CASE WHEN categoria = 'moradia' THEN valor else 0 END) AS totalMoradia,
+                SUM(CASE WHEN categoria = 'alimentacao' THEN valor else 0 END) AS totalAlimentacao,
+                SUM(CASE WHEN categoria = 'saude' THEN valor else 0 END) AS totalSaude,
+                SUM(CASE WHEN categoria = 'transporte' THEN valor else 0 END) AS totalTransporte,
+                SUM(CASE WHEN categoria = 'educacao' THEN valor else 0 END) AS totalEducacao,
+                SUM(CASE WHEN categoria = 'lazer' THEN valor else 0 END) AS totalLazer,
+                SUM(CASE WHEN categoria = 'compras' THEN valor else 0 END) AS totalCompras,
+                SUM(CASE WHEN categoria = 'impostos' THEN valor else 0 END) AS totalImpostos,
+                SUM(CASE WHEN categoria = 'dividas' THEN valor else 0 END) AS totalDividas,
+                SUM(CASE WHEN categoria = 'credito' THEN valor else 0 END) AS totalCredito,
+                SUM(CASE WHEN categoria = 'investimentosDESP' THEN valor else 0 END) AS totalInvestimentosDESP,
+                SUM(CASE WHEN categoria = 'salario' THEN valor else 0 END) AS totalSalario,
+                SUM(CASE WHEN categoria = 'extra' THEN valor else 0 END) AS totalExtra,
+                SUM(CASE WHEN categoria = 'investimentosREC' AND valor > 0 THEN valor else 0 END) AS totalInvestimentosREC,
+                SUM(CASE WHEN categoria = 'presentes' THEN valor else 0 END) AS totalPresentes,
+                SUM(CASE WHEN categoria = 'reembolsos' THEN valor else 0 END) AS totalReembolsos,
+                SUM(CASE WHEN categoria = 'cuidados-pessoais' THEN valor else 0 END) AS totalCuidados 
+                FROM movimentacoes WHERE id_usuario = $id AND MONTH(data_movimentacao) = MONTH(DATE_SUB('$dataAtual' , INTERVAL 1 MONTH))";
+        
                 if($resultado = $mysqli->query($sql_code)){
-                    
-                    //recuperando os dados do mês e adicionando eles na tabela extratos
-                    $dados = $resultado->fetch_assoc();
+        
+                    while($dados = $resultado->fetch_assoc()){
+                        
+                    //salva como variável php o nome dos retornos da consulta sql
+                    extract($dados);
 
-                    $despesa = -$dados['totalDespesa'];
-                    $receita = $dados['totalReceita'];
-                    $moradia = $dados['totalMoradia'];
-                    $alimentacao = $dados['totalAlimentacao'];
-                    $saude = $dados['totalSaude'];
-                    $cuidados = $dados['totalCuidados'];
-                    $transporte = $dados['totalTransporte'];
-                    $educacao = $dados['totalEducacao'];
-                    $lazer = $dados['totalLazer'];
-                    $compras = $dados['totalCompras'];
-                    $impostos = $dados['totalImpostos'];
-                    $divida = $dados['totalDividas'];
-                    $credito = $dados['totalCredito'];
-                    $salario = $dados['totalSalario'];
-                    $extra = $dados['totalExtra'];
-                    $investimentosDESP = $dados['totalInvestimentosDESP'];
-                    $investimentosREC = $dados['totalInvestimentosREC'];
-                    $presentes = $dados['totalPresentes'];
-                    $reembolsos = $dados['totalReembolsos'];
-                    
-
-                    $sql_code ="INSERT INTO extratos (id_usuario, despesa, receita, totalMoradia, totalAlimentacao, totalSaude, totalTransporte, totalEducacao, totalCuidados, totalLazer, totalCompras, totalImpostos, totalDividas, totalCredito, totalInvestimentosDESP, totalSalario, totalExtra,  totalInvestimentosREC, totalPresentes, totalReembolsos) 
-                                VALUES ('$id', '$despesa', '$receita', '$moradia', '$alimentacao', '$saude', '$transporte', '$educacao', '$cuidados', '$lazer', '$compras', '$impostos', '$divida', '$credito', '$investimentosDESP', '$salario', '$extra', '$investimentosREC', '$presentes', '$reembolsos')";
+                     //inserindo dados no extrato
+                     $sql_code = "INSERT INTO extratos (
+                        id_usuario, despesa, receita, totalMoradia, totalAlimentacao, 
+                        totalSaude, totalTransporte, totalEducacao, totalLazer, totalCompras, 
+                        totalImpostos, totalDividas, totalCredito, totalInvestimentosDESP, 
+                        totalSalario, totalExtra, totalInvestimentosREC, totalPresentes, 
+                        totalReembolsos, totalCuidados, data_extrato
+                    ) VALUES (
+                        $id, $despesa, $receita, $totalMoradia, $totalAlimentacao, 
+                        $totalSaude, $totalTransporte, $totalEducacao, $totalLazer, $totalCompras, 
+                        $totalImpostos, $totalDividas, $totalCredito, $totalInvestimentosDESP, 
+                        $totalSalario, $totalExtra, $totalInvestimentosREC, $totalPresentes, 
+                        $totalReembolsos, $totalCuidados, LAST_DAY(DATE_SUB('$dataAtual', INTERVAL 1 MONTH))
+                    )";
 
                     if($mysqli->query($sql_code)){
 
@@ -443,12 +417,15 @@
                         header("Location: erro-conexao-banco.php");
                     }
 
+                    }
+                    
                 } else {
                     header("Location: erro-conexao-banco.php");
-                }    
-            }  
+                }
+            } 
         }
     }
+
 //FUNÇÃO QUE IMPRIME OS EXTRATOS MENSAIS PARA O USUÁRIO
     function mostraExtratos($mysqli){
 
@@ -480,7 +457,7 @@
                                 
                                  <h5 class=\"inter-bold mb-3\">Resumo rápido</h5>
 
-                                <table class=\"table border\">
+                                <table class=\"table border justify-content-center\">
                                     <thead>
                                         <tr>
                                             <th>Despesas</th>

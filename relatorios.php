@@ -116,24 +116,24 @@ salvaExtrato($mysqli);
                     </div>
 
                     <section id="mensal">
-                    <div class="col-12 text-center mb-4">
-                        <h2 class="inter-bold">Mês atual</h2>
-                    </div>
-                     <div class="col-12 relatorio-eliza text-left p-4 background-preto">
-                        <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
-                        
-                        <p class="poppins-regular text-light my-3">
-                         <span class="texto-primario"><?php echo $_SESSION['nome']; ?></span> aqui estão os dados do seu mês:
-                        </p>
+                        <div class="col-12 text-center mb-4">
+                            <h2 class="inter-bold">Mês atual</h2>
+                        </div>
+                        <div class="col-12 relatorio-eliza text-left p-4 background-preto">
+                            <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
+                            
+                            <p class="poppins-regular text-light my-3">
+                            <span class="texto-primario"><?php echo $_SESSION['nome']; ?></span> aqui estão os dados do seu mês:
+                            </p>
 
-                        <p class="poppins-regular text-light my-3">
-                            Você realizou <?php echo $_SESSION['totalMovimentacoes']; ?> movimentações, totalizando R$<?php echo -$_SESSION['totalDespesa']; ?> em despesas e R$<?php echo $_SESSION['totalReceita']; ?> em receitas.
-                        </p>
+                            <p class="poppins-regular text-light my-3">
+                                Você realizou <?php echo $_SESSION['totalMovimentacoes']; ?> movimentações, totalizando R$<?php echo -$_SESSION['totalDespesa']; ?> em despesas e R$<?php echo $_SESSION['totalReceita']; ?> em receitas.
+                            </p>
 
-                        <p class="poppins-regular text-light my-3">
-                            <?php echo $_SESSION['elizaMontante']; ?>
-                        </p>
-                    </div>   
+                            <p class="poppins-regular text-light my-3">
+                                <?php echo $_SESSION['elizaMontante']; ?>
+                            </p>
+                        </div>   
                     </section>
                     <!--INTERACAO ELIZA-->
                     
@@ -161,7 +161,8 @@ salvaExtrato($mysqli);
                 <!--EXTRATOS-->
                 <div class="row d-flex background-menus justify-content-center borda-baixo">
                     <div class="col-12 text-center p-5">
-                        <h2 class="inter-bold mb-4">Extratos mensais</h2>
+                        <h2 class="inter-bold ">Extratos mensais</h2>
+                        <small class="poppins-light mb-4">Últimos seis meses</small>
 
                         <p class="poppins-light border text-center p-3 mt-3 mb-3" style="border-radius: 12px;">
                             Extratos salvos automaticamente no final de cada mês

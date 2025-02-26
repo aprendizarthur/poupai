@@ -8,6 +8,7 @@
         //pegando id usuário
         $id = $_SESSION['id'];
         
+        //primeiro pegando dados sobre despesas e receitas do mês atual
         $sql_code = " SELECT 
             SUM(CASE WHEN categoria = 'moradia' THEN valor else 0 END) AS totalMoradia,
             SUM(CASE WHEN categoria = 'alimentacao' THEN valor else 0 END) AS totalAlimentacao,

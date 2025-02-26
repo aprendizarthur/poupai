@@ -96,20 +96,12 @@ buscarDados($mysqli);
                                 Caso você não tenha enviado nenhum dado pelo painel, os gráficos não irão aparecer
                             </p>
                             <div class="row">
-                                    <div class="col-12 col-md-6 mt-2">
+                                    <div class="col-12 col-md-12 mt-2">
                                         <a class="btn botao-primario poppins-regular p-3 w-100" href="#mensal"> <i class="fa-regular fa-lg fa-calendar-days mr-2" style="color: #ffffff;"></i> Relatório deste mês</a>
                                     </div>
 
-                                    <div class="col-12 col-md-6 mt-2">
+                                    <div class="col-12 col-md-12 mt-2">
                                         <a class="btn botao-primario poppins-regular p-3 w-100" href="#extratoMensal"> <i class="fa-solid fa-list-ul fa-lg mr-2" style="color: #ffffff;"></i>  Extratos mensais</a>
-                                    </div>
-
-                                    <div class="col-12 col-md-12 d-none d-md-block mt-2 mb-5">
-                                        <a class="btn botao-primario poppins-regular p-3 w-100" href="relatorios.php"> <i class="fa-solid fa-chart-line fa-lg mr-2" style="color: #ffffff;"></i>  Evolução despesas </a>
-                                    </div>  
-
-                                    <div class="col-12 col-md-12 d-md-none mt-2">
-                                        <a class="btn botao-primario poppins-regular p-3 w-100" href="relatorios.php"> <i class="fa-solid fa-chart-line fa-lg mr-2" style="color: #ffffff;"></i>  Evolução despesas <span class="poppins-light"><small>(EM BREVE)</small></span> </a>
                                     </div>
                                     
                                     <div class="col-12 d-md-none mt-2 mb-5">
@@ -176,8 +168,8 @@ buscarDados($mysqli);
                 </div>
 
                 <!--EXTRATOS-->
-                <div class="row d-flex background-menus justify-content-center borda-baixo" id="extratoMensal">
-                    <div class="col-12 text-center px-5">
+                <div class="row d-flex background-menus justify-content-center" id="extratoMensal">
+                    <div class="col-12 text-center px-4">
                         <h2 class="inter-bold d-md-none mt-5">Extratos mensais</h2>
                         <h2 class="inter-bold d-none d-mb-block d-lg-block">Extratos mensais</h2>
                         <small class="poppins-light mb-4">Últimos seis meses</small>

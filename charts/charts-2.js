@@ -88,6 +88,4 @@ fetch('dados-relatorios.php')
         }
       }
     });
-
   })
-  .catch(error => console.error("Erro ao carregar gráfico:", error));

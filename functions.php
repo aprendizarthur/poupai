@@ -711,77 +711,102 @@
     }
 
 //FUNCAO QUE SALVA EXTRATO MENSAL QUANDO VIRA O MÊS
-    function salvaExtrato($mysqli){
-        //pegando id usuário da sessão e a data atual
+    
+function salvaExtrato($mysqli) {
+        //pegando id do usuário pela sessão e pegando a data atual
         $id = $_SESSION['id'];
         $dataAtual = date('Y-m-d');
-
-        //sql verificando se já existe um extrato do mês passado
-        $sql_code = "SELECT COUNT(*) AS total FROM extratos WHERE id_usuario = $id AND MONTH(data_extrato) = MONTH(DATE_SUB('$dataAtual', INTERVAL 1 MONTH))";
-
-        //se existir um extrato do mês passado encerra a função, se não existir coleta os dados e salva na tabela
-        if($resultado = $mysqli->query($sql_code)){
+    
+        //sql para verificar se já existe extrato salvo do mês passado
+        $sql_code = "SELECT COUNT(*) AS total 
+                     FROM extratos 
+                     WHERE id_usuario = $id 
+                     AND MONTH(data_extrato) = MONTH(DATE_SUB('$dataAtual', INTERVAL 1 MONTH))";
+    
+        $resultado = $mysqli->query($sql_code);
+        if ($resultado) {
             $linhas = $resultado->fetch_assoc();
-        
-            //se não tiver extrato, pega dados e salva
-            if($linhas['total'] == 0){
-
+    
+            //se não existe extrato salvo do mês passado, vamos procurar os dados e salvar um
+            if ($linhas['total'] == 0) {
+                // sql para coletar dados do mês passado
                 $sql_code = "SELECT 
-                SUM(CASE WHEN valor < 0 THEN valor ELSE 0 END) AS despesa,
-                SUM(CASE WHEN valor > 0 THEN valor ELSE 0 END) AS receita,
-                SUM(CASE WHEN categoria = 'moradia' THEN valor else 0 END) AS totalMoradia,
-                SUM(CASE WHEN categoria = 'alimentacao' THEN valor else 0 END) AS totalAlimentacao,
-                SUM(CASE WHEN categoria = 'saude' THEN valor else 0 END) AS totalSaude,
-                SUM(CASE WHEN categoria = 'transporte' THEN valor else 0 END) AS totalTransporte,
-                SUM(CASE WHEN categoria = 'educacao' THEN valor else 0 END) AS totalEducacao,
-                SUM(CASE WHEN categoria = 'lazer' THEN valor else 0 END) AS totalLazer,
-                SUM(CASE WHEN categoria = 'compras' THEN valor else 0 END) AS totalCompras,
-                SUM(CASE WHEN categoria = 'impostos' THEN valor else 0 END) AS totalImpostos,
-                SUM(CASE WHEN categoria = 'dividas' THEN valor else 0 END) AS totalDividas,
-                SUM(CASE WHEN categoria = 'credito' THEN valor else 0 END) AS totalCredito,
-                SUM(CASE WHEN categoria = 'investimentosDESP' THEN valor else 0 END) AS totalInvestimentosDESP,
-                SUM(CASE WHEN categoria = 'salario' THEN valor else 0 END) AS totalSalario,
-                SUM(CASE WHEN categoria = 'extra' THEN valor else 0 END) AS totalExtra,
-                SUM(CASE WHEN categoria = 'investimentosREC' AND valor > 0 THEN valor else 0 END) AS totalInvestimentosREC,
-                SUM(CASE WHEN categoria = 'presentes' THEN valor else 0 END) AS totalPresentes,
-                SUM(CASE WHEN categoria = 'reembolsos' THEN valor else 0 END) AS totalReembolsos,
-                SUM(CASE WHEN categoria = 'cuidados-pessoais' THEN valor else 0 END) AS totalCuidados 
-                FROM movimentacoes WHERE id_usuario = $id AND MONTH(data_movimentacao) = MONTH(DATE_SUB('$dataAtual' , INTERVAL 1 MONTH))";
-        
-                if($resultado = $mysqli->query($sql_code)){
-        
-                    while($dados = $resultado->fetch_assoc()){
-                        
-                    //salva como variável php o nome dos retornos da consulta sql
-                    extract($dados);
-
-                     //inserindo dados no extrato
-                     $sql_code = "INSERT INTO extratos (
-                        id_usuario, despesa, receita, totalMoradia, totalAlimentacao, 
-                        totalSaude, totalTransporte, totalEducacao, totalLazer, totalCompras, 
-                        totalImpostos, totalDividas, totalCredito, totalInvestimentosDESP, 
-                        totalSalario, totalExtra, totalInvestimentosREC, totalPresentes, 
-                        totalReembolsos, totalCuidados, data_extrato
-                    ) VALUES (
-                        $id, $despesa, $receita, $totalMoradia, $totalAlimentacao, 
-                        $totalSaude, $totalTransporte, $totalEducacao, $totalLazer, $totalCompras, 
-                        $totalImpostos, $totalDividas, $totalCredito, $totalInvestimentosDESP, 
-                        $totalSalario, $totalExtra, $totalInvestimentosREC, $totalPresentes, 
-                        $totalReembolsos, $totalCuidados, LAST_DAY(DATE_SUB('$dataAtual', INTERVAL 1 MONTH))
-                    )";
-
-                    if($mysqli->query($sql_code)){
-
-                    } else {
-                        header("Location: erro-conexao-banco.php");
+                    SUM(CASE WHEN valor < 0 THEN valor ELSE 0 END) AS despesa,
+                    SUM(CASE WHEN valor > 0 THEN valor ELSE 0 END) AS receita,
+                    SUM(CASE WHEN categoria = 'moradia' THEN valor ELSE 0 END) AS totalMoradia,
+                    SUM(CASE WHEN categoria = 'alimentacao' THEN valor ELSE 0 END) AS totalAlimentacao,
+                    SUM(CASE WHEN categoria = 'saude' THEN valor ELSE 0 END) AS totalSaude,
+                    SUM(CASE WHEN categoria = 'transporte' THEN valor ELSE 0 END) AS totalTransporte,
+                    SUM(CASE WHEN categoria = 'educacao' THEN valor ELSE 0 END) AS totalEducacao,
+                    SUM(CASE WHEN categoria = 'lazer' THEN valor ELSE 0 END) AS totalLazer,
+                    SUM(CASE WHEN categoria = 'compras' THEN valor ELSE 0 END) AS totalCompras,
+                    SUM(CASE WHEN categoria = 'impostos' THEN valor ELSE 0 END) AS totalImpostos,
+                    SUM(CASE WHEN categoria = 'dividas' THEN valor ELSE 0 END) AS totalDividas,
+                    SUM(CASE WHEN categoria = 'credito' THEN valor ELSE 0 END) AS totalCredito,
+                    SUM(CASE WHEN categoria = 'investimentosDESP' THEN valor ELSE 0 END) AS totalInvestimentosDESP,
+                    SUM(CASE WHEN categoria = 'salario' THEN valor ELSE 0 END) AS totalSalario,
+                    SUM(CASE WHEN categoria = 'extra' THEN valor ELSE 0 END) AS totalExtra,
+                    SUM(CASE WHEN categoria = 'investimentosREC' AND valor > 0 THEN valor ELSE 0 END) AS totalInvestimentosREC,
+                    SUM(CASE WHEN categoria = 'presentes' THEN valor ELSE 0 END) AS totalPresentes,
+                    SUM(CASE WHEN categoria = 'reembolsos' THEN valor ELSE 0 END) AS totalReembolsos,
+                    SUM(CASE WHEN categoria = 'cuidados-pessoais' THEN valor ELSE 0 END) AS totalCuidados 
+                    FROM movimentacoes 
+                    WHERE id_usuario = $id 
+                    AND MONTH(data_movimentacao) = MONTH(DATE_SUB('$dataAtual', INTERVAL 1 MONTH)) 
+                    AND YEAR(data_movimentacao) = YEAR('$dataAtual')";
+    
+                $resultado = $mysqli->query($sql_code);
+                if ($resultado) {
+                    while ($dados = $resultado->fetch_assoc()) {
+                        //se não tiver valor, retorna 0
+                        $despesa = $dados['despesa'] ?? 0;
+                        $receita = $dados['receita'] ?? 0;
+                        $totalMoradia = $dados['totalMoradia'] ?? 0;
+                        $totalAlimentacao = $dados['totalAlimentacao'] ?? 0;
+                        $totalSaude = $dados['totalSaude'] ?? 0;
+                        $totalTransporte = $dados['totalTransporte'] ?? 0;
+                        $totalEducacao = $dados['totalEducacao'] ?? 0;
+                        $totalLazer = $dados['totalLazer'] ?? 0;
+                        $totalCompras = $dados['totalCompras'] ?? 0;
+                        $totalImpostos = $dados['totalImpostos'] ?? 0;
+                        $totalDividas = $dados['totalDividas'] ?? 0;
+                        $totalCredito = $dados['totalCredito'] ?? 0;
+                        $totalInvestimentosDESP = $dados['totalInvestimentosDESP'] ?? 0;
+                        $totalSalario = $dados['totalSalario'] ?? 0;
+                        $totalExtra = $dados['totalExtra'] ?? 0;
+                        $totalInvestimentosREC = $dados['totalInvestimentosREC'] ?? 0;
+                        $totalPresentes = $dados['totalPresentes'] ?? 0;
+                        $totalReembolsos = $dados['totalReembolsos'] ?? 0;
+                        $totalCuidados = $dados['totalCuidados'] ?? 0;
+    
+                        //inserindo dados na tabela extratos
+                        $sql_code = "INSERT INTO extratos (
+                            id_usuario, despesa, receita, totalMoradia, totalAlimentacao, 
+                            totalSaude, totalTransporte, totalEducacao, totalLazer, totalCompras, 
+                            totalImpostos, totalDividas, totalCredito, totalInvestimentosDESP, 
+                            totalSalario, totalExtra, totalInvestimentosREC, totalPresentes, 
+                            totalReembolsos, totalCuidados, data_extrato) 
+                            VALUES (
+                            $id, $despesa, $receita, $totalMoradia, $totalAlimentacao, 
+                            $totalSaude, $totalTransporte, $totalEducacao, $totalLazer, $totalCompras, 
+                            $totalImpostos, $totalDividas, $totalCredito, $totalInvestimentosDESP, 
+                            $totalSalario, $totalExtra, $totalInvestimentosREC, $totalPresentes, 
+                            $totalReembolsos, $totalCuidados, LAST_DAY(DATE_SUB('$dataAtual', INTERVAL 1 MONTH))
+                        )";
+    
+                        if (!$mysqli->query($sql_code)) {
+                            header("Location: erro-conexao-banco.php");
+                            exit;
+                        }
                     }
-
-                    }
-                    
                 } else {
                     header("Location: erro-conexao-banco.php");
+                    exit;
                 }
-            } 
+            }
+        } else {
+            header("Location: erro-conexao-banco.php");
+            exit;
         }
     }
 

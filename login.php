@@ -55,14 +55,6 @@ login($mysqli);
                     <p class="poppins-regular eliza-crud-sm text-light my-3">
                         É tão bom te ver de novo!
                     </p>
-
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Você está trazendo boas notícias? 
-                    </p> 
-                    
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        De qualquer forma, estou te esperando lá no painel! 
-                    </p> 
                 </div>
 
                 <!--LOGIN-->

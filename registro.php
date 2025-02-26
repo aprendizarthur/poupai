@@ -52,16 +52,8 @@ verificarSessaoLogin();
                 <div class="d-md-none col-11 col-md-6 col-lg-5 background-preto relatorio-eliza p-5" style="border-radius: 12px 12px 0px 0px">
                     <h4 class="texto-primario poppins-regular mb-3"><i class="bi bi-stars"></i>Eliza</h4>
                     <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Oi, tudo bem?
-                    </p>
-
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
                         Fico feliz quando vejo gente nova por aqui!
-                    </p>
-
-                    <p class="poppins-regular eliza-crud-sm text-light my-3">
-                        Se registra aí embaixo rapidinho e vamos organizar as suas finanças hoje mesmo!  
-                    </p>        
+                    </p>       
                 </div>
 
                 <!--REGISTRO-->

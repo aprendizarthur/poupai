@@ -13,8 +13,8 @@
 </div>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
-  <strong>Status</strong>: Em desenvolvimento <br>
-  <strong>Tempo em desenvolvimento</strong>: Aproximadamente 1 mês, contando desde a prototipagem. <br> 
+  <strong>Status</strong>: Finalizado <br>
+  <strong>Tempo em desenvolvimento</strong>: Aproximadamente 1 mês contando desde a prototipagem. <br> 
 </div>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
@@ -40,8 +40,8 @@
 <ul>
   <li>CRUD para usuários, movimentações e extratos mensais</li>
   <li>Retorna gráficos de pizza sobre as despesas e receitas do usuário naquele mês</li>
-  <li>Na virada de cada mês o sistema salva um extrato do mês anterior que será exibido logo abaixo dos relatórios, para que o usuário possa ter um histórico de sua vida financeira</li>
-  <li>A assistente Eliza dá feedbacks sobre a relação despesa x receita do usuário com a finalidade de garantir um vida financeira saudável</li>
+  <li>O sistema salva um extrato de cada mês para que o usuário possa ter um histórico de sua vida financeira</li>
+  <li>A assistente Eliza dá feedbacks sobre a relação despesa x receita do usuário</li>
 </ul>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
@@ -50,7 +50,6 @@
 
 <ul>
   <li>Aprender e implementar prepared statement para diminuir a possibilidade de SQL Injection</li>
-  <li>Adicionar relatório anual com detalhes sobre cada categoria de despesa ao passar dos meses</li>
 </ul>
 
 <div align="left" style="margin-top: 20px; margin-bottom: 20px;">
@@ -64,7 +63,7 @@
   <li>Utilizar cookie com tempo de expiração para o usuário não ter que logar toda vez que abre o site</li>
   <li>Utilizar SQL para realizar consultas mais complexas</li>
   <li>Utilizar charts.js para exibir gráficos</li>
-  <li>Utilizar JSON para enviar dados de uma consulta ao db para o Javascript</li>
+  <li>Utilizar JSON para enviar dados de uma consulta SQL para o Javascript</li>
 </ul>
 
 <div align="center" style="margin-top: 20px; margin-bottom: 20px;">

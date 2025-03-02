@@ -6,8 +6,8 @@ include('functions.php');
 verificarSessao();
 //FUNÇÃO RECUPERAR DADOS DO BANCO PARA PARECER ELIZA
 buscarDados($mysqli);
-//FUNCAO SALVAR EXTRATO ULTIMO DIA DO MÊS
-
+//FUNCAO SALVAR EXTRATO
+salvaExtrato($mysqli);
 
 ?>
 
@@ -100,7 +100,11 @@ buscarDados($mysqli);
                                         <a class="btn botao-primario poppins-regular p-3 w-100" href="#mensal"> <i class="fa-regular fa-lg fa-calendar-days mr-2" style="color: #ffffff;"></i> Relatório deste mês</a>
                                     </div>
 
-                                    <div class="col-12 col-md-12 mt-2">
+                                    <div class="col-12 col-md-12 d-md-none mt-2">
+                                        <a class="btn botao-primario poppins-regular p-3 w-100" href="#extratoMensal"> <i class="fa-solid fa-list-ul fa-lg mr-2" style="color: #ffffff;"></i>  Extratos mensais</a>
+                                    </div>
+
+                                    <div class="col-12 col-md-12 d-none d-md-block mt-2 mb-5">
                                         <a class="btn botao-primario poppins-regular p-3 w-100" href="#extratoMensal"> <i class="fa-solid fa-list-ul fa-lg mr-2" style="color: #ffffff;"></i>  Extratos mensais</a>
                                     </div>
                                     
@@ -168,7 +172,7 @@ buscarDados($mysqli);
                 </div>
 
                 <!--EXTRATOS-->
-                <div class="row d-flex background-menus justify-content-center" id="extratoMensal">
+                <div class="row d-flex background-menus justify-content-center borda-baixo" id="extratoMensal">
                     <div class="col-12 text-center px-4">
                         <h2 class="inter-bold d-md-none mt-5">Extratos mensais</h2>
                         <h2 class="inter-bold d-none d-mb-block d-lg-block">Extratos mensais</h2>

@@ -320,6 +320,8 @@
                 case ($_SESSION['receita'] > -$_SESSION['despesa']):
                     $_SESSION['elizaMontante'] = "Suas despesas estão em um nível saudável. Isso significa que você tem uma boa margem para economizar ou investir!";
                     break;
+                default:
+                    $_SESSION['elizaMontante'] = "Preciso que você adicione alguma movimentação para gerar um feedback das suas finanças!";
             }
         } else {
             header("Location: erro-conexao-banco.php");
